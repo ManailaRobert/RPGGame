@@ -1,0 +1,4 @@
+﻿To be continued:
+Stats : Cand introduc clasele pentru jucator> formula costuri (stat - stat de clasa) / modifier +1 
+Balance stats.
+
