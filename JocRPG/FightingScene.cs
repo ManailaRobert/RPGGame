@@ -34,6 +34,7 @@ namespace JocRPG
             BTN_Block.Visible= true;    
             BTN_Counter.Visible= true;  
             BTN_Dodge.Visible= true;  
+            BTN_Shop.Visible= true;
             LB_Action.Visible= true;
             LB_HPE.Visible= true;
             LB_HPP.Visible= true;    
@@ -196,7 +197,6 @@ namespace JocRPG
         {
             Stats Stats = new Stats();
             Stats.Show();
-
         }
 
         private void BTN_Dodge_Click(object sender, EventArgs e)
@@ -250,6 +250,17 @@ namespace JocRPG
             LB_Action.Items.Add("----------------------------------------------------");
             LB_Action.Items.Add("Turn " + gameManager.Turn);
             LB_Action.Items.Add(gameManager.Player.Name + " Turn");
+        }
+
+        private void BTN_Shop_Click(object sender, EventArgs e)
+        {
+            Shop Shop =new Shop();
+            Shop.Show();
+        }
+
+        private void FightingScene_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

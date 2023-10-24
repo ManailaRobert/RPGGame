@@ -11,8 +11,9 @@ namespace JocRPG
     internal class GameManager
     {
         //int EnemyLevel=1;
-        public Entity Player = new Entity("S", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);//Name,Max_Hp,HP,ATK,STR,DEX,DEF,SPD,LVL,XPPoints,StatPts,Potions
+        public Entity Player = new Entity("S", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0);//Name,Max_Hp,HP,ATK,STR,DEX,DEF,SPD,LVL,XPPoints,StatPts,Potions
         public Entity Enemy = new Entity("Nume", 20, 20, 1, 1); //string name, int health, int max_health, int level, int attack
+        public Item Item = new Item("Excalibur", "Sword", 300, 500,"Knight","STR",3);
         public int Turn = 1;
 
         //Player creater
@@ -28,6 +29,7 @@ namespace JocRPG
             Player.Level = 1;
             Player.StatPoints = 50000;
             Player.Potions = 30;
+            Player.Money = 999999;
         }
         // Enemy creater
         public void CreateEnemy()
@@ -61,6 +63,11 @@ namespace JocRPG
                     Enemy.Attack = 1;
                     break;
             }
+        }
+
+        public void CreateItem()
+        {
+            Item.Name = "";
         }
         //Health updates
         public void UpdateHealthP(FightingScene form1)

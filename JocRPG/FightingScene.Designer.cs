@@ -46,6 +46,7 @@
             this.BTN_Counter = new System.Windows.Forms.Button();
             this.LB_NameP = new System.Windows.Forms.Label();
             this.LB_NumeE = new System.Windows.Forms.Label();
+            this.BTN_Shop = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Enemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Player)).BeginInit();
             this.SuspendLayout();
@@ -53,19 +54,22 @@
             // LB_Action
             // 
             this.LB_Action.FormattingEnabled = true;
-            this.LB_Action.Location = new System.Drawing.Point(197, 22);
+            this.LB_Action.ItemHeight = 20;
+            this.LB_Action.Location = new System.Drawing.Point(296, 34);
+            this.LB_Action.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LB_Action.Name = "LB_Action";
             this.LB_Action.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.LB_Action.Size = new System.Drawing.Size(451, 186);
+            this.LB_Action.Size = new System.Drawing.Size(674, 284);
             this.LB_Action.TabIndex = 0;
             this.LB_Action.UseTabStops = false;
             this.LB_Action.Visible = false;
             // 
             // PB_Enemy
             // 
-            this.PB_Enemy.Location = new System.Drawing.Point(654, 39);
+            this.PB_Enemy.Location = new System.Drawing.Point(981, 60);
+            this.PB_Enemy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PB_Enemy.Name = "PB_Enemy";
-            this.PB_Enemy.Size = new System.Drawing.Size(181, 147);
+            this.PB_Enemy.Size = new System.Drawing.Size(272, 226);
             this.PB_Enemy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PB_Enemy.TabIndex = 1;
             this.PB_Enemy.TabStop = false;
@@ -73,9 +77,10 @@
             // 
             // PB_Player
             // 
-            this.PB_Player.Location = new System.Drawing.Point(10, 39);
+            this.PB_Player.Location = new System.Drawing.Point(15, 60);
+            this.PB_Player.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PB_Player.Name = "PB_Player";
-            this.PB_Player.Size = new System.Drawing.Size(181, 149);
+            this.PB_Player.Size = new System.Drawing.Size(272, 229);
             this.PB_Player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PB_Player.TabIndex = 2;
             this.PB_Player.TabStop = false;
@@ -83,9 +88,10 @@
             // 
             // BTN_Attack
             // 
-            this.BTN_Attack.Location = new System.Drawing.Point(197, 214);
+            this.BTN_Attack.Location = new System.Drawing.Point(296, 329);
+            this.BTN_Attack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BTN_Attack.Name = "BTN_Attack";
-            this.BTN_Attack.Size = new System.Drawing.Size(85, 38);
+            this.BTN_Attack.Size = new System.Drawing.Size(128, 58);
             this.BTN_Attack.TabIndex = 4;
             this.BTN_Attack.Text = "Attack";
             this.BTN_Attack.UseVisualStyleBackColor = true;
@@ -96,9 +102,10 @@
             // 
             // BTN_Inventory
             // 
-            this.BTN_Inventory.Location = new System.Drawing.Point(10, 214);
+            this.BTN_Inventory.Location = new System.Drawing.Point(15, 329);
+            this.BTN_Inventory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BTN_Inventory.Name = "BTN_Inventory";
-            this.BTN_Inventory.Size = new System.Drawing.Size(181, 38);
+            this.BTN_Inventory.Size = new System.Drawing.Size(272, 58);
             this.BTN_Inventory.TabIndex = 6;
             this.BTN_Inventory.Text = "Inventory";
             this.BTN_Inventory.UseVisualStyleBackColor = true;
@@ -106,9 +113,10 @@
             // 
             // BTN_Block
             // 
-            this.BTN_Block.Location = new System.Drawing.Point(381, 214);
+            this.BTN_Block.Location = new System.Drawing.Point(572, 329);
+            this.BTN_Block.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BTN_Block.Name = "BTN_Block";
-            this.BTN_Block.Size = new System.Drawing.Size(85, 38);
+            this.BTN_Block.Size = new System.Drawing.Size(128, 58);
             this.BTN_Block.TabIndex = 7;
             this.BTN_Block.Text = "Block";
             this.BTN_Block.UseVisualStyleBackColor = true;
@@ -119,9 +127,10 @@
             // 
             // BTN_Dodge
             // 
-            this.BTN_Dodge.Location = new System.Drawing.Point(288, 214);
+            this.BTN_Dodge.Location = new System.Drawing.Point(432, 329);
+            this.BTN_Dodge.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BTN_Dodge.Name = "BTN_Dodge";
-            this.BTN_Dodge.Size = new System.Drawing.Size(85, 38);
+            this.BTN_Dodge.Size = new System.Drawing.Size(128, 58);
             this.BTN_Dodge.TabIndex = 8;
             this.BTN_Dodge.Text = "Dodge";
             this.BTN_Dodge.UseVisualStyleBackColor = true;
@@ -133,9 +142,10 @@
             // BTN_EnemyTurn
             // 
             this.BTN_EnemyTurn.Enabled = false;
-            this.BTN_EnemyTurn.Location = new System.Drawing.Point(654, 213);
+            this.BTN_EnemyTurn.Location = new System.Drawing.Point(981, 328);
+            this.BTN_EnemyTurn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BTN_EnemyTurn.Name = "BTN_EnemyTurn";
-            this.BTN_EnemyTurn.Size = new System.Drawing.Size(181, 38);
+            this.BTN_EnemyTurn.Size = new System.Drawing.Size(272, 58);
             this.BTN_EnemyTurn.TabIndex = 9;
             this.BTN_EnemyTurn.Text = "Enemy Turn";
             this.BTN_EnemyTurn.UseVisualStyleBackColor = true;
@@ -144,9 +154,10 @@
             // 
             // BTN_Heal
             // 
-            this.BTN_Heal.Location = new System.Drawing.Point(563, 213);
+            this.BTN_Heal.Location = new System.Drawing.Point(844, 328);
+            this.BTN_Heal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BTN_Heal.Name = "BTN_Heal";
-            this.BTN_Heal.Size = new System.Drawing.Size(85, 38);
+            this.BTN_Heal.Size = new System.Drawing.Size(128, 58);
             this.BTN_Heal.TabIndex = 10;
             this.BTN_Heal.Text = "Heal";
             this.BTN_Heal.UseVisualStyleBackColor = true;
@@ -157,18 +168,20 @@
             // 
             // TB_Detalii
             // 
-            this.TB_Detalii.Location = new System.Drawing.Point(197, 258);
+            this.TB_Detalii.Location = new System.Drawing.Point(296, 397);
+            this.TB_Detalii.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TB_Detalii.Multiline = true;
             this.TB_Detalii.Name = "TB_Detalii";
-            this.TB_Detalii.Size = new System.Drawing.Size(451, 38);
+            this.TB_Detalii.Size = new System.Drawing.Size(674, 56);
             this.TB_Detalii.TabIndex = 11;
             this.TB_Detalii.Visible = false;
             // 
             // BTN_Stats
             // 
-            this.BTN_Stats.Location = new System.Drawing.Point(10, 258);
+            this.BTN_Stats.Location = new System.Drawing.Point(15, 397);
+            this.BTN_Stats.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BTN_Stats.Name = "BTN_Stats";
-            this.BTN_Stats.Size = new System.Drawing.Size(181, 38);
+            this.BTN_Stats.Size = new System.Drawing.Size(272, 58);
             this.BTN_Stats.TabIndex = 12;
             this.BTN_Stats.Text = "Stats";
             this.BTN_Stats.UseVisualStyleBackColor = true;
@@ -177,9 +190,10 @@
             // 
             // BTN_StartGame
             // 
-            this.BTN_StartGame.Location = new System.Drawing.Point(357, 302);
+            this.BTN_StartGame.Location = new System.Drawing.Point(536, 465);
+            this.BTN_StartGame.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BTN_StartGame.Name = "BTN_StartGame";
-            this.BTN_StartGame.Size = new System.Drawing.Size(121, 27);
+            this.BTN_StartGame.Size = new System.Drawing.Size(182, 42);
             this.BTN_StartGame.TabIndex = 13;
             this.BTN_StartGame.Text = "Start";
             this.BTN_StartGame.UseVisualStyleBackColor = true;
@@ -189,9 +203,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(85, 173);
+            this.label1.Location = new System.Drawing.Point(128, 266);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 13);
+            this.label1.Size = new System.Drawing.Size(166, 20);
             this.label1.TabIndex = 14;
             this.label1.Text = "Stat points Available!";
             this.label1.Visible = false;
@@ -200,9 +215,10 @@
             // 
             this.LB_HPP.AutoSize = true;
             this.LB_HPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.LB_HPP.Location = new System.Drawing.Point(11, 195);
+            this.LB_HPP.Location = new System.Drawing.Point(16, 300);
+            this.LB_HPP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_HPP.Name = "LB_HPP";
-            this.LB_HPP.Size = new System.Drawing.Size(31, 17);
+            this.LB_HPP.Size = new System.Drawing.Size(45, 25);
             this.LB_HPP.TabIndex = 16;
             this.LB_HPP.Text = "HP:";
             this.LB_HPP.Visible = false;
@@ -211,18 +227,20 @@
             // 
             this.LB_HPE.AutoSize = true;
             this.LB_HPE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.LB_HPE.Location = new System.Drawing.Point(654, 195);
+            this.LB_HPE.Location = new System.Drawing.Point(981, 300);
+            this.LB_HPE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_HPE.Name = "LB_HPE";
-            this.LB_HPE.Size = new System.Drawing.Size(31, 17);
+            this.LB_HPE.Size = new System.Drawing.Size(45, 25);
             this.LB_HPE.TabIndex = 18;
             this.LB_HPE.Text = "HP:";
             this.LB_HPE.Visible = false;
             // 
             // BTN_Counter
             // 
-            this.BTN_Counter.Location = new System.Drawing.Point(472, 214);
+            this.BTN_Counter.Location = new System.Drawing.Point(708, 329);
+            this.BTN_Counter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BTN_Counter.Name = "BTN_Counter";
-            this.BTN_Counter.Size = new System.Drawing.Size(85, 38);
+            this.BTN_Counter.Size = new System.Drawing.Size(128, 58);
             this.BTN_Counter.TabIndex = 19;
             this.BTN_Counter.Text = "Counter";
             this.BTN_Counter.UseVisualStyleBackColor = true;
@@ -235,9 +253,10 @@
             // 
             this.LB_NameP.AutoSize = true;
             this.LB_NameP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.LB_NameP.Location = new System.Drawing.Point(6, 20);
+            this.LB_NameP.Location = new System.Drawing.Point(9, 31);
+            this.LB_NameP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_NameP.Name = "LB_NameP";
-            this.LB_NameP.Size = new System.Drawing.Size(54, 17);
+            this.LB_NameP.Size = new System.Drawing.Size(77, 25);
             this.LB_NameP.TabIndex = 22;
             this.LB_NameP.Text = "NumeP";
             this.LB_NameP.Visible = false;
@@ -246,18 +265,32 @@
             // 
             this.LB_NumeE.AutoSize = true;
             this.LB_NumeE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.LB_NumeE.Location = new System.Drawing.Point(654, 19);
+            this.LB_NumeE.Location = new System.Drawing.Point(981, 29);
+            this.LB_NumeE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_NumeE.Name = "LB_NumeE";
-            this.LB_NumeE.Size = new System.Drawing.Size(54, 17);
+            this.LB_NumeE.Size = new System.Drawing.Size(77, 25);
             this.LB_NumeE.TabIndex = 23;
             this.LB_NumeE.Text = "NumeE";
             this.LB_NumeE.Visible = false;
             // 
+            // BTN_Shop
+            // 
+            this.BTN_Shop.Location = new System.Drawing.Point(981, 397);
+            this.BTN_Shop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BTN_Shop.Name = "BTN_Shop";
+            this.BTN_Shop.Size = new System.Drawing.Size(272, 58);
+            this.BTN_Shop.TabIndex = 24;
+            this.BTN_Shop.Text = "Shop";
+            this.BTN_Shop.UseVisualStyleBackColor = true;
+            this.BTN_Shop.Visible = false;
+            this.BTN_Shop.Click += new System.EventHandler(this.BTN_Shop_Click);
+            // 
             // FightingScene
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 338);
+            this.ClientSize = new System.Drawing.Size(1262, 520);
+            this.Controls.Add(this.BTN_Shop);
             this.Controls.Add(this.LB_NumeE);
             this.Controls.Add(this.LB_NameP);
             this.Controls.Add(this.label1);
@@ -276,6 +309,7 @@
             this.Controls.Add(this.BTN_EnemyTurn);
             this.Controls.Add(this.BTN_Stats);
             this.Controls.Add(this.PB_Enemy);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FightingScene";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.PB_Enemy)).EndInit();
@@ -305,6 +339,7 @@
         public System.Windows.Forms.Button BTN_Counter;
         public System.Windows.Forms.Label LB_NameP;
         public System.Windows.Forms.Label LB_NumeE;
+        public System.Windows.Forms.Button BTN_Shop;
     }
 }
 

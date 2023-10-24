@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +21,7 @@ namespace JocRPG
         private int xp_points;
         private int statPoints;//just player
         private int potions;
+        private int money;
 
         public String Name
         {
@@ -80,6 +82,11 @@ namespace JocRPG
             get { return potions; }
             set { potions = value; }
         }
+        public int Money
+        {
+            get { return Money; }
+            set { Money = value; }
+        }
 
       
         public Entity(string name, int health, int max_health, int level, int attack) // Enemy
@@ -91,7 +98,7 @@ namespace JocRPG
             this.name = name;
         }
 
-        public Entity(string name, int max_health, int health,  int attack, int strength, int dexterity, int defence,int speed,  int level,int xppoints, int statPoints, int potions)//player
+        public Entity(string name, int max_health, int health,  int attack, int strength, int dexterity, int defence,int speed,  int level,int xppoints, int statPoints, int potions, int money)//player
         {
             this.name = name;
             this.health = health;
@@ -105,6 +112,7 @@ namespace JocRPG
             this.xp_points= xppoints;
             this.statPoints = statPoints;
             this.potions = potions;
+            this.money= money;
         }
     }
 }

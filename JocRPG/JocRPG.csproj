@@ -52,6 +52,13 @@
     <Compile Include="FightingScene.Designer.cs">
       <DependentUpon>FightingScene.cs</DependentUpon>
     </Compile>
+    <Compile Include="Item.cs" />
+    <Compile Include="Shop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shop.Designer.cs">
+      <DependentUpon>Shop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stats.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +71,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FightingScene.resx">
       <DependentUpon>FightingScene.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop.resx">
+      <DependentUpon>Shop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stats.resx">
       <DependentUpon>Stats.cs</DependentUpon>
