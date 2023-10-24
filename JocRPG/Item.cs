@@ -10,14 +10,16 @@ namespace JocRPG
     {
         private String name;
         private string type;
+        private int id;
         private int price;
         private int quantity;
         private String availableClass;
         private int requirement;
         private String requirementStat;
 
-        public Item(string name, string type, int quantity, int price,  string availableClass, string requirementStat ,int requirement)
+        public Item(int id,string name, string type, int quantity, int price,  string availableClass, string requirementStat ,int requirement)
         {
+            this.id = id;
             this.name = name;
             this.type = type;
             this.price = price;
@@ -34,7 +36,6 @@ namespace JocRPG
         public string AvailableClass { get => availableClass; set => availableClass = value; }
         public int Requirement { get => requirement; set => requirement = value; }
         public string RequirementStat { get => requirementStat; set => requirementStat = value; }
-
-
+        public int Id { get => id; set => id = value; }
     }
 }

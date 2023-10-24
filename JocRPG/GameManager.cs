@@ -13,7 +13,7 @@ namespace JocRPG
         //int EnemyLevel=1;
         public Entity Player = new Entity("S", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0);//Name,Max_Hp,HP,ATK,STR,DEX,DEF,SPD,LVL,XPPoints,StatPts,Potions
         public Entity Enemy = new Entity("Nume", 20, 20, 1, 1); //string name, int health, int max_health, int level, int attack
-        public Item Item = new Item("Excalibur", "Sword", 300, 500,"Knight","STR",3);
+        public Item Item = new Item(1,"Excalibur", "Sword", 300, 500,"Knight","STR",3);
         public int Turn = 1;
 
         //Player creater
