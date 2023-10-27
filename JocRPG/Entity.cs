@@ -84,8 +84,8 @@ namespace JocRPG
         }
         public int Money
         {
-            get { return Money; }
-            set { Money = value; }
+            get { return money; }
+            set { money = value; }
         }
 
       

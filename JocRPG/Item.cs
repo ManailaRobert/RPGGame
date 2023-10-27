@@ -25,8 +25,8 @@ namespace JocRPG
             this.price = price;
             this.quantity = quantity;
             this.availableClass = availableClass;
-            this.requirement = requirement;
             this.requirementStat = requirementStat;
+            this.requirement = requirement;
         }
 
         public string Name { get => name; set => name = value; }

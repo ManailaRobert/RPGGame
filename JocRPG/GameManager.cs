@@ -201,8 +201,7 @@ namespace JocRPG
             {
                 case "Goblin":
                    Name = "D:\\1\\JocRPG\\Img_JocRPG\\Goblin.png";
-                    break;
-                
+                    break;  
             }
             return Name; 
         }
