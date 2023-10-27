@@ -37,18 +37,19 @@
             // LB_ShopList
             // 
             this.LB_ShopList.FormattingEnabled = true;
-            this.LB_ShopList.ItemHeight = 20;
-            this.LB_ShopList.Location = new System.Drawing.Point(12, 26);
+            this.LB_ShopList.Location = new System.Drawing.Point(8, 17);
+            this.LB_ShopList.Margin = new System.Windows.Forms.Padding(2);
             this.LB_ShopList.Name = "LB_ShopList";
-            this.LB_ShopList.Size = new System.Drawing.Size(324, 264);
+            this.LB_ShopList.Size = new System.Drawing.Size(217, 173);
             this.LB_ShopList.TabIndex = 0;
             this.LB_ShopList.SelectedValueChanged += new System.EventHandler(this.LB_ShopList_SelectedValueChanged);
             // 
             // BTN_Cumparare
             // 
-            this.BTN_Cumparare.Location = new System.Drawing.Point(612, 63);
+            this.BTN_Cumparare.Location = new System.Drawing.Point(408, 41);
+            this.BTN_Cumparare.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Cumparare.Name = "BTN_Cumparare";
-            this.BTN_Cumparare.Size = new System.Drawing.Size(139, 91);
+            this.BTN_Cumparare.Size = new System.Drawing.Size(93, 59);
             this.BTN_Cumparare.TabIndex = 1;
             this.BTN_Cumparare.Text = "Cumpara";
             this.BTN_Cumparare.UseVisualStyleBackColor = true;
@@ -57,34 +58,37 @@
             // LB_Bani
             // 
             this.LB_Bani.AutoSize = true;
-            this.LB_Bani.Location = new System.Drawing.Point(653, 206);
+            this.LB_Bani.Location = new System.Drawing.Point(251, 144);
+            this.LB_Bani.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LB_Bani.Name = "LB_Bani";
-            this.LB_Bani.Size = new System.Drawing.Size(51, 20);
+            this.LB_Bani.Size = new System.Drawing.Size(35, 13);
             this.LB_Bani.TabIndex = 2;
             this.LB_Bani.Text = "label1";
             // 
             // TB_Detalii
             // 
-            this.TB_Detalii.Location = new System.Drawing.Point(342, 26);
+            this.TB_Detalii.Location = new System.Drawing.Point(228, 17);
+            this.TB_Detalii.Margin = new System.Windows.Forms.Padding(2);
             this.TB_Detalii.Multiline = true;
             this.TB_Detalii.Name = "TB_Detalii";
-            this.TB_Detalii.Size = new System.Drawing.Size(242, 173);
+            this.TB_Detalii.Size = new System.Drawing.Size(176, 114);
             this.TB_Detalii.TabIndex = 3;
             this.TB_Detalii.Visible = false;
             // 
             // Shop
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 306);
+            this.ClientSize = new System.Drawing.Size(506, 199);
             this.Controls.Add(this.TB_Detalii);
             this.Controls.Add(this.LB_Bani);
             this.Controls.Add(this.BTN_Cumparare);
             this.Controls.Add(this.LB_ShopList);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Shop";
             this.Text = "Shop";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Shop_FormClosed);
             this.Load += new System.EventHandler(this.Shop_Load);
-            this.Leave += new System.EventHandler(this.Shop_Leave);
             this.ResumeLayout(false);
             this.PerformLayout();
 

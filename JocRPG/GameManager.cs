@@ -200,14 +200,14 @@ namespace JocRPG
             switch(Name)
             {
                 case "Goblin":
-                   Name = "D:\\1\\JocRPG\\Img_JocRPG\\Goblin.png";
+                   Name = "..\\..\\Resources\\Goblin.png";
                     break;  
             }
             return Name; 
         }
         public void changeImg(FightingScene form1)
         {
-           form1.PB_Enemy.ImageLocation = checkPath(form1.GameManager.Enemy.Name);
+           form1.PB_Enemy.ImageLocation = @checkPath(form1.GameManager.Enemy.Name);
         }
     }
 
