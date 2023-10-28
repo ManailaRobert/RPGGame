@@ -2,11 +2,12 @@
 Stats : Cand introduc clasele pentru jucator> formula costuri (stat - stat de clasa) / modifier +1 
 Balance stats.
 
-#Item list; id,bane,type,quantity,price,class,Required stat,requirement
-3
-1;Sword1;Sword;300;3;Knight;STR;30
-2;Normal Bow;Bow;300;4;Archer;DEX;40
-3;Sword2;Sword;500;5;Barbarian;STR;50
+#Item list; id-0,name-1,type-2,quantity-3,price-4,availableClass-5,requirementStat-6,requirement-7,addedMXH-8,addedATK-9,addedSTR-10,addedDEX-11,addedSPD-12,addedDEF-13
+4
+1;Sword1;Sword;300;3;Knight;STR;30;0;0;1;0;0;0;0
+2;Normal Bow;Bow;300;4;Archer;DEX;40;0;1;0;0;0;0
+3;Sword2;Sword;500;5;Barbarian;STR;50;0;1;0;0;0;0
+4;Armor1;ChestPiece;300;6;Knight;STR;20;1;0;0;0;0;0
 #
 
 Add bonus stats for items

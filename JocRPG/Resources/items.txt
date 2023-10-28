@@ -1,4 +1,5 @@
-3
-1;Sword1;Sword;300;3;Knight;STR;30;
-2;Normal Bow;Bow;300;4;Archer;DEX;40;
-3;Sword2;Sword;500;5;Barbarian;STR;50;
+4
+1;Sword1;Sword;299;3;Knight;STR;30;0;0;1;0;0;0
+2;Normal Bow;Bow;300;4;Archer;DEX;40;0;1;0;0;0;0
+3;Sword2;Sword;499;5;Barbarian;STR;50;0;1;0;0;0;0
+4;Armor1;ChestPiece;300;6;Knight;STR;20;1;0;0;0;0;0

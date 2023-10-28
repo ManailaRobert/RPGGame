@@ -46,10 +46,6 @@ namespace JocRPG
             gameManager.CreateEnemy();
             gameManager.changeImg(this);
 
-            //LB_HPP.Text ="HP: "+ gameManager.Player.Health.ToString() + "/" + gameManager.Player.MaxHealth;
-            //LB_HPE.Text ="HP: " + gameManager.Enemy.Health.ToString() + "/" + gameManager.Enemy.MaxHealth;
-            //LB_NameP.Text ="LVL "+ gameManager.Player.Level.ToString()+ " "+ gameManager.Player.Name.ToString();
-            //LB_NumeE.Text ="LVL "+ gameManager.Enemy.Level.ToString() + " " + gameManager.Enemy.Name.ToString();
 
             gameManager.UpdateHealthP(this);
             gameManager.UpdateHealthE(this);

@@ -27,7 +27,7 @@ namespace JocRPG
         //Functions
         private void Form1_Load(object sender, EventArgs e)
         {
-            gameManager.CreatePlayer();
+            //gameManager.CreatePlayer();
 
             LB_Name.Text = Convert.ToString(FightingScene.date.GameManager.Player.Name);
             LB_Level.Text = "Level " + Convert.ToString(FightingScene.date.GameManager.Player.Level);
@@ -37,6 +37,8 @@ namespace JocRPG
             LB_SPD.Text = Convert.ToString(FightingScene.date.GameManager.Player.Speed + FightingScene.date.GameManager.Player.AddedSPD);
             LB_DEF.Text = Convert.ToString(FightingScene.date.GameManager.Player.Defence + FightingScene.date.GameManager.Player.AddedDEF);
             LB_STP.Text = Convert.ToString(FightingScene.date.GameManager.Player.StatPoints );
+
+            LB_ATK.Text = Convert.ToString(FightingScene.date.GameManager.Player.Attack + FightingScene.date.GameManager.Player.AddedATK);
 
             LB_AddedMXH.Text = Convert.ToString( FightingScene.date.GameManager.Player.AddedMXH );
             LB_AddedSTR.Text = Convert.ToString(FightingScene.date.GameManager.Player.AddedSTR);

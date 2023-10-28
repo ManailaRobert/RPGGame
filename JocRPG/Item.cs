@@ -3,24 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace JocRPG
 {
     internal class Item
     {
-        private String name;
-        private string type;
         private int id;
+        private string name;
+        private string type;
         private int price;
         private int quantity;
-        private String availableClass;
+        private string availableClass;
         private int requirement;
-        private String requirementStat;
+        private string requirementStat;
 
-        private int bonus;
-        private String bonusStat;
+        
+        private int addedMXH;
+        private int addedATK;
+        private int addedSTR;
+        private int addedDEX;
+        private int addedSPD;
+        private int addedDEF;
 
-        public Item(int id,string name, string type, int quantity, int price,  string availableClass, string requirementStat ,int requirement)
+        //private List<int> addedStats = new List<int> { addedMXH, addedATK, addedSTR, addedDEX, addedSPD, addedDEF };
+
+        public Item(int id, string name, string type, int quantity, int price, string availableClass, string requirementStat, int requirement,  int addedMXH, int addedATK, int addedSTR, int addedDEX, int addedSPD, int addedDEF )
         {
             this.id = id;
             this.name = name;
@@ -30,6 +38,12 @@ namespace JocRPG
             this.availableClass = availableClass;
             this.requirementStat = requirementStat;
             this.requirement = requirement;
+            this.addedMXH = addedMXH;
+            this.addedSTR = addedSTR;
+            this.addedDEX = addedDEX;
+            this.addedSPD = addedSPD;
+            this.addedDEF = addedDEF;
+            this.addedATK = addedATK;
         }
 
         public string Name { get => name; set => name = value; }
@@ -40,7 +54,12 @@ namespace JocRPG
         public int Requirement { get => requirement; set => requirement = value; }
         public string RequirementStat { get => requirementStat; set => requirementStat = value; }
         public int Id { get => id; set => id = value; }
-        public int Bonus { get => bonus; set => bonus = value; }
-        public string BonusStat { get => bonusStat; set => bonusStat = value; }
+        //public List<int> AddedStats { get => addedStats; set => addedStats = value; }
+        public  int AddedMXH { get => addedMXH; set => addedMXH = value; }
+        public  int AddedSTR { get => addedSTR; set => addedSTR = value; }
+        public  int AddedDEX { get => addedDEX; set => addedDEX = value; }
+        public  int AddedSPD { get => addedSPD; set => addedSPD = value; }
+        public  int AddedDEF { get => addedDEF; set => addedDEF = value; }
+        public  int AddedATK { get => addedATK; set => addedATK = value; }
     }
 }

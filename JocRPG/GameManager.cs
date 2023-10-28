@@ -13,17 +13,19 @@ namespace JocRPG
         //int EnemyLevel=1;
         public Entity Player = new Entity("S", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0);//Name,Max_Hp,HP,ATK,STR,DEX,DEF,SPD,LVL,XPPoints,StatPts,Potions
         public Entity Enemy = new Entity("Nume", 20, 20, 1, 1); //string name, int health, int max_health, int level, int attack
-        public Item Item = new Item(1,"Excalibur", "Sword", 300, 500,"Knight","STR",3);
+        public Item Item = new Item(1,"Excalibur", "Sword", 300, 500,"Knight","STR",3,0,0,0,0,0,1);//id,name,type,quantity,price,availableClass,requirementStat,requirement,addedMXH,addedATK,addedSTR,addedDEX,addedSPD,addedDEF)
+
         public int Turn = 1;
 
         //Player creater
         public void CreatePlayer()
-        { Player.Name = "Robert";
+        {
+            Player.Name = "Robert";
             Player.MaxHealth = 20;
             Player.Health = 20;
             Player.Attack = 1;
             Player.Strength = 1;
-            Player.Dexterity = 30; 
+            Player.Dexterity = 30;
             Player.Speed = 30;
             Player.Defence = 149;// 3 points = 1%
             Player.Level = 1;
@@ -31,10 +33,11 @@ namespace JocRPG
             Player.Potions = 30;
             Player.Money = 999999;
 
-            Player.AddedSTR = 1;
-            Player.AddedSPD = 1;
-            Player.AddedMXH = 1;
-            Player.AddedDEF = 1;
+            Player.AddedATK = 0;
+            Player.AddedSTR = 0;
+            Player.AddedSPD = 0;
+            Player.AddedMXH = 0;
+            Player.AddedDEF = 0;
 
         }
         // Enemy creater
@@ -71,10 +74,7 @@ namespace JocRPG
             }
         }
 
-        public void CreateItem()
-        {
-            Item.Name = "";
-        }
+
         //Health updates
         public void UpdateHealthP(FightingScene form1)
         {

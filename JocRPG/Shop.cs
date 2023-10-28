@@ -13,7 +13,7 @@ namespace JocRPG
 {
     public partial class Shop : Form
     {
-        GameManager gameManager=new GameManager();
+        //GameManager gameManager=new GameManager();
 
         List<Item> shopList = new List<Item>();
         //update list and lisbox
@@ -54,8 +54,9 @@ namespace JocRPG
             for (int i = 0; i < numberItems; i++)
             {
                 string line = In.ReadLine();
-                string[] arr = line.Split(';');
-                Item item = new Item(Convert.ToInt32(arr[0]), arr[1], arr[2], Convert.ToInt32(arr[3]), Convert.ToInt32(arr[4]), arr[5], arr[6], Convert.ToInt32(arr[7]));
+                string[] arr1 = line.Split(';');
+
+                Item item = new Item(Convert.ToInt32(arr1[0]), arr1[1], arr1[2], Convert.ToInt32(arr1[3]), Convert.ToInt32(arr1[4]), arr1[5], arr1[6], Convert.ToInt32(arr1[7]), Convert.ToInt32(arr1[8]), Convert.ToInt32(arr1[9]), Convert.ToInt32(arr1[10]), Convert.ToInt32(arr1[11]), Convert.ToInt32(arr1[12]),Convert.ToInt32(arr1[13]));
                 shopList.Add(item);
             }
 
@@ -67,9 +68,9 @@ namespace JocRPG
         public void SaveListOfItems()
         {
             StreamWriter Out = new StreamWriter(@"..\..\Resources\items.txt");
-            Out.Write(shopList.Count);
-            foreach( Item item in shopList)
-                Out.WriteLine($"{item.Id};{item.Name};{item.Type};{item.Quantity};{item.Price};{item.AvailableClass};{item.RequirementStat};{item.Requirement};");
+            Out.WriteLine(shopList.Count);
+            foreach( Item item in shopList)//id,name,type,quantity,price,availableClass,requirementStat,requirement,addedMXH,addedATK,addedSTR,addedDEX,addedSPD,addedDEF
+                Out.WriteLine($"{item.Id};{item.Name};{item.Type};{item.Quantity};{item.Price};{item.AvailableClass};{item.RequirementStat};{item.Requirement};{item.AddedMXH};{item.AddedATK};{item.AddedSTR};{item.AddedDEX};{item.AddedSPD};{item.AddedDEF}");
             Out.Close();
         }
         public Shop()
@@ -79,8 +80,8 @@ namespace JocRPG
         //events
         private void Shop_Load(object sender, EventArgs e)
         {
-            gameManager.CreatePlayer();
-            LB_Bani.Text = "Bani: "+gameManager.Player.Money.ToString();
+            //gameManager.CreatePlayer();
+            LB_Bani.Text = "Bani: " + FightingScene.date.GameManager.Player.Money.ToString();
             LoadListOfItemsFromFile();
             UpdateList();
 
@@ -92,11 +93,11 @@ namespace JocRPG
             {
                 if(LB_ShopList.GetSelected(i))
                 {
-                    if(gameManager.Player.Money>= shopList[i].Price)
+                    if(FightingScene.date.GameManager.Player.Money>= shopList[i].Price)
                     {
-                        gameManager.Player.Money-= shopList[i].Price;
-                        LB_Bani.Text = gameManager.Player.Money.ToString();
-                        LB_Bani.Text = "Bani: " + gameManager.Player.Money.ToString();
+                        FightingScene.date.GameManager.Player.Money-= shopList[i].Price;
+                        LB_Bani.Text = FightingScene.date.GameManager.Player.Money.ToString();
+                        LB_Bani.Text = "Bani: " + FightingScene.date.GameManager.Player.Money.ToString();
                         shopList[i].Quantity--;
                         UpdateDetalii();
                         

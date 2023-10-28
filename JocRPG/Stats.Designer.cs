@@ -67,6 +67,8 @@
             this.BTN_DEF_M = new System.Windows.Forms.Button();
             this.BTN_DEF_P = new System.Windows.Forms.Button();
             this.LB_Cost_DEF = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.LB_ATK = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,7 +136,7 @@
             // 
             this.LB_StatPoints.AutoSize = true;
             this.LB_StatPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_StatPoints.Location = new System.Drawing.Point(16, 284);
+            this.LB_StatPoints.Location = new System.Drawing.Point(12, 314);
             this.LB_StatPoints.Name = "LB_StatPoints";
             this.LB_StatPoints.Size = new System.Drawing.Size(154, 20);
             this.LB_StatPoints.TabIndex = 6;
@@ -144,7 +146,7 @@
             // 
             this.LB_STP.AutoSize = true;
             this.LB_STP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_STP.Location = new System.Drawing.Point(166, 284);
+            this.LB_STP.Location = new System.Drawing.Point(162, 314);
             this.LB_STP.Name = "LB_STP";
             this.LB_STP.Size = new System.Drawing.Size(99, 20);
             this.LB_STP.TabIndex = 13;
@@ -193,7 +195,7 @@
             // BTN_Save
             // 
             this.BTN_Save.Enabled = false;
-            this.BTN_Save.Location = new System.Drawing.Point(95, 321);
+            this.BTN_Save.Location = new System.Drawing.Point(91, 351);
             this.BTN_Save.Name = "BTN_Save";
             this.BTN_Save.Size = new System.Drawing.Size(75, 23);
             this.BTN_Save.TabIndex = 14;
@@ -456,11 +458,33 @@
             this.LB_Cost_DEF.TabIndex = 40;
             this.LB_Cost_DEF.Text = "2";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(13, 285);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 20);
+            this.label8.TabIndex = 41;
+            this.label8.Text = "ATK";
+            // 
+            // LB_ATK
+            // 
+            this.LB_ATK.AutoSize = true;
+            this.LB_ATK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_ATK.Location = new System.Drawing.Point(65, 285);
+            this.LB_ATK.Name = "LB_ATK";
+            this.LB_ATK.Size = new System.Drawing.Size(39, 20);
+            this.LB_ATK.TabIndex = 42;
+            this.LB_ATK.Text = "ATK";
+            // 
             // Stats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(318, 378);
+            this.Controls.Add(this.LB_ATK);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.LB_Cost_DEF);
             this.Controls.Add(this.BTN_DEF_P);
             this.Controls.Add(this.BTN_DEF_M);
@@ -551,5 +575,7 @@
         private System.Windows.Forms.Button BTN_DEF_M;
         private System.Windows.Forms.Button BTN_DEF_P;
         private System.Windows.Forms.Label LB_Cost_DEF;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label LB_ATK;
     }
 }
