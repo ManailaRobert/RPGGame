@@ -167,25 +167,25 @@ namespace JocRPG
                 BTN_Counter.Enabled = false;
                 BTN_Heal.Enabled = false;
                 BTN_Dodge.Enabled = false;
-                gameManager.EnemyTurn(this,"Attack");
             }
 
             gameManager.UpdateHealthP(this);
         }
         private void BTN_Heal_Click(object sender, EventArgs e)
         {
+            int healAmmount = 20;
             if (gameManager.Player.Health != gameManager.Player.MaxHealth)
             {
-                gameManager.Player.Health += 5;
+                gameManager.Player.Health += healAmmount;
                 gameManager.Player.Potions -= 1;
 
                 if (gameManager.Player.Health > gameManager.Player.MaxHealth)
                 {
-                    LB_Action.Items.Add("You healed for  " + Convert.ToString(5+ (gameManager.Player.MaxHealth-gameManager.Player.Health)));
+                    LB_Action.Items.Add($"You healed for   + {Convert.ToString(healAmmount+ (gameManager.Player.MaxHealth-gameManager.Player.Health) )}");
                     gameManager.Player.Health = gameManager.Player.MaxHealth;
                 }
                 else
-                    LB_Action.Items.Add("You healed for 5 HP");
+                    LB_Action.Items.Add($"You healed for {healAmmount}");
                 gameManager.UpdateHealthP(this);
                 BTN_Heal.Enabled = false;
             }

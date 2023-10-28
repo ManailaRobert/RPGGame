@@ -120,7 +120,7 @@
             // 
             // BTN_Dodge
             // 
-            this.BTN_Dodge.Location = new System.Drawing.Point(288, 214);
+            this.BTN_Dodge.Location = new System.Drawing.Point(472, 214);
             this.BTN_Dodge.Name = "BTN_Dodge";
             this.BTN_Dodge.Size = new System.Drawing.Size(85, 38);
             this.BTN_Dodge.TabIndex = 8;
@@ -221,7 +221,7 @@
             // 
             // BTN_Counter
             // 
-            this.BTN_Counter.Location = new System.Drawing.Point(472, 214);
+            this.BTN_Counter.Location = new System.Drawing.Point(290, 214);
             this.BTN_Counter.Name = "BTN_Counter";
             this.BTN_Counter.Size = new System.Drawing.Size(85, 38);
             this.BTN_Counter.TabIndex = 19;

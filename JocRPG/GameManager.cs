@@ -24,7 +24,7 @@ namespace JocRPG
             Player.MaxHealth = 20;
             Player.Health = 20;
             Player.Attack = 1;
-            Player.Strength = 1;
+            Player.Strength = 70;
             Player.Dexterity = 30;
             Player.Speed = 30;
             Player.Defence = 149;// 3 points = 1%
@@ -102,15 +102,17 @@ namespace JocRPG
         //Enemy Turn
         public void EnemyTurn(FightingScene form1, string move)
         {
-            switch(move)
+            int attack1 = Convert.ToInt32(Enemy.Attack * (Convert.ToDouble(Player.Defence / 3) / 100));//dmg taken formula: Enemy Attack * ( (PlayerDef/3)/100 ) -> percentage
+            int attack2 = Convert.ToInt32(Enemy.Attack*2 * (Convert.ToDouble(Player.Defence / 3) / 100)); //amplified dmg 2X
+            int attack3 = Convert.ToInt32(Enemy.Attack/2 * (Convert.ToDouble(Player.Defence / 3) / 100)); //half dmg given 
+            switch (move)
             {
                 case "Attack":
-                    int attack=Convert.ToInt32(Enemy.Attack*(Convert.ToDouble(Player.Defence/3)/100));//dmg taken formula: Enemy Attack * ( (PlayerDef/3)/100 ) -> percentage
 
             form1.LB_Action.Items.Add(Enemy.Name + " Turn");
-            form1.LB_Action.Items.Add(Enemy.Name + " attacked with " + Convert.ToString(attack )+ " DMG ");
-            Player.Health -= attack;
-            if (Player.Health < 0)
+            form1.LB_Action.Items.Add(Enemy.Name + " attacked with " + Convert.ToString(attack1)+ " DMG ");
+            Player.Health -= attack1;
+            if (Player.Health <= 0)
             {
                 MessageBox.Show("You Lost");
                 form1.Close();
@@ -139,9 +141,9 @@ namespace JocRPG
                         form1.LB_Action.Items.Add(Enemy.Name + " Turn");
                         form1.LB_Action.Items.Add("You failed to dodge!");
                         form1.LB_Action.Items.Add("Damage is amplified! ");
-                        form1.LB_Action.Items.Add(Enemy.Name + " attacked with " + Convert.ToString(Enemy.Attack *2) + " DMG ");
-                        Player.Health -= Enemy.Attack *2;
-                        if (Player.Health < 0)
+                        form1.LB_Action.Items.Add(Enemy.Name + " attacked with " + Convert.ToString(attack2) + " DMG ");
+                        Player.Health -= attack2;
+                        if (Player.Health <= 0)
                         {
                             MessageBox.Show("You Lost");
                             form1.Close();
@@ -154,29 +156,25 @@ namespace JocRPG
                 case "Block":
                     form1.LB_Action.Items.Add("You block the attack");
                     form1.LB_Action.Items.Add(Enemy.Name + " Turn");
-                   
+
+                    var random3 = new Random();
+                    int chance3= random3.Next(1, 100);
                     //exceding max stat
                     int stat2;
                     if (Player.Strength > 70)
                         stat2= 70;
                     else stat2=Player.Strength;
                          
-                    if (stat2 < 70)
+                    if (chance3 < stat2)
                         {
-                            form1.LB_Action.Items.Add(Enemy.Name + " attacked with " + Convert.ToString(Enemy.Attack - Convert.ToInt32(Player.Strength / 100 * Enemy.Attack)) + " DMG ");
-                            Player.Health -=Convert.ToInt32(Convert.ToDouble(Enemy.Attack) - (Player.Strength / 100 * Enemy.Attack));
-                            if (Player.Health < 0)
-                            {
-                                MessageBox.Show("You Lost");
-                                form1.Close();
-                            }
-                            form1.LB_HPP.Text = "HP: " + Player.Health.ToString() + "/" + Player.MaxHealth;
-                        }
+                        form1.LB_Action.Items.Add(Enemy.Name + " Turn");
+                        form1.LB_Action.Items.Add("You blocked the attack! ");
+                    }
                         else
                         {
-                            form1.LB_Action.Items.Add(Enemy.Name + " attacked with " + Convert.ToString(Convert.ToInt32(Enemy.Attack*0.5)) + " DMG ");
-                            Player.Health -= Convert.ToInt32(Enemy.Attack * 0.5);
-                            if (Player.Health < 0)
+                            form1.LB_Action.Items.Add(Enemy.Name + " attacked with " + Convert.ToString(attack1) + " DMG ");
+                            Player.Health -= attack1;
+                            if (Player.Health <= 0)
                             {
                                 MessageBox.Show("You Lost");
                                 form1.Close();
@@ -201,8 +199,8 @@ namespace JocRPG
                     {
                         form1.LB_Action.Items.Add(Enemy.Name + " Turn");
                         form1.LB_Action.Items.Add("You succesfully countered the attack! ");
-                        form1.LB_Action.Items.Add("You dealt"+ Enemy.Attack /0.5 + "damage !");
-                        Enemy.Health -= Convert.ToInt32(Enemy.Attack / 0.5);
+                        form1.LB_Action.Items.Add("You dealt"+ attack3 + "damage !");
+                        Enemy.Health -= attack3;
                         form1.LB_HPE.Text = "HP: " + Enemy.Health.ToString() + "/" + Enemy.MaxHealth;
                     }
                     else
@@ -211,9 +209,9 @@ namespace JocRPG
                         form1.LB_Action.Items.Add("You failed to counter!");
                         form1.LB_Action.Items.Add("Damage is amplified! ");
 
-                        form1.LB_Action.Items.Add(Enemy.Name + " attacked with " + Convert.ToString(Enemy.Attack * 2) + " DMG ");
-                        Player.Health -= Enemy.Attack * 2;
-                        if (Player.Health < 0)
+                        form1.LB_Action.Items.Add(Enemy.Name + " attacked with " + Convert.ToString(attack2) + " DMG ");
+                        Player.Health -= attack2;
+                        if (Player.Health <= 0)
                         {
                             MessageBox.Show("You Lost");
                             form1.Close();

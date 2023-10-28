@@ -1,6 +1,10 @@
 ﻿To be continued:
-Stats : Cand introduc clasele pentru jucator> formula costuri (stat - stat de clasa) / modifier +1 
-Balance stats.
+
+#Cand introduc clasele:
+- pentru jucator> formula costuri (stat - stat de clasa) / modifier +1 ;
+- in stats sa fie max stats ptr fiecare clasa
+
+#Balance stats.
 
 #Item list; id-0,name-1,type-2,quantity-3,price-4,availableClass-5,requirementStat-6,requirement-7,addedMXH-8,addedATK-9,addedSTR-10,addedDEX-11,addedSPD-12,addedDEF-13
 4
@@ -10,5 +14,4 @@ Balance stats.
 4;Armor1;ChestPiece;300;6;Knight;STR;20;1;0;0;0;0;0
 #
 
-Add bonus stats for items
 make inventory
