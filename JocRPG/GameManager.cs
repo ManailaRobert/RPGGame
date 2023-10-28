@@ -21,15 +21,21 @@ namespace JocRPG
         { Player.Name = "Robert";
             Player.MaxHealth = 20;
             Player.Health = 20;
-            Player.Attack = 4;
-            Player.Strength = 49;
-            Player.Dexterity = 50;
-            Player.Defence = 1;
-            Player.Speed = 50;
+            Player.Attack = 1;
+            Player.Strength = 1;
+            Player.Dexterity = 30; 
+            Player.Speed = 30;
+            Player.Defence = 149;// 3 points = 1%
             Player.Level = 1;
             Player.StatPoints = 50000;
             Player.Potions = 30;
             Player.Money = 999999;
+
+            Player.AddedSTR = 1;
+            Player.AddedSPD = 1;
+            Player.AddedMXH = 1;
+            Player.AddedDEF = 1;
+
         }
         // Enemy creater
         public void CreateEnemy()
@@ -44,7 +50,7 @@ namespace JocRPG
                     Enemy.MaxHealth = 14 + (Player.Level * 2);
                     Enemy.Health = Enemy.MaxHealth;
                     Enemy.Level = Player.Level;
-                    Enemy.Attack = 1 + (Player.Level * 2);
+                    Enemy.Attack = 2 + (Player.Level * 2);
                     break;
 
                 case 2:
@@ -52,7 +58,7 @@ namespace JocRPG
                     Enemy.MaxHealth = 16 + (Player.Level * 2);
                     Enemy.Health = Enemy.MaxHealth;
                     Enemy.Level = Player.Level;
-                    Enemy.Attack = 1 + (Player.Level * 2);
+                    Enemy.Attack = 2 + (Player.Level * 2);
                     break;
 
                 case 3:
@@ -99,9 +105,11 @@ namespace JocRPG
             switch(move)
             {
                 case "Attack":
+                    int attack=Convert.ToInt32(Enemy.Attack*(Convert.ToDouble(Player.Defence/3)/100));//dmg taken formula: Enemy Attack * ( (PlayerDef/3)/100 ) -> percentage
+
             form1.LB_Action.Items.Add(Enemy.Name + " Turn");
-            form1.LB_Action.Items.Add(Enemy.Name + " attacked with " + Convert.ToString(Enemy.Attack) + " DMG ");
-            Player.Health -= Enemy.Attack;
+            form1.LB_Action.Items.Add(Enemy.Name + " attacked with " + Convert.ToString(attack )+ " DMG ");
+            Player.Health -= attack;
             if (Player.Health < 0)
             {
                 MessageBox.Show("You Lost");
@@ -112,8 +120,16 @@ namespace JocRPG
 
                 case "Dodge":
                     var random = new Random();
+                    int stat1;
+
+                    //for exceding the max stat
+                    if (form1.GameManager.Player.Speed >= 50)
+                        stat1 = 50;
+                    else stat1= form1.GameManager.Player.Speed;
+
+
                     int chance = random.Next(1, 100);
-                    if (chance< form1.GameManager.Player.Speed)
+                    if (chance< stat1)
                     {
                         form1.LB_Action.Items.Add(Enemy.Name + " Turn");
                         form1.LB_Action.Items.Add("You dodged the attack! ");
@@ -138,7 +154,14 @@ namespace JocRPG
                 case "Block":
                     form1.LB_Action.Items.Add("You block the attack");
                     form1.LB_Action.Items.Add(Enemy.Name + " Turn");
-                    if (Player.Strength < 50)
+                   
+                    //exceding max stat
+                    int stat2;
+                    if (Player.Strength > 70)
+                        stat2= 70;
+                    else stat2=Player.Strength;
+                         
+                    if (stat2 < 70)
                         {
                             form1.LB_Action.Items.Add(Enemy.Name + " attacked with " + Convert.ToString(Enemy.Attack - Convert.ToInt32(Player.Strength / 100 * Enemy.Attack)) + " DMG ");
                             Player.Health -=Convert.ToInt32(Convert.ToDouble(Enemy.Attack) - (Player.Strength / 100 * Enemy.Attack));
@@ -166,8 +189,15 @@ namespace JocRPG
 
                 case "Counter":
                     var random2 = new Random();
+
+                    //exceding max stat
+                    int stat3;
+                    if (form1.GameManager.Player.Dexterity >= 50)
+                        stat3 = 50;
+                    else stat3 = form1.GameManager.Player.Dexterity;
+                    
                     int chance2 = random2.Next(1, 100);
-                    if (chance2 < form1.GameManager.Player.Dexterity)
+                    if (chance2 < stat3)
                     {
                         form1.LB_Action.Items.Add(Enemy.Name + " Turn");
                         form1.LB_Action.Items.Add("You succesfully countered the attack! ");

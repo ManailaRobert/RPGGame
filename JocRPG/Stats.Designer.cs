@@ -55,6 +55,18 @@
             this.LB_Cost_STR = new System.Windows.Forms.Label();
             this.LB_Cost_DEX = new System.Windows.Forms.Label();
             this.LB_Cost_SPD = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.LB_AddedMXH = new System.Windows.Forms.Label();
+            this.LB_AddedSTR = new System.Windows.Forms.Label();
+            this.LB_AddedDEX = new System.Windows.Forms.Label();
+            this.LB_AddedSPD = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.LB_DEF = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.LB_AddedDEF = new System.Windows.Forms.Label();
+            this.BTN_DEF_M = new System.Windows.Forms.Button();
+            this.BTN_DEF_P = new System.Windows.Forms.Button();
+            this.LB_Cost_DEF = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +94,7 @@
             // 
             this.LB_MaxHealth.AutoSize = true;
             this.LB_MaxHealth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_MaxHealth.Location = new System.Drawing.Point(67, 108);
+            this.LB_MaxHealth.Location = new System.Drawing.Point(62, 128);
             this.LB_MaxHealth.Name = "LB_MaxHealth";
             this.LB_MaxHealth.Size = new System.Drawing.Size(45, 20);
             this.LB_MaxHealth.TabIndex = 2;
@@ -92,7 +104,7 @@
             // 
             this.LB_STR.AutoSize = true;
             this.LB_STR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_STR.Location = new System.Drawing.Point(67, 139);
+            this.LB_STR.Location = new System.Drawing.Point(62, 159);
             this.LB_STR.Name = "LB_STR";
             this.LB_STR.Size = new System.Drawing.Size(41, 20);
             this.LB_STR.TabIndex = 3;
@@ -102,7 +114,7 @@
             // 
             this.LB_DEX.AutoSize = true;
             this.LB_DEX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_DEX.Location = new System.Drawing.Point(67, 170);
+            this.LB_DEX.Location = new System.Drawing.Point(62, 190);
             this.LB_DEX.Name = "LB_DEX";
             this.LB_DEX.Size = new System.Drawing.Size(43, 20);
             this.LB_DEX.TabIndex = 4;
@@ -112,7 +124,7 @@
             // 
             this.LB_SPD.AutoSize = true;
             this.LB_SPD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_SPD.Location = new System.Drawing.Point(67, 201);
+            this.LB_SPD.Location = new System.Drawing.Point(62, 221);
             this.LB_SPD.Name = "LB_SPD";
             this.LB_SPD.Size = new System.Drawing.Size(42, 20);
             this.LB_SPD.TabIndex = 5;
@@ -122,7 +134,7 @@
             // 
             this.LB_StatPoints.AutoSize = true;
             this.LB_StatPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_StatPoints.Location = new System.Drawing.Point(12, 231);
+            this.LB_StatPoints.Location = new System.Drawing.Point(16, 284);
             this.LB_StatPoints.Name = "LB_StatPoints";
             this.LB_StatPoints.Size = new System.Drawing.Size(154, 20);
             this.LB_StatPoints.TabIndex = 6;
@@ -132,7 +144,7 @@
             // 
             this.LB_STP.AutoSize = true;
             this.LB_STP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_STP.Location = new System.Drawing.Point(162, 231);
+            this.LB_STP.Location = new System.Drawing.Point(166, 284);
             this.LB_STP.Name = "LB_STP";
             this.LB_STP.Size = new System.Drawing.Size(99, 20);
             this.LB_STP.TabIndex = 13;
@@ -142,7 +154,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 201);
+            this.label2.Location = new System.Drawing.Point(11, 221);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 20);
             this.label2.TabIndex = 12;
@@ -152,7 +164,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 170);
+            this.label3.Location = new System.Drawing.Point(11, 190);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 20);
             this.label3.TabIndex = 11;
@@ -162,7 +174,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 139);
+            this.label4.Location = new System.Drawing.Point(11, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 20);
             this.label4.TabIndex = 10;
@@ -172,7 +184,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(16, 108);
+            this.label5.Location = new System.Drawing.Point(11, 128);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 20);
             this.label5.TabIndex = 9;
@@ -181,7 +193,7 @@
             // BTN_Save
             // 
             this.BTN_Save.Enabled = false;
-            this.BTN_Save.Location = new System.Drawing.Point(91, 268);
+            this.BTN_Save.Location = new System.Drawing.Point(95, 321);
             this.BTN_Save.Name = "BTN_Save";
             this.BTN_Save.Size = new System.Drawing.Size(75, 23);
             this.BTN_Save.TabIndex = 14;
@@ -191,7 +203,7 @@
             // 
             // BTN_MXH_M
             // 
-            this.BTN_MXH_M.Location = new System.Drawing.Point(144, 108);
+            this.BTN_MXH_M.Location = new System.Drawing.Point(205, 125);
             this.BTN_MXH_M.Name = "BTN_MXH_M";
             this.BTN_MXH_M.Size = new System.Drawing.Size(27, 23);
             this.BTN_MXH_M.TabIndex = 15;
@@ -202,7 +214,7 @@
             // 
             // BTN_MXH_P
             // 
-            this.BTN_MXH_P.Location = new System.Drawing.Point(177, 108);
+            this.BTN_MXH_P.Location = new System.Drawing.Point(238, 125);
             this.BTN_MXH_P.Name = "BTN_MXH_P";
             this.BTN_MXH_P.Size = new System.Drawing.Size(27, 23);
             this.BTN_MXH_P.TabIndex = 16;
@@ -213,7 +225,7 @@
             // 
             // BTN_STR_P
             // 
-            this.BTN_STR_P.Location = new System.Drawing.Point(177, 139);
+            this.BTN_STR_P.Location = new System.Drawing.Point(238, 156);
             this.BTN_STR_P.Name = "BTN_STR_P";
             this.BTN_STR_P.Size = new System.Drawing.Size(27, 23);
             this.BTN_STR_P.TabIndex = 18;
@@ -224,7 +236,7 @@
             // 
             // BTN_STR_M
             // 
-            this.BTN_STR_M.Location = new System.Drawing.Point(144, 139);
+            this.BTN_STR_M.Location = new System.Drawing.Point(205, 156);
             this.BTN_STR_M.Name = "BTN_STR_M";
             this.BTN_STR_M.Size = new System.Drawing.Size(27, 23);
             this.BTN_STR_M.TabIndex = 17;
@@ -235,7 +247,7 @@
             // 
             // BTN_DEX_P
             // 
-            this.BTN_DEX_P.Location = new System.Drawing.Point(177, 170);
+            this.BTN_DEX_P.Location = new System.Drawing.Point(238, 187);
             this.BTN_DEX_P.Name = "BTN_DEX_P";
             this.BTN_DEX_P.Size = new System.Drawing.Size(27, 23);
             this.BTN_DEX_P.TabIndex = 20;
@@ -246,7 +258,7 @@
             // 
             // BTN_DEX_M
             // 
-            this.BTN_DEX_M.Location = new System.Drawing.Point(144, 170);
+            this.BTN_DEX_M.Location = new System.Drawing.Point(205, 187);
             this.BTN_DEX_M.Name = "BTN_DEX_M";
             this.BTN_DEX_M.Size = new System.Drawing.Size(27, 23);
             this.BTN_DEX_M.TabIndex = 19;
@@ -257,7 +269,7 @@
             // 
             // BTN_SPD_P
             // 
-            this.BTN_SPD_P.Location = new System.Drawing.Point(177, 201);
+            this.BTN_SPD_P.Location = new System.Drawing.Point(238, 218);
             this.BTN_SPD_P.Name = "BTN_SPD_P";
             this.BTN_SPD_P.Size = new System.Drawing.Size(27, 23);
             this.BTN_SPD_P.TabIndex = 22;
@@ -268,7 +280,7 @@
             // 
             // BTN_SPD_M
             // 
-            this.BTN_SPD_M.Location = new System.Drawing.Point(144, 201);
+            this.BTN_SPD_M.Location = new System.Drawing.Point(205, 218);
             this.BTN_SPD_M.Name = "BTN_SPD_M";
             this.BTN_SPD_M.Size = new System.Drawing.Size(27, 23);
             this.BTN_SPD_M.TabIndex = 21;
@@ -288,7 +300,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(213, 92);
+            this.label1.Location = new System.Drawing.Point(270, 92);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 13);
             this.label1.TabIndex = 24;
@@ -297,7 +309,7 @@
             // LB_Cost_MXH
             // 
             this.LB_Cost_MXH.AutoSize = true;
-            this.LB_Cost_MXH.Location = new System.Drawing.Point(219, 113);
+            this.LB_Cost_MXH.Location = new System.Drawing.Point(280, 130);
             this.LB_Cost_MXH.Name = "LB_Cost_MXH";
             this.LB_Cost_MXH.Size = new System.Drawing.Size(13, 13);
             this.LB_Cost_MXH.TabIndex = 25;
@@ -306,7 +318,7 @@
             // LB_Cost_STR
             // 
             this.LB_Cost_STR.AutoSize = true;
-            this.LB_Cost_STR.Location = new System.Drawing.Point(219, 144);
+            this.LB_Cost_STR.Location = new System.Drawing.Point(280, 161);
             this.LB_Cost_STR.Name = "LB_Cost_STR";
             this.LB_Cost_STR.Size = new System.Drawing.Size(13, 13);
             this.LB_Cost_STR.TabIndex = 26;
@@ -315,7 +327,7 @@
             // LB_Cost_DEX
             // 
             this.LB_Cost_DEX.AutoSize = true;
-            this.LB_Cost_DEX.Location = new System.Drawing.Point(219, 175);
+            this.LB_Cost_DEX.Location = new System.Drawing.Point(280, 192);
             this.LB_Cost_DEX.Name = "LB_Cost_DEX";
             this.LB_Cost_DEX.Size = new System.Drawing.Size(13, 13);
             this.LB_Cost_DEX.TabIndex = 27;
@@ -324,17 +336,143 @@
             // LB_Cost_SPD
             // 
             this.LB_Cost_SPD.AutoSize = true;
-            this.LB_Cost_SPD.Location = new System.Drawing.Point(219, 208);
+            this.LB_Cost_SPD.Location = new System.Drawing.Point(280, 225);
             this.LB_Cost_SPD.Name = "LB_Cost_SPD";
             this.LB_Cost_SPD.Size = new System.Drawing.Size(13, 13);
             this.LB_Cost_SPD.TabIndex = 28;
             this.LB_Cost_SPD.Text = "2";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(115, 108);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 13);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Stats from Items";
+            // 
+            // LB_AddedMXH
+            // 
+            this.LB_AddedMXH.AutoSize = true;
+            this.LB_AddedMXH.Location = new System.Drawing.Point(150, 132);
+            this.LB_AddedMXH.Name = "LB_AddedMXH";
+            this.LB_AddedMXH.Size = new System.Drawing.Size(13, 13);
+            this.LB_AddedMXH.TabIndex = 30;
+            this.LB_AddedMXH.Text = "0";
+            // 
+            // LB_AddedSTR
+            // 
+            this.LB_AddedSTR.AutoSize = true;
+            this.LB_AddedSTR.Location = new System.Drawing.Point(150, 161);
+            this.LB_AddedSTR.Name = "LB_AddedSTR";
+            this.LB_AddedSTR.Size = new System.Drawing.Size(13, 13);
+            this.LB_AddedSTR.TabIndex = 31;
+            this.LB_AddedSTR.Text = "0";
+            // 
+            // LB_AddedDEX
+            // 
+            this.LB_AddedDEX.AutoSize = true;
+            this.LB_AddedDEX.Location = new System.Drawing.Point(150, 192);
+            this.LB_AddedDEX.Name = "LB_AddedDEX";
+            this.LB_AddedDEX.Size = new System.Drawing.Size(13, 13);
+            this.LB_AddedDEX.TabIndex = 32;
+            this.LB_AddedDEX.Text = "0";
+            // 
+            // LB_AddedSPD
+            // 
+            this.LB_AddedSPD.AutoSize = true;
+            this.LB_AddedSPD.Location = new System.Drawing.Point(150, 223);
+            this.LB_AddedSPD.Name = "LB_AddedSPD";
+            this.LB_AddedSPD.Size = new System.Drawing.Size(13, 13);
+            this.LB_AddedSPD.TabIndex = 33;
+            this.LB_AddedSPD.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(46, 108);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 13);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "Total Points";
+            // 
+            // LB_DEF
+            // 
+            this.LB_DEF.AutoSize = true;
+            this.LB_DEF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_DEF.Location = new System.Drawing.Point(65, 254);
+            this.LB_DEF.Name = "LB_DEF";
+            this.LB_DEF.Size = new System.Drawing.Size(42, 20);
+            this.LB_DEF.TabIndex = 35;
+            this.LB_DEF.Text = "DEF";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(12, 254);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(42, 20);
+            this.label9.TabIndex = 36;
+            this.label9.Text = "DEF";
+            // 
+            // LB_AddedDEF
+            // 
+            this.LB_AddedDEF.AutoSize = true;
+            this.LB_AddedDEF.Location = new System.Drawing.Point(150, 259);
+            this.LB_AddedDEF.Name = "LB_AddedDEF";
+            this.LB_AddedDEF.Size = new System.Drawing.Size(13, 13);
+            this.LB_AddedDEF.TabIndex = 37;
+            this.LB_AddedDEF.Text = "0";
+            // 
+            // BTN_DEF_M
+            // 
+            this.BTN_DEF_M.Location = new System.Drawing.Point(205, 254);
+            this.BTN_DEF_M.Name = "BTN_DEF_M";
+            this.BTN_DEF_M.Size = new System.Drawing.Size(27, 23);
+            this.BTN_DEF_M.TabIndex = 38;
+            this.BTN_DEF_M.Text = "-";
+            this.BTN_DEF_M.UseVisualStyleBackColor = true;
+            this.BTN_DEF_M.Visible = false;
+            this.BTN_DEF_M.Click += new System.EventHandler(this.BTN_DEF_M_Click);
+            // 
+            // BTN_DEF_P
+            // 
+            this.BTN_DEF_P.Location = new System.Drawing.Point(238, 254);
+            this.BTN_DEF_P.Name = "BTN_DEF_P";
+            this.BTN_DEF_P.Size = new System.Drawing.Size(27, 23);
+            this.BTN_DEF_P.TabIndex = 39;
+            this.BTN_DEF_P.Text = "+";
+            this.BTN_DEF_P.UseVisualStyleBackColor = true;
+            this.BTN_DEF_P.Visible = false;
+            this.BTN_DEF_P.Click += new System.EventHandler(this.BTN_DEF_P_Click);
+            // 
+            // LB_Cost_DEF
+            // 
+            this.LB_Cost_DEF.AutoSize = true;
+            this.LB_Cost_DEF.Location = new System.Drawing.Point(280, 259);
+            this.LB_Cost_DEF.Name = "LB_Cost_DEF";
+            this.LB_Cost_DEF.Size = new System.Drawing.Size(13, 13);
+            this.LB_Cost_DEF.TabIndex = 40;
+            this.LB_Cost_DEF.Text = "2";
+            // 
             // Stats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(253, 307);
+            this.ClientSize = new System.Drawing.Size(318, 378);
+            this.Controls.Add(this.LB_Cost_DEF);
+            this.Controls.Add(this.BTN_DEF_P);
+            this.Controls.Add(this.BTN_DEF_M);
+            this.Controls.Add(this.LB_AddedDEF);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.LB_DEF);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.LB_AddedSPD);
+            this.Controls.Add(this.LB_AddedDEX);
+            this.Controls.Add(this.LB_AddedSTR);
+            this.Controls.Add(this.LB_AddedMXH);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.LB_Cost_SPD);
             this.Controls.Add(this.LB_Cost_DEX);
             this.Controls.Add(this.LB_Cost_STR);
@@ -401,5 +539,17 @@
         private System.Windows.Forms.Label LB_Cost_STR;
         private System.Windows.Forms.Label LB_Cost_DEX;
         private System.Windows.Forms.Label LB_Cost_SPD;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label LB_AddedMXH;
+        private System.Windows.Forms.Label LB_AddedSTR;
+        private System.Windows.Forms.Label LB_AddedDEX;
+        private System.Windows.Forms.Label LB_AddedSPD;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label LB_DEF;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label LB_AddedDEF;
+        private System.Windows.Forms.Button BTN_DEF_M;
+        private System.Windows.Forms.Button BTN_DEF_P;
+        private System.Windows.Forms.Label LB_Cost_DEF;
     }
 }

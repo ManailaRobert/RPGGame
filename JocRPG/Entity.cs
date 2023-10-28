@@ -23,73 +23,37 @@ namespace JocRPG
         private int potions;
         private int money;
 
-        public String Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-        public int Health
-        { get { return health; }
-          set {health = value; }
-         }
-        public int MaxHealth
-        {
-            get { return max_health; }
-            set { max_health = value; }
-        }
-        public int Attack
-        {
-            get { return attack; }
-            set { attack = value; }
-        }
-        public int Strength
-        {
-            get { return strength; }
-            set { strength = value; }
-        }
-        public int Dexterity
-        {
-            get { return dexterity; }
-            set { dexterity = value; }
-        }
-        public int Defence
-        {
-            get { return defence; }
-            set { defence = value; }
-        }
-        public int Speed
-        {
-            get { return speed; }   
-            set { speed = value; }
-        }
-        public int Level
-        {
-            get { return level; }   
-            set { level = value; }
-        }
-        public int XPPoints
-        {
-            get { return xp_points; }
-            set { xp_points = value; }
-        }
-        public int StatPoints
-        {
-            get { return statPoints; }
-            set { statPoints = value; }
-        }
-        public int Potions
-        {
-            get { return potions; }
-            set { potions = value; }
-        }
-        public int Money
-        {
-            get { return money; }
-            set { money = value; }
-        }
+        private int addedMXH;
+        private int addedATK;
+        private int addedSTR;
+        private int addedDEX;
+        private int addedSPD;
+        private int addedDEF;
 
-      
-        public Entity(string name, int health, int max_health, int level, int attack) // Enemy
+       
+
+        public int AddedATK { get => addedATK; set => addedATK = value; }
+        public int AddedSTR { get => addedSTR; set => addedSTR = value; }
+        public int AddedDEX { get => addedDEX; set => addedDEX = value; }
+        public int AddedSPD { get => addedSPD; set => addedSPD = value; }
+        public int AddedDEF { get => addedDEF; set => addedDEF = value; }
+        public int AddedMXH { get => addedMXH; set => addedMXH = value; }
+        public string Name { get => name; set => name = value; }
+        public int Health { get => health; set => health = value; }
+        public int MaxHealth { get => max_health; set => max_health = value; }
+        public int Attack { get => attack; set => attack = value; }
+        public int Strength { get => strength; set => strength = value; }
+        public int Dexterity { get => dexterity; set => dexterity = value; }
+        public int Defence { get => defence; set => defence = value; }
+        public int Speed { get => speed; set => speed = value; }
+        public int Level { get => level; set => level = value; }
+        public int XPPoints { get => xp_points; set => xp_points = value; }
+        public int StatPoints { get => statPoints; set => statPoints = value; }
+        public int Potions { get => potions; set => potions = value; }
+        public int Money { get => money; set => money = value; }
+
+        //Enemy
+        public Entity(string name, int health, int max_health, int level, int attack) 
         {
             this.health = health;
             this.max_health = max_health;
@@ -97,8 +61,8 @@ namespace JocRPG
             this.attack = attack;
             this.name = name;
         }
-
-        public Entity(string name, int max_health, int health,  int attack, int strength, int dexterity, int defence,int speed,  int level,int xppoints, int statPoints, int potions, int money)//player
+        //Player
+        public Entity(string name, int max_health, int health,  int attack, int strength, int dexterity, int defence,int speed,  int level,int xppoints, int statPoints, int potions, int money)
         {
             this.name = name;
             this.health = health;

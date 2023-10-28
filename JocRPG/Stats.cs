@@ -22,6 +22,7 @@ namespace JocRPG
         private int STR_p;
         private int DEX_p;
         private int SPD_p;
+        private int DEF_p;
         
         //Functions
         private void Form1_Load(object sender, EventArgs e)
@@ -30,16 +31,24 @@ namespace JocRPG
 
             LB_Name.Text = Convert.ToString(FightingScene.date.GameManager.Player.Name);
             LB_Level.Text = "Level " + Convert.ToString(FightingScene.date.GameManager.Player.Level);
-            LB_MaxHealth.Text = Convert.ToString(FightingScene.date.GameManager.Player.MaxHealth);
-            LB_STR.Text = Convert.ToString(FightingScene.date.GameManager.Player.Strength);
-            LB_DEX.Text = Convert.ToString(FightingScene.date.GameManager.Player.Dexterity);
-            LB_SPD.Text = Convert.ToString(FightingScene.date.GameManager.Player.Speed);
-            LB_STP.Text = Convert.ToString(FightingScene.date.GameManager.Player.StatPoints);
+            LB_MaxHealth.Text = Convert.ToString(FightingScene.date.GameManager.Player.MaxHealth + FightingScene.date.GameManager.Player.AddedMXH);
+            LB_STR.Text = Convert.ToString(FightingScene.date.GameManager.Player.Strength+FightingScene.date.GameManager.Player.AddedSTR);
+            LB_DEX.Text = Convert.ToString(FightingScene.date.GameManager.Player.Dexterity + FightingScene.date.GameManager.Player.AddedDEX);
+            LB_SPD.Text = Convert.ToString(FightingScene.date.GameManager.Player.Speed + FightingScene.date.GameManager.Player.AddedSPD);
+            LB_DEF.Text = Convert.ToString(FightingScene.date.GameManager.Player.Defence + FightingScene.date.GameManager.Player.AddedDEF);
+            LB_STP.Text = Convert.ToString(FightingScene.date.GameManager.Player.StatPoints );
+
+            LB_AddedMXH.Text = Convert.ToString( FightingScene.date.GameManager.Player.AddedMXH );
+            LB_AddedSTR.Text = Convert.ToString(FightingScene.date.GameManager.Player.AddedSTR);
+            LB_AddedDEX.Text = Convert.ToString(FightingScene.date.GameManager.Player.AddedDEX);
+            LB_AddedSPD.Text = Convert.ToString(FightingScene.date.GameManager.Player.AddedSPD);
+            LB_AddedDEF.Text = Convert.ToString(FightingScene.date.GameManager.Player.AddedDEF);
 
             MXH_p = 0;
             STR_p = 0;
             DEX_p = 0;
             SPD_p = 0;
+            DEF_p = 0;
 
             UpdateCosts();
 
@@ -56,6 +65,9 @@ namespace JocRPG
 
                 BTN_SPD_M.Visible = true;
                 BTN_SPD_P.Visible = true;
+
+                BTN_DEF_M.Visible = true;
+                BTN_DEF_P.Visible = true;
             }
 
             VerifyPoints();
@@ -72,6 +84,16 @@ namespace JocRPG
             if (Convert.ToInt32(LB_SPD.Text) >= 50)
             {
                 BTN_SPD_P.Enabled = false;
+            }
+
+            if(Convert.ToInt32(LB_DEF.Text)>=210) 
+            {
+                BTN_DEF_P.Enabled = false;
+            }
+
+            if (Convert.ToInt32(LB_STR.Text) >= 70)
+            {
+                BTN_DEF_P.Enabled = false;
             }
 
         }
@@ -111,6 +133,14 @@ namespace JocRPG
             else
             {
                 BTN_SPD_P.Enabled = false;
+            }
+            if (Convert.ToInt32(LB_STP.Text) >= Convert.ToInt32(LB_Cost_DEF.Text))
+            {
+                BTN_DEF_P.Enabled = true;
+            }
+            else
+            {
+                BTN_DEF_P.Enabled = false;
             }
         }
        //Verifing if points have been added
@@ -152,29 +182,49 @@ namespace JocRPG
             {
                 BTN_SPD_M.Enabled = false;
             }
+            if (DEF_p != 0)
+            {
+                BTN_DEF_M.Enabled = true;
+            }
+            else
+            {
+                BTN_DEF_M.Enabled = false;
+            }
         }
        
         private void SaveStats()
         {
-            FightingScene.date.GameManager.Player.MaxHealth = Convert.ToInt32(LB_MaxHealth.Text);
-            FightingScene.date.GameManager.Player.Strength = Convert.ToInt32(LB_STR.Text);
-            FightingScene.date.GameManager.Player.Dexterity = Convert.ToInt32(LB_DEX.Text);
-            FightingScene.date.GameManager.Player.Speed = Convert.ToInt32(LB_SPD.Text);
+            FightingScene.date.GameManager.Player.MaxHealth = Convert.ToInt32(LB_MaxHealth.Text) - FightingScene.date.GameManager.Player.AddedMXH;
+            FightingScene.date.GameManager.Player.Strength = Convert.ToInt32(LB_STR.Text) - FightingScene.date.GameManager.Player.AddedSTR;
+            FightingScene.date.GameManager.Player.Dexterity = Convert.ToInt32(LB_DEX.Text) - FightingScene.date.GameManager.Player.AddedDEX;
+            FightingScene.date.GameManager.Player.Speed = Convert.ToInt32(LB_SPD.Text) - FightingScene.date.GameManager.Player.AddedSPD;
+            FightingScene.date.GameManager.Player.Defence = Convert.ToInt32(LB_DEF.Text) - FightingScene.date.GameManager.Player.AddedDEF;
             FightingScene.date.GameManager.Player.StatPoints = Convert.ToInt32(LB_STP.Text);
-
+            
         }
 
         private void UpdateCosts()
         {
-            if (Convert.ToInt32(LB_MaxHealth.Text) / 20 == 0)
+            // MXH,STR,DEF relative 
+            
+            //every 20 points cost +1
+            if ((Convert.ToInt32(LB_MaxHealth.Text)-FightingScene.date.GameManager.Player.AddedMXH) / 20 == 0)
                 LB_Cost_MXH.Text = Convert.ToString(1);
             else
-                LB_Cost_MXH.Text = Convert.ToString(Convert.ToInt32(LB_MaxHealth.Text) / 20);
+                LB_Cost_MXH.Text = Convert.ToString((Convert.ToInt32(LB_MaxHealth.Text)-FightingScene.date.GameManager.Player.AddedMXH) / 20);
 
-            if (Convert.ToInt32(LB_STR.Text) / 6 == 0)
+            //every 6 points cost +1
+            if ((Convert.ToInt32(LB_STR.Text)-FightingScene.date.GameManager.Player.AddedSTR) / 6 == 0)
                 LB_Cost_STR.Text = Convert.ToString(1);
-            else LB_Cost_STR.Text = Convert.ToString((Convert.ToInt32(LB_STR.Text)- gameManager.Player.Strength )/ 5+1);
+            else LB_Cost_STR.Text = Convert.ToString((Convert.ToInt32(LB_STR.Text) -FightingScene.date.GameManager.Player.AddedSTR- gameManager.Player.Strength) / 5+1);
+            
+            //every 3 points cost +1
+            if (Convert.ToInt32(LB_DEF.Text) / 3 == 0)
+                LB_Cost_DEF.Text = Convert.ToString(1);
+            else LB_Cost_DEF.Text = Convert.ToString(Convert.ToInt32(LB_DEF.Text) - FightingScene.date.GameManager.Player.AddedDEF / 3);
 
+            // DEX,SPD fix; after 25 points the dex maxes out
+     
             if (Convert.ToInt32(LB_DEX.Text) / 25 == 0)
                 LB_Cost_DEX.Text = Convert.ToString(1);
             else LB_Cost_DEX.Text = Convert.ToString(2);
@@ -182,6 +232,7 @@ namespace JocRPG
             if(Convert.ToInt32(LB_SPD.Text) / 25 == 0)
                 LB_Cost_SPD.Text = Convert.ToString(1) ;
             else LB_Cost_SPD.Text = Convert.ToString(2);
+
 
         }
         private void BTN_Save_Click(object sender, EventArgs e)
@@ -191,6 +242,7 @@ namespace JocRPG
             STR_p = 0;
             DEX_p = 0;
             SPD_p = 0;
+            DEF_p= 0;
 
             SaveStats();
             VerifyPointsAdded();
@@ -200,7 +252,7 @@ namespace JocRPG
 
         private void Stats_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (BTN_MXH_M.Enabled == true || BTN_STR_M.Enabled == true || BTN_DEX_M.Enabled == true || BTN_SPD_M.Enabled == true)
+            if (BTN_MXH_M.Enabled == true || BTN_STR_M.Enabled == true || BTN_DEX_M.Enabled == true || BTN_SPD_M.Enabled == true || BTN_DEF_M.Enabled==true)
             {
                 DialogResult result;
                 result = MessageBox.Show("You have not saved the stats. Do you want to save?", "Save", MessageBoxButtons.YesNo);
@@ -333,6 +385,39 @@ namespace JocRPG
                 LB_SPD.Text = Convert.ToString(Convert.ToInt32(LB_SPD.Text) - 1);
                 UpdateCosts();
                 LB_STP.Text = Convert.ToString(Convert.ToInt32(LB_STP.Text) + Convert.ToInt32(LB_Cost_SPD.Text));
+
+                VerifyPointsAdded();
+                VerifyPoints();
+                VerifyMaxStats();
+
+                BTN_Save.Enabled = true;
+            }
+        }
+
+        private void BTN_DEF_P_Click(object sender, EventArgs e)
+        {
+            DEF_p++;
+
+            LB_STP.Text = Convert.ToString(Convert.ToInt32(LB_STP.Text) - Convert.ToInt32(LB_Cost_DEF.Text));
+            LB_DEF.Text = Convert.ToString(Convert.ToInt32(LB_DEF.Text) + 1);
+
+            VerifyPoints();
+            VerifyPointsAdded();
+            UpdateCosts();
+            VerifyMaxStats();
+            BTN_Save.Enabled = true;
+
+        }
+
+        private void BTN_DEF_M_Click(object sender, EventArgs e)
+        {
+            if (DEF_p > 0)
+            {
+                DEF_p--;
+
+                LB_DEF.Text = Convert.ToString(Convert.ToInt32(LB_DEF.Text) - 1);
+                UpdateCosts();
+                LB_STP.Text = Convert.ToString(Convert.ToInt32(LB_STP.Text) + Convert.ToInt32(LB_Cost_DEF.Text));
 
                 VerifyPointsAdded();
                 VerifyPoints();

@@ -46,7 +46,7 @@
             // 
             // BTN_Cumparare
             // 
-            this.BTN_Cumparare.Location = new System.Drawing.Point(408, 41);
+            this.BTN_Cumparare.Location = new System.Drawing.Point(311, 135);
             this.BTN_Cumparare.Margin = new System.Windows.Forms.Padding(2);
             this.BTN_Cumparare.Name = "BTN_Cumparare";
             this.BTN_Cumparare.Size = new System.Drawing.Size(93, 59);
@@ -58,12 +58,12 @@
             // LB_Bani
             // 
             this.LB_Bani.AutoSize = true;
-            this.LB_Bani.Location = new System.Drawing.Point(251, 144);
+            this.LB_Bani.Location = new System.Drawing.Point(229, 158);
             this.LB_Bani.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LB_Bani.Name = "LB_Bani";
-            this.LB_Bani.Size = new System.Drawing.Size(35, 13);
+            this.LB_Bani.Size = new System.Drawing.Size(39, 13);
             this.LB_Bani.TabIndex = 2;
-            this.LB_Bani.Text = "label1";
+            this.LB_Bani.Text = "Money";
             // 
             // TB_Detalii
             // 
@@ -79,7 +79,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 199);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(409, 196);
             this.Controls.Add(this.TB_Detalii);
             this.Controls.Add(this.LB_Bani);
             this.Controls.Add(this.BTN_Cumparare);

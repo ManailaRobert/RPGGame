@@ -63,7 +63,7 @@ namespace JocRPG
         private void BTN_Attack_MouseHover(object sender, EventArgs e)
         {
             TB_Detalii.Visible = true;
-            TB_Detalii.Text = "Attack dmg: " + Convert.ToString(gameManager.Player.Attack + Convert.ToInt32(GameManager.Player.Strength * 0.5));
+            TB_Detalii.Text = "Attack dmg: " + Convert.ToString(gameManager.Player.Attack + GameManager.Player.AddedATK);
         }
         private void BTN_Dodge_MouseHover(object sender, EventArgs e)
         {
@@ -129,8 +129,11 @@ namespace JocRPG
         }
         private void BTN_Attack_Click(object sender, EventArgs e)
             {
-            gameManager.Enemy.Health -= gameManager.Player.Attack + Convert.ToInt32 (GameManager.Player.Strength * 0.5); // dmg taken
-            LB_Action.Items.Add("You dealt " + Convert.ToString (gameManager.Player.Attack + Convert.ToInt32 ( GameManager.Player.Strength* 0.5)) + " damage!");
+            int attack = gameManager.Player.Attack + gameManager.Player.AddedATK; // attack dmg formula
+            gameManager.Enemy.Health -= attack; // dmg given
+
+            LB_Action.Items.Add("You dealt " + Convert.ToString (attack) + " damage!");
+
             if (gameManager.Enemy.Health <= 0)// defeated enemy
             {
                 gameManager.UpdateHealthE(this);
@@ -168,7 +171,7 @@ namespace JocRPG
                 BTN_Counter.Enabled = false;
                 BTN_Heal.Enabled = false;
                 BTN_Dodge.Enabled = false;
-                //gameManager.EnemyTurn(this);
+                gameManager.EnemyTurn(this,"Attack");
             }
 
             gameManager.UpdateHealthP(this);
@@ -258,9 +261,6 @@ namespace JocRPG
             Shop.Show();
         }
 
-        private void FightingScene_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }
