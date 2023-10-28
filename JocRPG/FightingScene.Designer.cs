@@ -64,13 +64,12 @@
             // 
             // PB_Enemy
             // 
-            this.PB_Enemy.Location = new System.Drawing.Point(654, 39);
+            this.PB_Enemy.Location = new System.Drawing.Point(653, 43);
             this.PB_Enemy.Name = "PB_Enemy";
-            this.PB_Enemy.Size = new System.Drawing.Size(181, 147);
+            this.PB_Enemy.Size = new System.Drawing.Size(183, 145);
             this.PB_Enemy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PB_Enemy.TabIndex = 1;
             this.PB_Enemy.TabStop = false;
-            this.PB_Enemy.Visible = false;
             // 
             // PB_Player
             // 
@@ -270,6 +269,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 338);
+            this.Controls.Add(this.PB_Enemy);
             this.Controls.Add(this.BTN_Shop);
             this.Controls.Add(this.LB_NumeE);
             this.Controls.Add(this.LB_NameP);
@@ -288,7 +288,6 @@
             this.Controls.Add(this.TB_Detalii);
             this.Controls.Add(this.BTN_EnemyTurn);
             this.Controls.Add(this.BTN_Stats);
-            this.Controls.Add(this.PB_Enemy);
             this.Name = "FightingScene";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.PB_Enemy)).EndInit();
@@ -301,7 +300,6 @@
         #endregion
 
         public System.Windows.Forms.ListBox LB_Action;
-        public System.Windows.Forms.PictureBox PB_Enemy;
         public System.Windows.Forms.PictureBox PB_Player;
         public System.Windows.Forms.Button BTN_Attack;
         public System.Windows.Forms.Button BTN_Inventory;
@@ -319,6 +317,7 @@
         public System.Windows.Forms.Label LB_NameP;
         public System.Windows.Forms.Label LB_NumeE;
         public System.Windows.Forms.Button BTN_Shop;
+        public System.Windows.Forms.PictureBox PB_Enemy;
     }
 }
 

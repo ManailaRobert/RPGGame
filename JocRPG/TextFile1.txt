@@ -15,3 +15,5 @@
 #
 
 make inventory
+make a database
+add new mobs: goblin king, orcs, orc king,skeleton,skeleton king

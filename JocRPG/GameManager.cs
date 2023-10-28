@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JocRPG.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
@@ -44,7 +45,7 @@ namespace JocRPG
         public void CreateEnemy()
         {
             var random = new Random();
-            int Enemy_Number = random.Next(1, 3);
+            int Enemy_Number = random.Next(1, 1);
             //EnemyLevel = Convert.ToInt32(kills / 2);
             switch (Enemy_Number)
             {
@@ -228,14 +229,17 @@ namespace JocRPG
             switch(Name)
             {
                 case "Goblin":
-                   Name = "..\\..\\Resources\\Goblin.png";
-                    break;  
+                   Name = $"..\\..\\Resources\\{1}.Goblin_S-Av1.png";
+                    break;
+
+
             }
             return Name; 
         }
         public void changeImg(FightingScene form1)
         {
-           form1.PB_Enemy.ImageLocation = @checkPath(form1.GameManager.Enemy.Name);
+            form1.PB_Enemy.ImageLocation = @checkPath(form1.GameManager.Enemy.Name);
+
         }
     }
 
