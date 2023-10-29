@@ -104,7 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Goblin.png" />
-    <Content Include="TextFile1.txt" />
+    <Content Include="Notes.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

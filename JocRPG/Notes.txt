@@ -18,9 +18,15 @@
 -----------------------------------------------------------------------------
 #To do list:
 
-make inventory
-make a database
-add new mobs: goblin king, orcs, orc king,skeleton,skeleton king
+1.make inventory
+2.add kill counter
+3.save file
+4.make a database
+5.add new mobs:orcs, orc king
+6.balance stats
+
+post release: 
+-add new mobs: goblin king, orcs, orc king,skeleton,skeleton king
 
 -----------------------------------------------------------------------------
 #Notes
@@ -28,5 +34,3 @@ add new mobs: goblin king, orcs, orc king,skeleton,skeleton king
 ~Cand introduc clasele:
 - pentru jucator> formula costuri (stat - stat de clasa) / modifier +1 ;
 - in stats sa fie max stats ptr fiecare clasa
-
-~Balance stats.
