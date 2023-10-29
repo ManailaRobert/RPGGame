@@ -64,6 +64,7 @@
             // 
             // PB_Enemy
             // 
+            this.PB_Enemy.InitialImage = null;
             this.PB_Enemy.Location = new System.Drawing.Point(653, 43);
             this.PB_Enemy.Name = "PB_Enemy";
             this.PB_Enemy.Size = new System.Drawing.Size(183, 145);

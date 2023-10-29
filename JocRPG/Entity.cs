@@ -10,6 +10,7 @@ namespace JocRPG
     internal class Entity
     {
         private string name;
+        private string type;
         private int health;
         private int max_health;
         private int attack;
@@ -51,15 +52,18 @@ namespace JocRPG
         public int StatPoints { get => statPoints; set => statPoints = value; }
         public int Potions { get => potions; set => potions = value; }
         public int Money { get => money; set => money = value; }
+        public string Type { get => type; set => type = value; }
 
         //Enemy
-        public Entity(string name, int health, int max_health, int level, int attack) 
+        public Entity(string name,string type, int health, int max_health, int level, int attack) 
         {
             this.health = health;
+            this.type = type;
             this.max_health = max_health;
             this.level = level;
             this.attack = attack;
             this.name = name;
+            
         }
         //Player
         public Entity(string name, int max_health, int health,  int attack, int strength, int dexterity, int defence,int speed,  int level,int xppoints, int statPoints, int potions, int money)

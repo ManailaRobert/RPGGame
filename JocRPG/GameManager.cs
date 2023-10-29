@@ -13,7 +13,7 @@ namespace JocRPG
     {
         //int EnemyLevel=1;
         public Entity Player = new Entity("S", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0);//Name,Max_Hp,HP,ATK,STR,DEX,DEF,SPD,LVL,XPPoints,StatPts,Potions
-        public Entity Enemy = new Entity("Nume", 20, 20, 1, 1); //string name, int health, int max_health, int level, int attack
+        public Entity Enemy = new Entity("Nume","Type", 20, 20, 1, 1); //string name, int health, int max_health, int level, int attack
         public Item Item = new Item(1,"Excalibur", "Sword", 300, 500,"Knight","STR",3,0,0,0,0,0,1);//id,name,type,quantity,price,availableClass,requirementStat,requirement,addedMXH,addedATK,addedSTR,addedDEX,addedSPD,addedDEF)
 
         public int Turn = 1;
@@ -22,14 +22,14 @@ namespace JocRPG
         public void CreatePlayer()
         {
             Player.Name = "Robert";
-            Player.MaxHealth = 20;
-            Player.Health = 20;
-            Player.Attack = 1;
+            Player.MaxHealth = 5000;
+            Player.Health = Player.MaxHealth;
+            Player.Attack = 3000;
             Player.Strength = 70;
             Player.Dexterity = 30;
             Player.Speed = 30;
             Player.Defence = 149;// 3 points = 1%
-            Player.Level = 1;
+            Player.Level = 90;
             Player.StatPoints = 50000;
             Player.Potions = 30;
             Player.Money = 999999;
@@ -51,6 +51,7 @@ namespace JocRPG
             {
                 case 1:
                     Enemy.Name = "Goblin";
+                    Enemy.Type = "Goblin";
                     Enemy.MaxHealth = 14 + (Player.Level * 2);
                     Enemy.Health = Enemy.MaxHealth;
                     Enemy.Level = Player.Level;
@@ -59,6 +60,7 @@ namespace JocRPG
 
                 case 2:
                     Enemy.Name = "Orc";
+                    Enemy.Type = "Orc";
                     Enemy.MaxHealth = 16 + (Player.Level * 2);
                     Enemy.Health = Enemy.MaxHealth;
                     Enemy.Level = Player.Level;
@@ -67,6 +69,7 @@ namespace JocRPG
 
                 case 3:
                     Enemy.Name = "Orc King";
+                    Enemy.Type = "Boss";
                     Enemy.MaxHealth = 20;
                     Enemy.Health = 20;
                     Enemy.Level = Player.Level;
@@ -224,21 +227,34 @@ namespace JocRPG
         }
 
         //Img selector and changer
-        public string checkPath(string Name)
+        public string checkPath(string Type,int lvl)
         {
-            switch(Name)
+            var random = new Random();
+            switch (Type)
             {
                 case "Goblin":
-                   Name = $"..\\..\\Resources\\{1}.Goblin_S-Av1.png";
+                    int Pv=0,Hv=0,Sv;
+                    if (lvl == 1) { Pv = 0; Hv = 0; }
+                    if (lvl == 2) { Pv = random.Next(1, 3); Hv = 0; }
+                    if (lvl == 3) { Pv = random.Next(1, 3); Hv = random.Next(1, 3); }
+                    Sv=random.Next(0, 2);
+                    Type = $"..\\..\\Resources\\{lvl}.Goblin_{random.Next(1,3)}-Av{random.Next(1,4)}-Pv{Pv}-Hv{Hv}-Sv{Sv}.png";
+                    
                     break;
 
 
             }
-            return Name; 
+            return Type; 
         }
         public void changeImg(FightingScene form1)
         {
-            form1.PB_Enemy.ImageLocation = @checkPath(form1.GameManager.Enemy.Name);
+            int lvl;
+            if (FightingScene.date.GameManager.Player.Level == 90)
+                lvl = 3;
+            else
+                lvl=FightingScene.date.GameManager.Player.Level/30+1;//every 30 lvls the img goes to next lvl of enemy 
+            
+            form1.PB_Enemy.ImageLocation = @checkPath(form1.GameManager.Enemy.Type,lvl);
 
         }
     }

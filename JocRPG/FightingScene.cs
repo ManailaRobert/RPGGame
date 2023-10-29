@@ -133,24 +133,35 @@ namespace JocRPG
             if (gameManager.Enemy.Health <= 0)// defeated enemy
             {
                 gameManager.UpdateHealthE(this);
-                MessageBox.Show("Enemy Defeted! "+ "Gained " + Convert.ToString(gameManager.Enemy.Level * 4) + " XP!");
-                gameManager.Player.XPPoints += gameManager.Enemy.Level * 4;
-                while(gameManager.Player.XPPoints >= gameManager.Player.Level*10)//level up
+                if (GameManager.Player.Level<90)//max lvl 90
                 {
-                    gameManager.Player.XPPoints -= gameManager.Player.Level * 10;
-                    gameManager.Player.Level += 1;
-                    MessageBox.Show("Leveled up! Gained "+ (2 * GameManager.Player.Level + 1) + " stat points. Your LVL is now " + gameManager.Player.Level);
-                    gameManager.Player.StatPoints += 2 * GameManager.Player.Level +1;
+                    MessageBox.Show("Enemy Defeted! " + "Gained " + Convert.ToString(gameManager.Enemy.Level * 4) + " XP!");
+                    gameManager.Player.XPPoints += gameManager.Enemy.Level * 4;
+                    while (gameManager.Player.XPPoints >= gameManager.Player.Level * 10)//level up
+                    {
+                        gameManager.Player.XPPoints -= gameManager.Player.Level * 10;
+                        gameManager.Player.Level += 1;
+                        MessageBox.Show("Leveled up! Gained " + (2 * GameManager.Player.Level + 1) + " stat points. Your LVL is now " + gameManager.Player.Level);
+                        gameManager.Player.StatPoints += 2 * GameManager.Player.Level + 1;
+                    }
+
+                    if (gameManager.Player.StatPoints != 0)//available stats shower
+                        label1.Show();
+
+                    LB_Action.Items.Clear();
+                    gameManager.Turn = 1;
+                    LB_Action.Items.Add("Turn " + gameManager.Turn);
+
+                    gameManager.UpdateLevelP(this);
+                }else
+                {
+                    MessageBox.Show("Enemy Defeted! You are are max Level! You dont gain any xp.");
                 }
-               
-                if (gameManager.Player.StatPoints != 0)//available stats shower
-                    label1.Show();
 
                 LB_Action.Items.Clear();
                 gameManager.Turn = 1;
                 LB_Action.Items.Add("Turn " + gameManager.Turn);
 
-                gameManager.UpdateLevelP(this);
                 gameManager.CreateEnemy();
                 gameManager.changeImg(this);
                 gameManager.UpdateHealthE(this);
