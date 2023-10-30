@@ -56,7 +56,7 @@ namespace JocRPG
                 string line = In.ReadLine();
                 string[] arr1 = line.Split(';');
 
-                Item item = new Item(Convert.ToInt32(arr1[0]), arr1[1], arr1[2], Convert.ToInt32(arr1[3]), Convert.ToInt32(arr1[4]), arr1[5], arr1[6], Convert.ToInt32(arr1[7]), Convert.ToInt32(arr1[8]), Convert.ToInt32(arr1[9]), Convert.ToInt32(arr1[10]), Convert.ToInt32(arr1[11]), Convert.ToInt32(arr1[12]),Convert.ToInt32(arr1[13]));
+                Item item = new Item(Convert.ToInt32(arr1[0]), arr1[1], arr1[2], arr1[3], Convert.ToInt32(arr1[4]), Convert.ToInt32(arr1[5]), arr1[6], arr1[7], Convert.ToInt32(arr1[8]), Convert.ToInt32(arr1[9]), Convert.ToInt32(arr1[10]), Convert.ToInt32(arr1[11]), Convert.ToInt32(arr1[12]), Convert.ToInt32(arr1[13]),Convert.ToInt32(arr1[14]));
                 shopList.Add(item);
             }
 
@@ -70,7 +70,7 @@ namespace JocRPG
             StreamWriter Out = new StreamWriter(@"..\..\Resources\items.txt");
             Out.WriteLine(shopList.Count);
             foreach( Item item in shopList)//id,name,type,quantity,price,availableClass,requirementStat,requirement,addedMXH,addedATK,addedSTR,addedDEX,addedSPD,addedDEF
-                Out.WriteLine($"{item.Id};{item.Name};{item.Type};{item.Quantity};{item.Price};{item.AvailableClass};{item.RequirementStat};{item.Requirement};{item.AddedMXH};{item.AddedATK};{item.AddedSTR};{item.AddedDEX};{item.AddedSPD};{item.AddedDEF}");
+                Out.WriteLine($"{item.Id};{item.Name};{item.ItemType};{item.Type};{item.Quantity};{item.Price};{item.AvailableClass};{item.RequirementStat};{item.Requirement};{item.AddedMXH};{item.AddedATK};{item.AddedSTR};{item.AddedDEX};{item.AddedSPD};{item.AddedDEF}");
             Out.Close();
         }
         public Shop()
