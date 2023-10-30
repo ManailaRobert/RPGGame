@@ -238,7 +238,7 @@ namespace JocRPG
                     if (lvl == 2) { Pv = random.Next(1, 3); Hv = 0; }
                     if (lvl == 3) { Pv = random.Next(1, 3); Hv = random.Next(1, 3); }
                     Sv=random.Next(0, 2);
-                    Type = $"..\\..\\Resources\\Goblin\\{lvl}.Goblin_{random.Next(1,3)}-Av{random.Next(1,4)}-Pv{Pv}-Hv{Hv}-Sv{Sv}.png";
+                    Type = $"..\\..\\Resources\\{lvl}.Goblin_{random.Next(1,3)}-Av{random.Next(1,4)}-Pv{Pv}-Hv{Hv}-Sv{Sv}.png";
                     
                     break;
 
