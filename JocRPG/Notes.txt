@@ -18,7 +18,10 @@
 -----------------------------------------------------------------------------
 #To do list:
 
-1.make inventory
+1.make inventory -> working on it  
+~load the inventory from a file  
+~???
+  
 2.add kill counter
 3.save file
 4.make a database

@@ -44,6 +44,7 @@ namespace JocRPG
 
             gameManager.CreatePlayer();
             gameManager.CreateEnemy();
+            gameManager.LoadItemList();
             gameManager.changeImg(this);
 
 
@@ -267,7 +268,5 @@ namespace JocRPG
             Shop Shop =new Shop();
             Shop.Show();
         }
-
-
     }
 }

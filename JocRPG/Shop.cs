@@ -16,6 +16,7 @@ namespace JocRPG
         //GameManager gameManager=new GameManager();
 
         List<Item> shopList = new List<Item>();
+        GameManager gameManager=new GameManager();
         //update list and lisbox
         public void UpdateList()
         {
@@ -46,7 +47,7 @@ namespace JocRPG
             }
         }
         //load list from file
-        public void LoadListOfItemsFromFile()
+        public void LoadShopListFromFile()
         {
             StreamReader In = new StreamReader(@"..\..\Resources\items.txt");
             int numberItems = Convert.ToInt32(In.ReadLine());
@@ -82,7 +83,7 @@ namespace JocRPG
         {
             //gameManager.CreatePlayer();
             LB_Bani.Text = "Bani: " + FightingScene.date.GameManager.Player.Money.ToString();
-            LoadListOfItemsFromFile();
+            LoadShopListFromFile();
             UpdateList();
 
         }
@@ -101,7 +102,7 @@ namespace JocRPG
                         shopList[i].Quantity--;
                         UpdateDetalii();
                         
-                        //gameManager.Player.InventoryList.Items.Add(shopList[i]);// adaugare item cumparat in inventar
+                        gameManager.Player.Inventory.Add(shopList[i]);// adaugare item cumparat in inventar
 
                     }
                 }

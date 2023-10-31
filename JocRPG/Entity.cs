@@ -23,6 +23,9 @@ namespace JocRPG
         private int statPoints;//just player
         private int potions;
         private int money;
+       
+
+        private List<Item> inventory = new List<Item>();
 
         private int addedMXH;
         private int addedATK;
@@ -53,6 +56,7 @@ namespace JocRPG
         public int Potions { get => potions; set => potions = value; }
         public int Money { get => money; set => money = value; }
         public string Type { get => type; set => type = value; }
+        public List<Item> Inventory { get => inventory; set => inventory = value; }
 
         //Enemy
         public Entity(string name,string type, int health, int max_health, int level, int attack) 

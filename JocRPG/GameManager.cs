@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace JocRPG
         public Entity Player = new Entity("S", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0);//Name,Max_Hp,HP,ATK,STR,DEX,DEF,SPD,LVL,XPPoints,StatPts,Potions
         public Entity Enemy = new Entity("Nume","Type", 20, 20, 1, 1); //string name, int health, int max_health, int level, int attack
         public Item Item = new Item(1, "Excalibur","Weapon","Sword", 300, 500, "Knight", "STR", 3, 0, 0, 0, 0, 0, 1);//id,name,type,quantity,price,availableClass,requirementStat,requirement,addedMXH,addedATK,addedSTR,addedDEX,addedSPD,addedDEF)
+        public List<Item> Items = new List<Item>();
 
         public int Turn = 1;
 
@@ -78,7 +80,24 @@ namespace JocRPG
             }
         }
 
+       public void LoadItemList()
+        {
+            StreamReader In = new StreamReader(@"..\..\Resources\items.txt");
+            int numberItems = Convert.ToInt32(In.ReadLine());
 
+            for (int i = 0; i < numberItems; i++)
+            {
+                string line = In.ReadLine();
+                string[] arr1 = line.Split(';');
+
+                Item item = new Item(Convert.ToInt32(arr1[0]), arr1[1], arr1[2], arr1[3], Convert.ToInt32(arr1[4]), Convert.ToInt32(arr1[5]), arr1[6], arr1[7], Convert.ToInt32(arr1[8]), Convert.ToInt32(arr1[9]), Convert.ToInt32(arr1[10]), Convert.ToInt32(arr1[11]), Convert.ToInt32(arr1[12]), Convert.ToInt32(arr1[13]), Convert.ToInt32(arr1[14]));
+                FightingScene.date.GameManager.Player.Inventory.Add(item);
+            }
+
+
+
+            In.Close();
+        }
         //Health updates
         public void UpdateHealthP(FightingScene form1)
         {
