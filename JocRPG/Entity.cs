@@ -10,7 +10,8 @@ namespace JocRPG
     internal class Entity
     {
         private string name;
-        private string type;
+        private string type; //just enemy
+        private string playerClass;
         private int health;
         private int max_health;
         private int attack;
@@ -25,7 +26,7 @@ namespace JocRPG
         private int money;
        
 
-        private List<Item> inventory = new List<Item>();
+        private Dictionary<int, Item> inventoryList = new Dictionary<int, Item>();
 
         private int addedMXH;
         private int addedATK;
@@ -56,7 +57,8 @@ namespace JocRPG
         public int Potions { get => potions; set => potions = value; }
         public int Money { get => money; set => money = value; }
         public string Type { get => type; set => type = value; }
-        public List<Item> Inventory { get => inventory; set => inventory = value; }
+        public string PlayerClass { get => playerClass; set=> playerClass=value; }
+        public Dictionary<int, Item> InventoryList { get => inventoryList; set => inventoryList = value; }
 
         //Enemy
         public Entity(string name,string type, int health, int max_health, int level, int attack) 

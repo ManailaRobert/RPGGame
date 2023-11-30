@@ -9,7 +9,6 @@ namespace JocRPG
 {
     internal class Item
     {
-        private int id;
         private string name;
         private string type;
         private string itemType;//weapon/armor/junk
@@ -29,9 +28,8 @@ namespace JocRPG
 
         //private List<int> addedStats = new List<int> { addedMXH, addedATK, addedSTR, addedDEX, addedSPD, addedDEF };
 
-        public Item(int id, string name, string itemType,string type, int quantity, int price, string availableClass, string requirementStat, int requirement,  int addedMXH, int addedATK, int addedSTR, int addedDEX, int addedSPD, int addedDEF )
+        public Item(string name, string itemType,string type, int quantity, int price, string availableClass, string requirementStat, int requirement,  int addedMXH, int addedATK, int addedSTR, int addedDEX, int addedSPD, int addedDEF )
         {
-            this.id = id;
             this.name = name;
             this.itemType = itemType;
             this.type = type;
@@ -56,7 +54,6 @@ namespace JocRPG
         public string AvailableClass { get => availableClass; set => availableClass = value; }
         public int Requirement { get => requirement; set => requirement = value; }
         public string RequirementStat { get => requirementStat; set => requirementStat = value; }
-        public int Id { get => id; set => id = value; }
         //public List<int> AddedStats { get => addedStats; set => addedStats = value; }
         public  int AddedMXH { get => addedMXH; set => addedMXH = value; }
         public  int AddedSTR { get => addedSTR; set => addedSTR = value; }

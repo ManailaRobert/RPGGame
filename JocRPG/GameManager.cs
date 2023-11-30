@@ -12,13 +12,14 @@ namespace JocRPG
 {
     internal class GameManager
     {
-        //int EnemyLevel=1;
         public Entity Player = new Entity("S", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0);//Name,Max_Hp,HP,ATK,STR,DEX,DEF,SPD,LVL,XPPoints,StatPts,Potions
         public Entity Enemy = new Entity("Nume","Type", 20, 20, 1, 1); //string name, int health, int max_health, int level, int attack
-        public Item Item = new Item(1, "Excalibur","Weapon","Sword", 300, 500, "Knight", "STR", 3, 0, 0, 0, 0, 0, 1);//id,name,type,quantity,price,availableClass,requirementStat,requirement,addedMXH,addedATK,addedSTR,addedDEX,addedSPD,addedDEF)
-        public List<Item> Items = new List<Item>();
+
+        Dictionary<int, Item> inventoryItemList = new Dictionary<int, Item>();
 
         public int Turn = 1;
+
+        internal Dictionary<int, Item> InventoryItemList { get => inventoryItemList; set => inventoryItemList = value; }
 
         //Player creater
         public void CreatePlayer()
@@ -79,24 +80,33 @@ namespace JocRPG
                     break;
             }
         }
-
-       public void LoadItemList()
+        //Load and Save Inventory
+        public void LoadInventoryList()
         {
-            StreamReader In = new StreamReader(@"..\..\Resources\items.txt");
+            StreamReader In = new StreamReader(@"..\..\Resources\Inventory.txt");
             int numberItems = Convert.ToInt32(In.ReadLine());
-
+            if(numberItems > 0)
             for (int i = 0; i < numberItems; i++)
             {
                 string line = In.ReadLine();
                 string[] arr1 = line.Split(';');
+                Item item = new Item(arr1[1], arr1[2], arr1[3], Convert.ToInt32(arr1[4]), Convert.ToInt32(arr1[5]), arr1[6], arr1[7], Convert.ToInt32(arr1[8]), Convert.ToInt32(arr1[9]), Convert.ToInt32(arr1[10]), Convert.ToInt32(arr1[11]), Convert.ToInt32(arr1[12]), Convert.ToInt32(arr1[13]), Convert.ToInt32(arr1[14]));
+                FightingScene.date.GameManager.Player.InventoryList.Add(Convert.ToInt32(arr1[0]), item);
+            }
+            In.Close();
+        }
+        public void SaveInventoryList()
+        {
+            StreamWriter Out = new StreamWriter(@"..\..\Resources\Inventory.txt");
+            Out.WriteLine(FightingScene.date.GameManager.Player.InventoryList.Count);
+            foreach (var item in FightingScene.date.GameManager.Player.InventoryList)
+            {
+                //id,name,type,quantity,price,availableClass,requirementStat,requirement,addedMXH,addedATK,addedSTR,addedDEX,addedSPD,addedDEF
+                Out.WriteLine($"{item.Key};{item.Value.Name};{item.Value.ItemType};{item.Value.Type};{item.Value.Quantity};{item.Value.Price};{item.Value.AvailableClass};{item.Value.RequirementStat};{item.Value.Requirement};{item.Value.AddedMXH};{item.Value.AddedATK};{item.Value.AddedSTR};{item.Value.AddedDEX};{item.Value.AddedSPD};{item.Value.AddedDEF}");
 
-                Item item = new Item(Convert.ToInt32(arr1[0]), arr1[1], arr1[2], arr1[3], Convert.ToInt32(arr1[4]), Convert.ToInt32(arr1[5]), arr1[6], arr1[7], Convert.ToInt32(arr1[8]), Convert.ToInt32(arr1[9]), Convert.ToInt32(arr1[10]), Convert.ToInt32(arr1[11]), Convert.ToInt32(arr1[12]), Convert.ToInt32(arr1[13]), Convert.ToInt32(arr1[14]));
-                FightingScene.date.GameManager.Player.Inventory.Add(item);
             }
 
-
-
-            In.Close();
+            Out.Close();
         }
         //Health updates
         public void UpdateHealthP(FightingScene form1)

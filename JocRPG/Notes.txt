@@ -19,14 +19,13 @@
 #To do list:
 
 1.make inventory -> working on it  
-~load the inventory from a file  
 ~???
   
 2.add kill counter
-3.save file
+3.save file -> saving player data (instantiate the player entity from GameManager in createPlayer class with the details from save file)
 4.make a database
 5.add new mobs:orcs, orc king
-6.balance stats
+6.balance stats (xp drop, gold drop,class stats)
 
 post release: 
 -add new mobs: goblin king, orcs, orc king,skeleton,skeleton king

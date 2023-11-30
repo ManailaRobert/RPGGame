@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,11 +43,11 @@ namespace JocRPG
             LB_NumeE.Visible= true;
             BTN_StartGame.Visible = false;
 
+            Inventory inventory = new Inventory();
             gameManager.CreatePlayer();
             gameManager.CreateEnemy();
-            gameManager.LoadItemList();
+            gameManager.LoadInventoryList();
             gameManager.changeImg(this);
-
 
             gameManager.UpdateHealthP(this);
             gameManager.UpdateHealthE(this);
@@ -160,6 +161,13 @@ namespace JocRPG
                 }
 
                 LB_Action.Items.Clear();
+
+                //Gold added
+                int goldFromEnemy = gameManager.Enemy.Level * 10;
+                MessageBox.Show($"You have gained {goldFromEnemy} gold for slaying LVL {gameManager.Enemy.Level} {gameManager.Enemy.Name} ");
+                gameManager.Player.Money += goldFromEnemy;
+                
+                //New turn start
                 gameManager.Turn = 1;
                 LB_Action.Items.Add("Turn " + gameManager.Turn);
 
@@ -267,6 +275,21 @@ namespace JocRPG
         {
             Shop Shop =new Shop();
             Shop.Show();
+        }
+
+        private void BTN_Inventory_Click(object sender, EventArgs e)
+        {
+            Inventory inventory =new Inventory();
+            inventory.Show();
+        }
+
+        private void FightingScene_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            StreamWriter Out = new StreamWriter(@"..\..\Resources\Inventory.txt");
+            Out.WriteLine(gameManager.Player.InventoryList.Count);
+            foreach (var item in gameManager.Player.InventoryList)//id,name,type,quantity,price,availableClass,requirementStat,requirement,addedMXH,addedATK,addedSTR,addedDEX,addedSPD,addedDEF
+                Out.WriteLine($"{item.Key};{item.Value.Name};{item.Value.ItemType};{item.Value.Type};{item.Value.Quantity};{item.Value.Price};{item.Value.AvailableClass};{item.Value.RequirementStat};{item.Value.Requirement};{item.Value.AddedMXH};{item.Value.AddedATK};{item.Value.AddedSTR};{item.Value.AddedDEX};{item.Value.AddedSPD};{item.Value.AddedDEF}");
+            Out.Close();
         }
     }
 }

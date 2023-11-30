@@ -234,8 +234,6 @@ namespace JocRPG
             if(Convert.ToInt32(LB_SPD.Text) / 25 == 0)
                 LB_Cost_SPD.Text = Convert.ToString(1) ;
             else LB_Cost_SPD.Text = Convert.ToString(2);
-
-
         }
         private void BTN_Save_Click(object sender, EventArgs e)
         {
