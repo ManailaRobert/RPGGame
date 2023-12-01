@@ -17,7 +17,6 @@ namespace JocRPG
         public static FightingScene date;
         internal GameManager GameManager { get => gameManager; set => gameManager = value; }
 
-
         public FightingScene()
         {
             InitializeComponent();
@@ -288,7 +287,7 @@ namespace JocRPG
             StreamWriter Out = new StreamWriter(@"..\..\Resources\Inventory.txt");
             Out.WriteLine(gameManager.Player.InventoryList.Count);
             foreach (var item in gameManager.Player.InventoryList)//id,name,type,quantity,price,availableClass,requirementStat,requirement,addedMXH,addedATK,addedSTR,addedDEX,addedSPD,addedDEF
-                Out.WriteLine($"{item.Key};{item.Value.Name};{item.Value.ItemType};{item.Value.Type};{item.Value.Quantity};{item.Value.Price};{item.Value.AvailableClass};{item.Value.RequirementStat};{item.Value.Requirement};{item.Value.AddedMXH};{item.Value.AddedATK};{item.Value.AddedSTR};{item.Value.AddedDEX};{item.Value.AddedSPD};{item.Value.AddedDEF}");
+                Out.WriteLine($"{item.Key};{item.Value.Name};{item.Value.ItemType};{item.Value.Type};{item.Value.Quantity};{item.Value.Price};{item.Value.AvailableClass};{item.Value.RequiredLevel};{item.Value.RequiredStat};{item.Value.Requirement};{item.Value.AddedMXH};{item.Value.AddedATK};{item.Value.AddedSTR};{item.Value.AddedDEX};{item.Value.AddedSPD};{item.Value.AddedDEF}");
             Out.Close();
         }
     }

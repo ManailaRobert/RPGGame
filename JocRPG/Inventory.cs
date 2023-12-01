@@ -25,9 +25,11 @@ namespace JocRPG
 
                     TB_Detalii.Text = $"" +
                         $"\t{FightingScene.date.GameManager.InventoryItemList[id].Name}" + Environment.NewLine +
-                        $"\nType: {FightingScene.date.GameManager.InventoryItemList[id].Type}" + Environment.NewLine +
-                        $"\nClass: {FightingScene.date.GameManager.InventoryItemList[id].AvailableClass} " + Environment.NewLine +
-                        $"\nRequired Stats: {FightingScene.date.GameManager.InventoryItemList[id].Requirement + " " + FightingScene.date.GameManager.InventoryItemList[id].RequirementStat} " + Environment.NewLine;
+                        $"Type: {FightingScene.date.GameManager.InventoryItemList[id].Type}" + Environment.NewLine +
+                        $"Class: {FightingScene.date.GameManager.InventoryItemList[id].AvailableClass} " + Environment.NewLine +
+                        $"Required Level: {FightingScene.date.GameManager.InventoryItemList[id].RequiredLevel}" + Environment.NewLine+
+                        $"Required Stats: {FightingScene.date.GameManager.InventoryItemList[id].Requirement + " " + FightingScene.date.GameManager.InventoryItemList[id].RequiredStat} " + Environment.NewLine;
+                        
 
                     TB_Detalii.Text = TB_Detalii.Text + "(";
                     if (FightingScene.date.GameManager.InventoryItemList[id].AddedMXH != 0)

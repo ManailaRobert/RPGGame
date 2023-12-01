@@ -1,10 +1,20 @@
 ﻿-----------------------------------------------------------------------------
-#Item list; id-0,name-1,itemClass-2,type-3,quantity-4,price-5,availableClass-6,requirementStat-7,requirement-8,addedMXH-9,addedATK-10,addedSTR-11,addedDEX-12,addedSPD-13,addedDEF-14
-4
-1;Sword1;Weapon;Sword;300;3;Knight;STR;30;0;0;1;0;0;0;0
-2;Normal Bow;Weapon;Bow;300;4;Archer;DEX;40;0;1;0;0;0;0
-3;Sword2;Weapon;Sword;500;5;Barbarian;STR;50;0;1;0;0;0;0
-4;Armor1;Armor;ChestPiece;300;6;Knight;STR;20;1;0;0;0;0;0
+#Item list; id-0,name-1,itemClass-2,type-3,quantity-4,price-5,availableClass-6,requiredLevel-7,requirementStat-8,requirement-9,addedMXH-10,addedATK-11,addedSTR-12,addedDEX-13,addedSPD-14,addedDEF-15
+10
+1;Excalibur;Weapon(1H);Sword;299;3;Knight;2;STR;30;0;0;1;0;0;0
+2;GreatSword;Weapon(2H);Sword(2H);299;3;Knight;2;STR;30;0;0;1;0;0;0
+3;Normal Bow;Weapon(2H);Bow(2H);297;4;Archer;1;DEX;40;0;1;0;0;0;0
+4;Red Sword;Weapon(1H);Sword;498;5;Barbarian;3;STR;50;0;1;0;0;0;0
+5;Great Axe;Weapon(2H);Axe(2H);398;10;Barbarian;10;STR;20;1;0;0;0;0;0
+6;Shield;OffHand;Shield;398;10;Knight;10;STR;20;1;0;0;0;0;0
+7;Leather ChestPlate;Armor;ChestPiece;298;6;Knight;3;STR;20;1;0;0;0;0;0
+8;Coif;Armor;HeadGear;298;6;Knight;2;STR;20;1;0;0;0;0;0
+9;Leather Leggings;Armor;Leggings;298;6;Knight;1;STR;20;1;0;0;0;0;0
+10;Leather Boots;Armor;Boots;298;6;Knight;6;STR;20;1;0;0;0;0;0
+
+itemClass = Armor,Weapon(1H),Weapon(2H),OffHand
+
+type = HeadGear,ChestPiece,Leggings,Boots,Sword/GreatSword(2H)/Bow(2)/Axe(2H),Shield(OffHand)
 
 -----------------------------------------------------------------------------
 #Database:
@@ -19,13 +29,14 @@
 #To do list:
 
 1.make inventory -> working on it  
-~???
+~make items equipable (lvl, stats?,class)
+2.Add Class Selector
   
-2.add kill counter
-3.save file -> saving player data (instantiate the player entity from GameManager in createPlayer class with the details from save file)
-4.make a database
-5.add new mobs:orcs, orc king
-6.balance stats (xp drop, gold drop,class stats)
+3.add kill counter
+4.save file -> saving player data (instantiate the player entity from GameManager in createPlayer class with the details from save file)
+5.make a database
+6.add new mobs:orcs, orc king
+7.balance stats (xp drop, gold drop,class stats)
 
 post release: 
 -add new mobs: goblin king, orcs, orc king,skeleton,skeleton king

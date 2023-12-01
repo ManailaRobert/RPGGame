@@ -1,5 +1,11 @@
-4
-1;Sword1;Weapon;Sword;299;3;Knight;STR;30;0;0;1;0;0;0
-2;Normal Bow;Weapon;Bow;297;4;Archer;DEX;40;0;1;0;0;0;0
-3;Sword2;Weapon;Sword;498;5;Barbarian;STR;50;0;1;0;0;0;0
-4;Armor1;Armor;ChestPiece;298;6;Knight;STR;20;1;0;0;0;0;0
+10
+1;Excalibur;Weapon(1H);Sword;298;3;Knight;2;STR;30;0;0;1;0;0;0
+2;GreatSword;Weapon(2H);Sword(2H);298;3;Knight;2;STR;30;0;0;1;0;0;0
+3;Normal Bow;Weapon(2H);Bow(2H);296;4;Archer;1;DEX;40;0;1;0;0;0;0
+4;Red Sword;Weapon(1H);Sword;497;5;Barbarian;3;STR;50;0;1;0;0;0;0
+5;Great Axe;Weapon(2H);Axe(2H);397;10;Barbarian;10;STR;20;1;0;0;0;0;0
+6;Shield;OffHand;Shield;396;10;Knight;10;STR;20;1;0;0;0;0;0
+7;Leather ChestPlate;Armor;ChestPiece;297;6;Knight;3;STR;20;1;0;0;0;0;0
+8;Coif;Armor;HeadGear;296;6;Knight;2;STR;20;1;0;0;0;0;0
+9;Leather Leggings;Armor;Leggings;297;6;Knight;1;STR;20;1;0;0;0;0;0
+10;Leather Boots;Armor;Boots;297;6;Knight;6;STR;20;1;0;0;0;0;0

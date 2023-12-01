@@ -15,6 +15,7 @@ namespace JocRPG
         private int price;
         private int quantity;
         private string availableClass;
+        private int requiredLevel;
         private int requirement;
         private string requirementStat;
 
@@ -28,7 +29,7 @@ namespace JocRPG
 
         //private List<int> addedStats = new List<int> { addedMXH, addedATK, addedSTR, addedDEX, addedSPD, addedDEF };
 
-        public Item(string name, string itemType,string type, int quantity, int price, string availableClass, string requirementStat, int requirement,  int addedMXH, int addedATK, int addedSTR, int addedDEX, int addedSPD, int addedDEF )
+        public Item(string name, string itemType,string type, int quantity, int price, string availableClass, int requiredLevel, string requirementStat, int requirement,  int addedMXH, int addedATK, int addedSTR, int addedDEX, int addedSPD, int addedDEF )
         {
             this.name = name;
             this.itemType = itemType;
@@ -36,6 +37,7 @@ namespace JocRPG
             this.quantity = quantity;
             this.price = price;
             this.availableClass = availableClass;
+            this.requiredLevel = requiredLevel;
             this.requirementStat = requirementStat;
             this.requirement = requirement;
             this.addedMXH = addedMXH;
@@ -52,9 +54,9 @@ namespace JocRPG
         public int Price { get => price; set => price = value; }
         public int Quantity { get => quantity; set => quantity = value; }
         public string AvailableClass { get => availableClass; set => availableClass = value; }
+        public int RequiredLevel { get => requiredLevel; set => requiredLevel = value; }
         public int Requirement { get => requirement; set => requirement = value; }
-        public string RequirementStat { get => requirementStat; set => requirementStat = value; }
-        //public List<int> AddedStats { get => addedStats; set => addedStats = value; }
+        public string RequiredStat { get => requirementStat; set => requirementStat = value; }
         public  int AddedMXH { get => addedMXH; set => addedMXH = value; }
         public  int AddedSTR { get => addedSTR; set => addedSTR = value; }
         public  int AddedDEX { get => addedDEX; set => addedDEX = value; }
