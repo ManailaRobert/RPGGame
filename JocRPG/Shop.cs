@@ -47,7 +47,10 @@ namespace JocRPG
                         $"Class: {shopList[id].AvailableClass} " + Environment.NewLine +
                         $"Required Level: {shopList[id].RequiredLevel}" + Environment.NewLine;
 
-                        TB_Detalii.Text = TB_Detalii.Text + $"( +{shopList[id].AddedDEF} DEF )";
+                    if (shopList[id].AddedDEF != 0)
+                        TB_Detalii.Text = TB_Detalii.Text + $"DEF: {shopList[id].AddedDEF}" + Environment.NewLine;
+                    if (shopList[id].AddedATK != 0)
+                        TB_Detalii.Text = TB_Detalii.Text + $"ATK: {shopList[id].AddedATK}";
 
                 }
             }
