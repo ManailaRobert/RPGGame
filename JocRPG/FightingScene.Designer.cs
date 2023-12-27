@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.LB_Action = new System.Windows.Forms.ListBox();
-            this.PB_Enemy = new System.Windows.Forms.PictureBox();
             this.PB_Player = new System.Windows.Forms.PictureBox();
             this.BTN_Attack = new System.Windows.Forms.Button();
             this.BTN_Inventory = new System.Windows.Forms.Button();
@@ -47,8 +46,9 @@
             this.LB_NameP = new System.Windows.Forms.Label();
             this.LB_NumeE = new System.Windows.Forms.Label();
             this.BTN_Shop = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_Enemy)).BeginInit();
+            this.PB_Enemy = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Player)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Enemy)).BeginInit();
             this.SuspendLayout();
             // 
             // LB_Action
@@ -61,16 +61,6 @@
             this.LB_Action.TabIndex = 0;
             this.LB_Action.UseTabStops = false;
             this.LB_Action.Visible = false;
-            // 
-            // PB_Enemy
-            // 
-            this.PB_Enemy.InitialImage = null;
-            this.PB_Enemy.Location = new System.Drawing.Point(653, 43);
-            this.PB_Enemy.Name = "PB_Enemy";
-            this.PB_Enemy.Size = new System.Drawing.Size(183, 145);
-            this.PB_Enemy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PB_Enemy.TabIndex = 1;
-            this.PB_Enemy.TabStop = false;
             // 
             // PB_Player
             // 
@@ -266,6 +256,16 @@
             this.BTN_Shop.Visible = false;
             this.BTN_Shop.Click += new System.EventHandler(this.BTN_Shop_Click);
             // 
+            // PB_Enemy
+            // 
+            this.PB_Enemy.Location = new System.Drawing.Point(654, 37);
+            this.PB_Enemy.Name = "PB_Enemy";
+            this.PB_Enemy.Size = new System.Drawing.Size(181, 149);
+            this.PB_Enemy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PB_Enemy.TabIndex = 25;
+            this.PB_Enemy.TabStop = false;
+            this.PB_Enemy.Visible = false;
+            // 
             // FightingScene
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,8 +293,8 @@
             this.Name = "FightingScene";
             this.Text = "RPG_Game";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FightingScene_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.PB_Enemy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Player)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Enemy)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
