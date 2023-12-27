@@ -39,12 +39,11 @@
             this.LB_ChestPiece = new System.Windows.Forms.Label();
             this.LB_Leggings = new System.Windows.Forms.Label();
             this.LB_Boots = new System.Windows.Forms.Label();
-            this.LB_Weapon = new System.Windows.Forms.Label();
+            this.LB_Main = new System.Windows.Forms.Label();
             this.LB_OffHand = new System.Windows.Forms.Label();
             this.LB_Inventory = new System.Windows.Forms.ListBox();
             this.TB_Detalii = new System.Windows.Forms.TextBox();
             this.BTN_Equip = new System.Windows.Forms.Button();
-            this.BTN_Unequip = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -104,9 +103,9 @@
             this.label6.Location = new System.Drawing.Point(17, 147);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 13);
+            this.label6.Size = new System.Drawing.Size(59, 13);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Weapon";
+            this.label6.Text = "Main-Hand";
             // 
             // label7
             // 
@@ -121,7 +120,7 @@
             // LB_HeadGear
             // 
             this.LB_HeadGear.AutoSize = true;
-            this.LB_HeadGear.Location = new System.Drawing.Point(71, 47);
+            this.LB_HeadGear.Location = new System.Drawing.Point(80, 47);
             this.LB_HeadGear.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LB_HeadGear.Name = "LB_HeadGear";
             this.LB_HeadGear.Size = new System.Drawing.Size(36, 13);
@@ -131,7 +130,7 @@
             // LB_ChestPiece
             // 
             this.LB_ChestPiece.AutoSize = true;
-            this.LB_ChestPiece.Location = new System.Drawing.Point(71, 69);
+            this.LB_ChestPiece.Location = new System.Drawing.Point(80, 69);
             this.LB_ChestPiece.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LB_ChestPiece.Name = "LB_ChestPiece";
             this.LB_ChestPiece.Size = new System.Drawing.Size(36, 13);
@@ -141,7 +140,7 @@
             // LB_Leggings
             // 
             this.LB_Leggings.AutoSize = true;
-            this.LB_Leggings.Location = new System.Drawing.Point(71, 91);
+            this.LB_Leggings.Location = new System.Drawing.Point(80, 91);
             this.LB_Leggings.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LB_Leggings.Name = "LB_Leggings";
             this.LB_Leggings.Size = new System.Drawing.Size(36, 13);
@@ -151,27 +150,27 @@
             // LB_Boots
             // 
             this.LB_Boots.AutoSize = true;
-            this.LB_Boots.Location = new System.Drawing.Point(71, 117);
+            this.LB_Boots.Location = new System.Drawing.Point(80, 117);
             this.LB_Boots.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LB_Boots.Name = "LB_Boots";
             this.LB_Boots.Size = new System.Drawing.Size(36, 13);
             this.LB_Boots.TabIndex = 10;
             this.LB_Boots.Text = "Empty";
             // 
-            // LB_Weapon
+            // LB_Main
             // 
-            this.LB_Weapon.AutoSize = true;
-            this.LB_Weapon.Location = new System.Drawing.Point(71, 147);
-            this.LB_Weapon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LB_Weapon.Name = "LB_Weapon";
-            this.LB_Weapon.Size = new System.Drawing.Size(36, 13);
-            this.LB_Weapon.TabIndex = 11;
-            this.LB_Weapon.Text = "Empty";
+            this.LB_Main.AutoSize = true;
+            this.LB_Main.Location = new System.Drawing.Point(80, 147);
+            this.LB_Main.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LB_Main.Name = "LB_Main";
+            this.LB_Main.Size = new System.Drawing.Size(36, 13);
+            this.LB_Main.TabIndex = 11;
+            this.LB_Main.Text = "Empty";
             // 
             // LB_OffHand
             // 
             this.LB_OffHand.AutoSize = true;
-            this.LB_OffHand.Location = new System.Drawing.Point(71, 168);
+            this.LB_OffHand.Location = new System.Drawing.Point(80, 168);
             this.LB_OffHand.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LB_OffHand.Name = "LB_OffHand";
             this.LB_OffHand.Size = new System.Drawing.Size(36, 13);
@@ -202,21 +201,11 @@
             // 
             this.BTN_Equip.Location = new System.Drawing.Point(172, 262);
             this.BTN_Equip.Name = "BTN_Equip";
-            this.BTN_Equip.Size = new System.Drawing.Size(75, 23);
+            this.BTN_Equip.Size = new System.Drawing.Size(155, 23);
             this.BTN_Equip.TabIndex = 15;
             this.BTN_Equip.Text = "Equip";
             this.BTN_Equip.UseVisualStyleBackColor = true;
             this.BTN_Equip.Click += new System.EventHandler(this.BTN_Equip_Click);
-            // 
-            // BTN_Unequip
-            // 
-            this.BTN_Unequip.Location = new System.Drawing.Point(252, 262);
-            this.BTN_Unequip.Name = "BTN_Unequip";
-            this.BTN_Unequip.Size = new System.Drawing.Size(75, 23);
-            this.BTN_Unequip.TabIndex = 16;
-            this.BTN_Unequip.Text = "Unequip";
-            this.BTN_Unequip.UseVisualStyleBackColor = true;
-            this.BTN_Unequip.Click += new System.EventHandler(this.BTN_Unequip_Click);
             // 
             // label8
             // 
@@ -234,12 +223,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(331, 289);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.BTN_Unequip);
             this.Controls.Add(this.BTN_Equip);
             this.Controls.Add(this.TB_Detalii);
             this.Controls.Add(this.LB_Inventory);
             this.Controls.Add(this.LB_OffHand);
-            this.Controls.Add(this.LB_Weapon);
+            this.Controls.Add(this.LB_Main);
             this.Controls.Add(this.LB_Boots);
             this.Controls.Add(this.LB_Leggings);
             this.Controls.Add(this.LB_ChestPiece);
@@ -273,12 +261,11 @@
         private System.Windows.Forms.Label LB_ChestPiece;
         private System.Windows.Forms.Label LB_Leggings;
         private System.Windows.Forms.Label LB_Boots;
-        private System.Windows.Forms.Label LB_Weapon;
+        private System.Windows.Forms.Label LB_Main;
         private System.Windows.Forms.Label LB_OffHand;
         private System.Windows.Forms.ListBox LB_Inventory;
         private System.Windows.Forms.TextBox TB_Detalii;
         private System.Windows.Forms.Button BTN_Equip;
-        private System.Windows.Forms.Button BTN_Unequip;
         private System.Windows.Forms.Label label8;
     }
 }

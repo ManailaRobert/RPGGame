@@ -56,10 +56,6 @@
             this.LB_Cost_DEX = new System.Windows.Forms.Label();
             this.LB_Cost_SPD = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.LB_AddedMXH = new System.Windows.Forms.Label();
-            this.LB_AddedSTR = new System.Windows.Forms.Label();
-            this.LB_AddedDEX = new System.Windows.Forms.Label();
-            this.LB_AddedSPD = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.LB_DEF = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -353,42 +349,6 @@
             this.label6.TabIndex = 29;
             this.label6.Text = "Stats from Items";
             // 
-            // LB_AddedMXH
-            // 
-            this.LB_AddedMXH.AutoSize = true;
-            this.LB_AddedMXH.Location = new System.Drawing.Point(150, 132);
-            this.LB_AddedMXH.Name = "LB_AddedMXH";
-            this.LB_AddedMXH.Size = new System.Drawing.Size(13, 13);
-            this.LB_AddedMXH.TabIndex = 30;
-            this.LB_AddedMXH.Text = "0";
-            // 
-            // LB_AddedSTR
-            // 
-            this.LB_AddedSTR.AutoSize = true;
-            this.LB_AddedSTR.Location = new System.Drawing.Point(150, 161);
-            this.LB_AddedSTR.Name = "LB_AddedSTR";
-            this.LB_AddedSTR.Size = new System.Drawing.Size(13, 13);
-            this.LB_AddedSTR.TabIndex = 31;
-            this.LB_AddedSTR.Text = "0";
-            // 
-            // LB_AddedDEX
-            // 
-            this.LB_AddedDEX.AutoSize = true;
-            this.LB_AddedDEX.Location = new System.Drawing.Point(150, 192);
-            this.LB_AddedDEX.Name = "LB_AddedDEX";
-            this.LB_AddedDEX.Size = new System.Drawing.Size(13, 13);
-            this.LB_AddedDEX.TabIndex = 32;
-            this.LB_AddedDEX.Text = "0";
-            // 
-            // LB_AddedSPD
-            // 
-            this.LB_AddedSPD.AutoSize = true;
-            this.LB_AddedSPD.Location = new System.Drawing.Point(150, 223);
-            this.LB_AddedSPD.Name = "LB_AddedSPD";
-            this.LB_AddedSPD.Size = new System.Drawing.Size(13, 13);
-            this.LB_AddedSPD.TabIndex = 33;
-            this.LB_AddedSPD.Text = "0";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -492,10 +452,6 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.LB_DEF);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.LB_AddedSPD);
-            this.Controls.Add(this.LB_AddedDEX);
-            this.Controls.Add(this.LB_AddedSTR);
-            this.Controls.Add(this.LB_AddedMXH);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.LB_Cost_SPD);
             this.Controls.Add(this.LB_Cost_DEX);
@@ -525,7 +481,7 @@
             this.Controls.Add(this.LB_Level);
             this.Controls.Add(this.LB_Name);
             this.Name = "Stats";
-            this.Text = "Form1";
+            this.Text = "Stats";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Stats_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -564,10 +520,6 @@
         private System.Windows.Forms.Label LB_Cost_DEX;
         private System.Windows.Forms.Label LB_Cost_SPD;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label LB_AddedMXH;
-        private System.Windows.Forms.Label LB_AddedSTR;
-        private System.Windows.Forms.Label LB_AddedDEX;
-        private System.Windows.Forms.Label LB_AddedSPD;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label LB_DEF;
         private System.Windows.Forms.Label label9;

@@ -291,7 +291,7 @@
             this.Controls.Add(this.BTN_EnemyTurn);
             this.Controls.Add(this.BTN_Stats);
             this.Name = "FightingScene";
-            this.Text = "Form1";
+            this.Text = "RPG_Game";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FightingScene_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.PB_Enemy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Player)).EndInit();

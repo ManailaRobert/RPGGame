@@ -23,7 +23,6 @@ namespace JocRPG
         private int DEX_p;
         private int SPD_p;
         private int DEF_p;
-        
         //Functions
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -31,19 +30,15 @@ namespace JocRPG
 
             LB_Name.Text = Convert.ToString(FightingScene.date.GameManager.Player.Name);
             LB_Level.Text = "Level " + Convert.ToString(FightingScene.date.GameManager.Player.Level);
-            LB_MaxHealth.Text = Convert.ToString(FightingScene.date.GameManager.Player.MaxHealth + FightingScene.date.GameManager.Player.AddedMXH);
-            LB_STR.Text = Convert.ToString(FightingScene.date.GameManager.Player.Strength+FightingScene.date.GameManager.Player.AddedSTR);
-            LB_DEX.Text = Convert.ToString(FightingScene.date.GameManager.Player.Dexterity + FightingScene.date.GameManager.Player.AddedDEX);
-            LB_SPD.Text = Convert.ToString(FightingScene.date.GameManager.Player.Speed + FightingScene.date.GameManager.Player.AddedSPD);
-            LB_DEF.Text = Convert.ToString(FightingScene.date.GameManager.Player.Defence + FightingScene.date.GameManager.Player.AddedDEF);
+            LB_MaxHealth.Text = Convert.ToString(FightingScene.date.GameManager.Player.MaxHealth);
+            LB_STR.Text = Convert.ToString(FightingScene.date.GameManager.Player.Strength);
+            LB_DEX.Text = Convert.ToString(FightingScene.date.GameManager.Player.Dexterity);
+            LB_SPD.Text = Convert.ToString(FightingScene.date.GameManager.Player.Speed);
+            LB_DEF.Text = Convert.ToString(FightingScene.date.GameManager.Player.Defence);
             LB_STP.Text = Convert.ToString(FightingScene.date.GameManager.Player.StatPoints );
 
-            LB_ATK.Text = Convert.ToString(FightingScene.date.GameManager.Player.Attack + FightingScene.date.GameManager.Player.AddedATK);
+            LB_ATK.Text = Convert.ToString(FightingScene.date.GameManager.Player.Attack);
 
-            LB_AddedMXH.Text = Convert.ToString( FightingScene.date.GameManager.Player.AddedMXH );
-            LB_AddedSTR.Text = Convert.ToString(FightingScene.date.GameManager.Player.AddedSTR);
-            LB_AddedDEX.Text = Convert.ToString(FightingScene.date.GameManager.Player.AddedDEX);
-            LB_AddedSPD.Text = Convert.ToString(FightingScene.date.GameManager.Player.AddedSPD);
             LB_AddedDEF.Text = Convert.ToString(FightingScene.date.GameManager.Player.AddedDEF);
 
             MXH_p = 0;
@@ -196,13 +191,8 @@ namespace JocRPG
        
         private void SaveStats()
         {
-            FightingScene.date.GameManager.Player.MaxHealth = Convert.ToInt32(LB_MaxHealth.Text) - FightingScene.date.GameManager.Player.AddedMXH;
-            FightingScene.date.GameManager.Player.Strength = Convert.ToInt32(LB_STR.Text) - FightingScene.date.GameManager.Player.AddedSTR;
-            FightingScene.date.GameManager.Player.Dexterity = Convert.ToInt32(LB_DEX.Text) - FightingScene.date.GameManager.Player.AddedDEX;
-            FightingScene.date.GameManager.Player.Speed = Convert.ToInt32(LB_SPD.Text) - FightingScene.date.GameManager.Player.AddedSPD;
             FightingScene.date.GameManager.Player.Defence = Convert.ToInt32(LB_DEF.Text) - FightingScene.date.GameManager.Player.AddedDEF;
             FightingScene.date.GameManager.Player.StatPoints = Convert.ToInt32(LB_STP.Text);
-            
         }
 
         private void UpdateCosts()
@@ -210,15 +200,15 @@ namespace JocRPG
             // MXH,STR,DEF relative 
             
             //every 20 points cost +1
-            if ((Convert.ToInt32(LB_MaxHealth.Text)-FightingScene.date.GameManager.Player.AddedMXH) / 20 == 0)
+            if (Convert.ToInt32(LB_MaxHealth.Text) / 20 == 0)
                 LB_Cost_MXH.Text = Convert.ToString(1);
             else
-                LB_Cost_MXH.Text = Convert.ToString((Convert.ToInt32(LB_MaxHealth.Text)-FightingScene.date.GameManager.Player.AddedMXH) / 20);
+                LB_Cost_MXH.Text = Convert.ToString(Convert.ToInt32(LB_MaxHealth.Text) / 20);
 
             //every 6 points cost +1
-            if ((Convert.ToInt32(LB_STR.Text)-FightingScene.date.GameManager.Player.AddedSTR) / 6 == 0)
+            if (Convert.ToInt32(LB_STR.Text) / 6 == 0)
                 LB_Cost_STR.Text = Convert.ToString(1);
-            else LB_Cost_STR.Text = Convert.ToString((Convert.ToInt32(LB_STR.Text) -FightingScene.date.GameManager.Player.AddedSTR- gameManager.Player.Strength) / 5+1);
+            else LB_Cost_STR.Text = Convert.ToString((Convert.ToInt32(LB_STR.Text) - gameManager.Player.Strength) / 5+1);
             
             //every 3 points cost +1
             if (Convert.ToInt32(LB_DEF.Text) / 3 == 0)

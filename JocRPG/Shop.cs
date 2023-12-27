@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace JocRPG
 {
@@ -39,27 +41,14 @@ namespace JocRPG
 
                     TB_Detalii.Text = $"" +
                         $"\t{shopList[id].Name}" + Environment.NewLine +
-                        $"Type: {shopList[id].Type}" + Environment.NewLine +
+                        $"Type: {shopList[id].ItemType}" + Environment.NewLine +
                         $"Pret: {shopList[id].Price}" + Environment.NewLine +
                         $"Quantity: {shopList[id].Quantity}" + Environment.NewLine +
                         $"Class: {shopList[id].AvailableClass} " + Environment.NewLine +
-                        $"Required Level: {shopList[id].RequiredLevel}"+ Environment.NewLine+
-                        $"Required Stats: {shopList[id].Requirement + " " + shopList[id].RequiredStat} "+ Environment.NewLine;
+                        $"Required Level: {shopList[id].RequiredLevel}" + Environment.NewLine;
 
-                    TB_Detalii.Text = TB_Detalii.Text + "(";
-                    if (shopList[id].AddedMXH != 0)
-                        TB_Detalii.Text = TB_Detalii.Text + $" +{shopList[id].AddedMXH} MaxHealth";
-                    if (shopList[id].AddedATK != 0)
-                        TB_Detalii.Text = TB_Detalii.Text + $" +{shopList[id].AddedATK} ATK";
-                    if (shopList[id].AddedSTR != 0)
-                        TB_Detalii.Text = TB_Detalii.Text + $" +{shopList[id].AddedSTR} STR";
-                    if (shopList[id].AddedDEX != 0)
-                        TB_Detalii.Text = TB_Detalii.Text + $" +{shopList[id].AddedDEX} DEX";
-                    if (shopList[id].AddedSPD != 0)
-                        TB_Detalii.Text = TB_Detalii.Text + $" +{shopList[id].AddedSPD} SPD";
-                    if (shopList[id].AddedDEF != 0)
-                        TB_Detalii.Text = TB_Detalii.Text + $" +{shopList[id].AddedDEF} DEF";
-                    TB_Detalii.Text = TB_Detalii.Text + " )";
+                        TB_Detalii.Text = TB_Detalii.Text + $"( +{shopList[id].AddedDEF} DEF )";
+
                 }
             }
         }
@@ -74,7 +63,7 @@ namespace JocRPG
                 string line = In.ReadLine();
                 string[] arr1 = line.Split(';');
 
-                Item item = new Item(arr1[1], arr1[2], arr1[3], Convert.ToInt32(arr1[4]), Convert.ToInt32(arr1[5]), arr1[6], Convert.ToInt32(arr1[7]),arr1[8], Convert.ToInt32(arr1[9]), Convert.ToInt32(arr1[10]), Convert.ToInt32(arr1[11]), Convert.ToInt32(arr1[12]), Convert.ToInt32(arr1[13]), Convert.ToInt32(arr1[14]),Convert.ToInt32(arr1[15]));
+                Item item = new Item(arr1[1], arr1[2], arr1[3], Convert.ToInt32(arr1[4]), Convert.ToInt32(arr1[5]), arr1[6], Convert.ToInt32(arr1[7]),Convert.ToInt32(arr1[8]), Convert.ToInt32(arr1[9]));
                 shopList.Add(Convert.ToInt32(arr1[0]),item);
             }
             In.Close();
@@ -84,8 +73,8 @@ namespace JocRPG
         {
             StreamWriter Out = new StreamWriter(@"..\..\Resources\items.txt");
             Out.WriteLine(shopList.Count);
-            foreach( var item in shopList)//id,name,type,quantity,price,availableClass,requirementStat,requirement,addedMXH,addedATK,addedSTR,addedDEX,addedSPD,addedDEF
-                Out.WriteLine($"{item.Key};{item.Value.Name};{item.Value.ItemType};{item.Value.Type};{item.Value.Quantity};{item.Value.Price};{item.Value.AvailableClass};{item.Value.RequiredLevel};{item.Value.RequiredStat};{item.Value.Requirement};{item.Value.AddedMXH};{item.Value.AddedATK};{item.Value.AddedSTR};{item.Value.AddedDEX};{item.Value.AddedSPD};{item.Value.AddedDEF}");
+            foreach( var item in shopList) //id - 0,name - 1,itemClass - 2,type - 3,quantity - 4,price - 5,availableClass - 6,requiredLevel - 7,addedDEF - 8
+                Out.WriteLine($"{item.Key};{item.Value.Name};{item.Value.ItemClass};{item.Value.ItemType};{item.Value.Quantity};{item.Value.Price};{item.Value.AvailableClass};{item.Value.RequiredLevel};{item.Value.AddedATK};{item.Value.AddedDEF}");
             Out.Close();
         }
         public Shop()

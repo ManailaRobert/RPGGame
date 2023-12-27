@@ -60,7 +60,7 @@ namespace JocRPG
         private void BTN_Attack_MouseHover(object sender, EventArgs e)
         {
             TB_Detalii.Visible = true;
-            TB_Detalii.Text = "Attack dmg: " + Convert.ToString(gameManager.Player.Attack + GameManager.Player.AddedATK);
+            TB_Detalii.Text = "Attack dmg: " + Convert.ToString(gameManager.Player.Attack);
         }
         private void BTN_Dodge_MouseHover(object sender, EventArgs e)
         {
@@ -126,7 +126,7 @@ namespace JocRPG
         }
         private void BTN_Attack_Click(object sender, EventArgs e)
             {
-            int attack = gameManager.Player.Attack + gameManager.Player.AddedATK; // attack dmg formula
+            int attack = gameManager.Player.Attack ; // attack dmg formula
             gameManager.Enemy.Health -= attack; // dmg given
 
             LB_Action.Items.Add("You dealt " + Convert.ToString (attack) + " damage!");
@@ -287,7 +287,7 @@ namespace JocRPG
             StreamWriter Out = new StreamWriter(@"..\..\Resources\Inventory.txt");
             Out.WriteLine(gameManager.Player.InventoryList.Count);
             foreach (var item in gameManager.Player.InventoryList)//id,name,type,quantity,price,availableClass,requirementStat,requirement,addedMXH,addedATK,addedSTR,addedDEX,addedSPD,addedDEF
-                Out.WriteLine($"{item.Key};{item.Value.Name};{item.Value.ItemType};{item.Value.Type};{item.Value.Quantity};{item.Value.Price};{item.Value.AvailableClass};{item.Value.RequiredLevel};{item.Value.RequiredStat};{item.Value.Requirement};{item.Value.AddedMXH};{item.Value.AddedATK};{item.Value.AddedSTR};{item.Value.AddedDEX};{item.Value.AddedSPD};{item.Value.AddedDEF}");
+                Out.WriteLine($"{item.Key};{item.Value.Name};{item.Value.ItemClass};{item.Value.ItemType};{item.Value.Quantity};{item.Value.Price};{item.Value.AvailableClass};{item.Value.RequiredLevel};{item.Value.AddedATK};{item.Value.AddedDEF}");
             Out.Close();
         }
     }

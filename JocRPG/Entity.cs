@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -27,22 +28,13 @@ namespace JocRPG
        
 
         private Dictionary<int, Item> inventoryList = new Dictionary<int, Item>();
+        private Dictionary<string,int> equipment = new Dictionary<string,int>();
 
-        private int addedMXH;
-        private int addedATK;
-        private int addedSTR;
-        private int addedDEX;
-        private int addedSPD;
         private int addedDEF;
 
        
 
-        public int AddedATK { get => addedATK; set => addedATK = value; }
-        public int AddedSTR { get => addedSTR; set => addedSTR = value; }
-        public int AddedDEX { get => addedDEX; set => addedDEX = value; }
-        public int AddedSPD { get => addedSPD; set => addedSPD = value; }
         public int AddedDEF { get => addedDEF; set => addedDEF = value; }
-        public int AddedMXH { get => addedMXH; set => addedMXH = value; }
         public string Name { get => name; set => name = value; }
         public int Health { get => health; set => health = value; }
         public int MaxHealth { get => max_health; set => max_health = value; }
@@ -59,7 +51,19 @@ namespace JocRPG
         public string Type { get => type; set => type = value; }
         public string PlayerClass { get => playerClass; set=> playerClass=value; }
         public Dictionary<int, Item> InventoryList { get => inventoryList; set => inventoryList = value; }
-
+        public Dictionary<string, int> Equipment { get => equipment; set => equipment = value; }
+        //Creates equipment elements
+        private void initializeEquipment()
+        {
+            //type:HeadGear,ChestPiece,Leggings,Boots
+            //item class:Armor,Weapon(1H),Weapon(2H),OffHand
+            equipment.Add("HeadGear", 0);
+            equipment.Add("ChestPiece", 0);
+            equipment.Add("Leggings", 0);
+            equipment.Add("Boots", 0);
+            equipment.Add("Main", 0);
+            equipment.Add("OffHand", 0);
+        }
         //Enemy
         public Entity(string name,string type, int health, int max_health, int level, int attack) 
         {
@@ -87,6 +91,7 @@ namespace JocRPG
             this.statPoints = statPoints;
             this.potions = potions;
             this.money= money;
+            initializeEquipment();
         }
     }
 }

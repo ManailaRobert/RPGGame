@@ -37,10 +37,6 @@ namespace JocRPG
             Player.Potions = 30;
             Player.Money = 999999;
 
-            Player.AddedATK = 0;
-            Player.AddedSTR = 0;
-            Player.AddedSPD = 0;
-            Player.AddedMXH = 0;
             Player.AddedDEF = 0;
 
         }
@@ -90,7 +86,7 @@ namespace JocRPG
             {
                 string line = In.ReadLine();
                 string[] arr1 = line.Split(';');
-                Item item = new Item(arr1[1], arr1[2], arr1[3], Convert.ToInt32(arr1[4]), Convert.ToInt32(arr1[5]), arr1[6], Convert.ToInt32(arr1[7]), arr1[8], Convert.ToInt32(arr1[9]), Convert.ToInt32(arr1[10]), Convert.ToInt32(arr1[11]), Convert.ToInt32(arr1[12]), Convert.ToInt32(arr1[13]), Convert.ToInt32(arr1[14]), Convert.ToInt32(arr1[15]));
+                Item item = new Item(arr1[1], arr1[2], arr1[3], Convert.ToInt32(arr1[4]), Convert.ToInt32(arr1[5]), arr1[6], Convert.ToInt32(arr1[7]), Convert.ToInt32(arr1[8]), Convert.ToInt32(arr1[9]));
                 FightingScene.date.GameManager.Player.InventoryList.Add(Convert.ToInt32(arr1[0]), item);
             }
             In.Close();
@@ -102,8 +98,7 @@ namespace JocRPG
             foreach (var item in FightingScene.date.GameManager.Player.InventoryList)
             {
                 //id,name,type,quantity,price,availableClass,requirementStat,requirement,addedMXH,addedATK,addedSTR,addedDEX,addedSPD,addedDEF
-                Out.WriteLine($"{item.Key};{item.Value.Name};{item.Value.ItemType};{item.Value.Type};{item.Value.Quantity};{item.Value.Price};{item.Value.AvailableClass};{item.Value.RequiredStat};{item.Value.Requirement};{item.Value.AddedMXH};{item.Value.AddedATK};{item.Value.AddedSTR};{item.Value.AddedDEX};{item.Value.AddedSPD};{item.Value.AddedDEF}");
-
+                Out.WriteLine($"{item.Key};{item.Value.Name};{item.Value.ItemClass};{item.Value.ItemType};{item.Value.Quantity};{item.Value.Price};{item.Value.AvailableClass};{item.Value.AddedATK};{item.Value.AddedDEF}");
             }
 
             Out.Close();
@@ -135,9 +130,9 @@ namespace JocRPG
         //Enemy Turn
         public void EnemyTurn(FightingScene form1, string move)
         {
-            int attack1 = Convert.ToInt32(Enemy.Attack * (Convert.ToDouble(Player.Defence / 3) / 100));//dmg taken formula: Enemy Attack * ( (PlayerDef/3)/100 ) -> percentage
-            int attack2 = Convert.ToInt32(Enemy.Attack*2 * (Convert.ToDouble(Player.Defence / 3) / 100)); //amplified dmg 2X
-            int attack3 = Convert.ToInt32(Enemy.Attack/2 * (Convert.ToDouble(Player.Defence / 3) / 100)); //half dmg given 
+            int attack1 = Convert.ToInt32(Enemy.Attack * (Convert.ToDouble((Player.Defence+Player.AddedDEF) / 3) / 100));//dmg taken formula: Enemy Attack * ( (PlayerDef/3)/100 ) -> percentage
+            int attack2 = Convert.ToInt32(Enemy.Attack*2 * (Convert.ToDouble((Player.Defence + Player.AddedDEF) / 3) / 100)); //amplified dmg 2X
+            int attack3 = Convert.ToInt32(Enemy.Attack/2 * (Convert.ToDouble((Player.Defence + Player.AddedDEF) / 3) / 100)); //half dmg given 
             switch (move)
             {
                 case "Attack":
@@ -158,9 +153,9 @@ namespace JocRPG
                     int stat1;
 
                     //for exceding the max stat
-                    if (form1.GameManager.Player.Speed >= 50)
+                    if (Player.Speed >= 50)
                         stat1 = 50;
-                    else stat1= form1.GameManager.Player.Speed;
+                    else stat1= Player.Speed;
 
 
                     int chance = random.Next(1, 100);
