@@ -47,6 +47,12 @@
             this.LB_NumeE = new System.Windows.Forms.Label();
             this.BTN_Shop = new System.Windows.Forms.Button();
             this.PB_Enemy = new System.Windows.Forms.PictureBox();
+            this.RB_Knight = new System.Windows.Forms.RadioButton();
+            this.RB_Barbarian = new System.Windows.Forms.RadioButton();
+            this.RB_Archer = new System.Windows.Forms.RadioButton();
+            this.LB_Classes = new System.Windows.Forms.Label();
+            this.TB_Name = new System.Windows.Forms.TextBox();
+            this.LB_NameSelector = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Enemy)).BeginInit();
             this.SuspendLayout();
@@ -54,17 +60,17 @@
             // LB_Action
             // 
             this.LB_Action.FormattingEnabled = true;
-            this.LB_Action.Location = new System.Drawing.Point(197, 22);
+            this.LB_Action.Location = new System.Drawing.Point(201, 25);
             this.LB_Action.Name = "LB_Action";
             this.LB_Action.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.LB_Action.Size = new System.Drawing.Size(451, 186);
+            this.LB_Action.Size = new System.Drawing.Size(451, 173);
             this.LB_Action.TabIndex = 0;
             this.LB_Action.UseTabStops = false;
             this.LB_Action.Visible = false;
             // 
             // PB_Player
             // 
-            this.PB_Player.Location = new System.Drawing.Point(10, 39);
+            this.PB_Player.Location = new System.Drawing.Point(14, 25);
             this.PB_Player.Name = "PB_Player";
             this.PB_Player.Size = new System.Drawing.Size(181, 149);
             this.PB_Player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -74,7 +80,7 @@
             // 
             // BTN_Attack
             // 
-            this.BTN_Attack.Location = new System.Drawing.Point(197, 214);
+            this.BTN_Attack.Location = new System.Drawing.Point(201, 200);
             this.BTN_Attack.Name = "BTN_Attack";
             this.BTN_Attack.Size = new System.Drawing.Size(85, 38);
             this.BTN_Attack.TabIndex = 4;
@@ -87,7 +93,7 @@
             // 
             // BTN_Inventory
             // 
-            this.BTN_Inventory.Location = new System.Drawing.Point(10, 214);
+            this.BTN_Inventory.Location = new System.Drawing.Point(14, 200);
             this.BTN_Inventory.Name = "BTN_Inventory";
             this.BTN_Inventory.Size = new System.Drawing.Size(181, 38);
             this.BTN_Inventory.TabIndex = 6;
@@ -98,7 +104,7 @@
             // 
             // BTN_Block
             // 
-            this.BTN_Block.Location = new System.Drawing.Point(381, 214);
+            this.BTN_Block.Location = new System.Drawing.Point(385, 200);
             this.BTN_Block.Name = "BTN_Block";
             this.BTN_Block.Size = new System.Drawing.Size(85, 38);
             this.BTN_Block.TabIndex = 7;
@@ -111,7 +117,7 @@
             // 
             // BTN_Dodge
             // 
-            this.BTN_Dodge.Location = new System.Drawing.Point(472, 214);
+            this.BTN_Dodge.Location = new System.Drawing.Point(476, 200);
             this.BTN_Dodge.Name = "BTN_Dodge";
             this.BTN_Dodge.Size = new System.Drawing.Size(85, 38);
             this.BTN_Dodge.TabIndex = 8;
@@ -125,7 +131,7 @@
             // BTN_EnemyTurn
             // 
             this.BTN_EnemyTurn.Enabled = false;
-            this.BTN_EnemyTurn.Location = new System.Drawing.Point(654, 213);
+            this.BTN_EnemyTurn.Location = new System.Drawing.Point(658, 199);
             this.BTN_EnemyTurn.Name = "BTN_EnemyTurn";
             this.BTN_EnemyTurn.Size = new System.Drawing.Size(181, 38);
             this.BTN_EnemyTurn.TabIndex = 9;
@@ -136,7 +142,7 @@
             // 
             // BTN_Heal
             // 
-            this.BTN_Heal.Location = new System.Drawing.Point(563, 213);
+            this.BTN_Heal.Location = new System.Drawing.Point(567, 199);
             this.BTN_Heal.Name = "BTN_Heal";
             this.BTN_Heal.Size = new System.Drawing.Size(85, 38);
             this.BTN_Heal.TabIndex = 10;
@@ -149,7 +155,7 @@
             // 
             // TB_Detalii
             // 
-            this.TB_Detalii.Location = new System.Drawing.Point(197, 258);
+            this.TB_Detalii.Location = new System.Drawing.Point(201, 244);
             this.TB_Detalii.Multiline = true;
             this.TB_Detalii.Name = "TB_Detalii";
             this.TB_Detalii.Size = new System.Drawing.Size(451, 38);
@@ -158,7 +164,7 @@
             // 
             // BTN_Stats
             // 
-            this.BTN_Stats.Location = new System.Drawing.Point(10, 258);
+            this.BTN_Stats.Location = new System.Drawing.Point(14, 244);
             this.BTN_Stats.Name = "BTN_Stats";
             this.BTN_Stats.Size = new System.Drawing.Size(181, 38);
             this.BTN_Stats.TabIndex = 12;
@@ -169,9 +175,9 @@
             // 
             // BTN_StartGame
             // 
-            this.BTN_StartGame.Location = new System.Drawing.Point(357, 302);
+            this.BTN_StartGame.Location = new System.Drawing.Point(289, 295);
             this.BTN_StartGame.Name = "BTN_StartGame";
-            this.BTN_StartGame.Size = new System.Drawing.Size(121, 27);
+            this.BTN_StartGame.Size = new System.Drawing.Size(143, 27);
             this.BTN_StartGame.TabIndex = 13;
             this.BTN_StartGame.Text = "Start";
             this.BTN_StartGame.UseVisualStyleBackColor = true;
@@ -181,7 +187,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(85, 173);
+            this.label1.Location = new System.Drawing.Point(89, 159);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 13);
             this.label1.TabIndex = 14;
@@ -192,7 +198,7 @@
             // 
             this.LB_HPP.AutoSize = true;
             this.LB_HPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.LB_HPP.Location = new System.Drawing.Point(11, 195);
+            this.LB_HPP.Location = new System.Drawing.Point(15, 181);
             this.LB_HPP.Name = "LB_HPP";
             this.LB_HPP.Size = new System.Drawing.Size(31, 17);
             this.LB_HPP.TabIndex = 16;
@@ -203,7 +209,7 @@
             // 
             this.LB_HPE.AutoSize = true;
             this.LB_HPE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.LB_HPE.Location = new System.Drawing.Point(654, 195);
+            this.LB_HPE.Location = new System.Drawing.Point(658, 181);
             this.LB_HPE.Name = "LB_HPE";
             this.LB_HPE.Size = new System.Drawing.Size(31, 17);
             this.LB_HPE.TabIndex = 18;
@@ -212,7 +218,7 @@
             // 
             // BTN_Counter
             // 
-            this.BTN_Counter.Location = new System.Drawing.Point(290, 214);
+            this.BTN_Counter.Location = new System.Drawing.Point(294, 200);
             this.BTN_Counter.Name = "BTN_Counter";
             this.BTN_Counter.Size = new System.Drawing.Size(85, 38);
             this.BTN_Counter.TabIndex = 19;
@@ -227,7 +233,7 @@
             // 
             this.LB_NameP.AutoSize = true;
             this.LB_NameP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.LB_NameP.Location = new System.Drawing.Point(6, 20);
+            this.LB_NameP.Location = new System.Drawing.Point(10, 6);
             this.LB_NameP.Name = "LB_NameP";
             this.LB_NameP.Size = new System.Drawing.Size(54, 17);
             this.LB_NameP.TabIndex = 22;
@@ -238,7 +244,7 @@
             // 
             this.LB_NumeE.AutoSize = true;
             this.LB_NumeE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.LB_NumeE.Location = new System.Drawing.Point(654, 19);
+            this.LB_NumeE.Location = new System.Drawing.Point(658, 5);
             this.LB_NumeE.Name = "LB_NumeE";
             this.LB_NumeE.Size = new System.Drawing.Size(54, 17);
             this.LB_NumeE.TabIndex = 23;
@@ -247,7 +253,7 @@
             // 
             // BTN_Shop
             // 
-            this.BTN_Shop.Location = new System.Drawing.Point(654, 258);
+            this.BTN_Shop.Location = new System.Drawing.Point(658, 244);
             this.BTN_Shop.Name = "BTN_Shop";
             this.BTN_Shop.Size = new System.Drawing.Size(181, 38);
             this.BTN_Shop.TabIndex = 24;
@@ -258,7 +264,7 @@
             // 
             // PB_Enemy
             // 
-            this.PB_Enemy.Location = new System.Drawing.Point(654, 37);
+            this.PB_Enemy.Location = new System.Drawing.Point(658, 23);
             this.PB_Enemy.Name = "PB_Enemy";
             this.PB_Enemy.Size = new System.Drawing.Size(181, 149);
             this.PB_Enemy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -266,11 +272,74 @@
             this.PB_Enemy.TabStop = false;
             this.PB_Enemy.Visible = false;
             // 
+            // RB_Knight
+            // 
+            this.RB_Knight.AutoSize = true;
+            this.RB_Knight.Checked = true;
+            this.RB_Knight.Location = new System.Drawing.Point(643, 300);
+            this.RB_Knight.Name = "RB_Knight";
+            this.RB_Knight.Size = new System.Drawing.Size(55, 17);
+            this.RB_Knight.TabIndex = 26;
+            this.RB_Knight.TabStop = true;
+            this.RB_Knight.Text = "Knight";
+            this.RB_Knight.UseVisualStyleBackColor = true;
+            // 
+            // RB_Barbarian
+            // 
+            this.RB_Barbarian.AutoSize = true;
+            this.RB_Barbarian.Location = new System.Drawing.Point(704, 300);
+            this.RB_Barbarian.Name = "RB_Barbarian";
+            this.RB_Barbarian.Size = new System.Drawing.Size(70, 17);
+            this.RB_Barbarian.TabIndex = 27;
+            this.RB_Barbarian.Text = "Barbarian";
+            this.RB_Barbarian.UseVisualStyleBackColor = true;
+            // 
+            // RB_Archer
+            // 
+            this.RB_Archer.AutoSize = true;
+            this.RB_Archer.Location = new System.Drawing.Point(780, 300);
+            this.RB_Archer.Name = "RB_Archer";
+            this.RB_Archer.Size = new System.Drawing.Size(56, 17);
+            this.RB_Archer.TabIndex = 28;
+            this.RB_Archer.Text = "Archer";
+            this.RB_Archer.UseVisualStyleBackColor = true;
+            // 
+            // LB_Classes
+            // 
+            this.LB_Classes.AutoSize = true;
+            this.LB_Classes.Location = new System.Drawing.Point(589, 302);
+            this.LB_Classes.Name = "LB_Classes";
+            this.LB_Classes.Size = new System.Drawing.Size(46, 13);
+            this.LB_Classes.TabIndex = 29;
+            this.LB_Classes.Text = "Classes:";
+            // 
+            // TB_Name
+            // 
+            this.TB_Name.Location = new System.Drawing.Point(479, 299);
+            this.TB_Name.Name = "TB_Name";
+            this.TB_Name.Size = new System.Drawing.Size(100, 20);
+            this.TB_Name.TabIndex = 30;
+            // 
+            // LB_NameSelector
+            // 
+            this.LB_NameSelector.AutoSize = true;
+            this.LB_NameSelector.Location = new System.Drawing.Point(438, 302);
+            this.LB_NameSelector.Name = "LB_NameSelector";
+            this.LB_NameSelector.Size = new System.Drawing.Size(35, 13);
+            this.LB_NameSelector.TabIndex = 31;
+            this.LB_NameSelector.Text = "Name";
+            // 
             // FightingScene
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 338);
+            this.ClientSize = new System.Drawing.Size(841, 327);
+            this.Controls.Add(this.LB_NameSelector);
+            this.Controls.Add(this.TB_Name);
+            this.Controls.Add(this.LB_Classes);
+            this.Controls.Add(this.RB_Archer);
+            this.Controls.Add(this.RB_Barbarian);
+            this.Controls.Add(this.RB_Knight);
             this.Controls.Add(this.PB_Enemy);
             this.Controls.Add(this.BTN_Shop);
             this.Controls.Add(this.LB_NumeE);
@@ -321,6 +390,12 @@
         public System.Windows.Forms.Label LB_NumeE;
         public System.Windows.Forms.Button BTN_Shop;
         public System.Windows.Forms.PictureBox PB_Enemy;
+        private System.Windows.Forms.RadioButton RB_Knight;
+        private System.Windows.Forms.RadioButton RB_Barbarian;
+        private System.Windows.Forms.RadioButton RB_Archer;
+        private System.Windows.Forms.Label LB_Classes;
+        private System.Windows.Forms.TextBox TB_Name;
+        private System.Windows.Forms.Label LB_NameSelector;
     }
 }
 

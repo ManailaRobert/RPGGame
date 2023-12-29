@@ -105,6 +105,7 @@ namespace JocRPG
         }
         private void Inventory_Load(object sender, EventArgs e)
         {
+            LB_Name.Text = $"{FightingScene.date.GameManager.Player.PlayerClass} {FightingScene.date.GameManager.Player.Name} {FightingScene.date.GameManager.Player.Level}" ;
             LoadInventoryList();
             LoadInventory();
             ShowEquippedItems();
@@ -132,56 +133,66 @@ namespace JocRPG
                             //checks if an item is equipped in that slot
                             //level check
                             if (FightingScene.date.GameManager.Player.Level >= FightingScene.date.GameManager.Player.InventoryList[id].RequiredLevel)
-                            {
-                                if (FightingScene.date.GameManager.Player.Equipment[FightingScene.date.GameManager.Player.InventoryList[id].ItemType] != 0)
-                                    if (MessageBox.Show("Atentie itemele deja echipate vor fi date jos. Doriti sa continuati", "Atention", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                                        break;
-                                    else
-                                    {
-                                        int curentId = FightingScene.date.GameManager.Player.Equipment[FightingScene.date.GameManager.Player.InventoryList[id].ItemType];
-                                        FightingScene.date.GameManager.Player.AddedDEF -= FightingScene.date.GameManager.Player.InventoryList[curentId].AddedDEF;
-                                    }
-                                //equippes the item
-                                FightingScene.date.GameManager.Player.Equipment[FightingScene.date.GameManager.Player.InventoryList[id].ItemType] = id;
-                                //changes stats addedMXH;addedATK;addedSTR;addedDEX;addedSPD;addedDEF;
-                                FightingScene.date.GameManager.Player.AddedDEF += FightingScene.date.GameManager.Player.InventoryList[id].AddedDEF;
-                                //show items in labels
-                                ShowEquippedItems();
+                            {//class check
+                                if (FightingScene.date.GameManager.Player.InventoryList[id].ItemClass == FightingScene.date.GameManager.Player.PlayerClass)
+                                {
+                                    if (FightingScene.date.GameManager.Player.Equipment[FightingScene.date.GameManager.Player.InventoryList[id].ItemType] != 0)
+                                        if (MessageBox.Show("Atentie itemele deja echipate vor fi date jos. Doriti sa continuati", "Atention", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                                            break;
+                                        else
+                                        {
+                                            int curentId = FightingScene.date.GameManager.Player.Equipment[FightingScene.date.GameManager.Player.InventoryList[id].ItemType];
+                                            FightingScene.date.GameManager.Player.AddedDEF -= FightingScene.date.GameManager.Player.InventoryList[curentId].AddedDEF;
+                                        }
+                                    //equippes the item
+                                    FightingScene.date.GameManager.Player.Equipment[FightingScene.date.GameManager.Player.InventoryList[id].ItemType] = id;
+                                    //changes stats addedMXH;addedATK;addedSTR;addedDEX;addedSPD;addedDEF;
+                                    FightingScene.date.GameManager.Player.AddedDEF += FightingScene.date.GameManager.Player.InventoryList[id].AddedDEF;
+                                    //show items in labels
+                                    ShowEquippedItems();
+                                }
+                                else MessageBox.Show("You cannot equip items from another class.");
+
                             }
                             else MessageBox.Show("Your level is too low for this item");
                             break;
                         case "Weapon(2H)": // for 2handers and 1h weapons
                                            //level check
                             if (FightingScene.date.GameManager.Player.Level >= FightingScene.date.GameManager.Player.InventoryList[id].RequiredLevel)
-                            {
-                                //checks if an item is equipped in that slot
-                                if (FightingScene.date.GameManager.Player.Equipment["Main"] != 0 || FightingScene.date.GameManager.Player.Equipment["OffHand"] != 0)
-                                    if (MessageBox.Show("Atentie itemele deja echipate vor fi date jos. Doriti sa continuati", "Atention", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                                        break;
-                                    else
-                                    {
-                                        // deletes the added stats from Main and OffHand
-                                        int curentId;
-                                        if (FightingScene.date.GameManager.Player.Equipment["OffHand"] != 0)
+                            {//class check
+                                if (FightingScene.date.GameManager.Player.InventoryList[id].ItemClass == FightingScene.date.GameManager.Player.PlayerClass)
+                                {
+                                    //checks if an item is equipped in that slot
+                                    if (FightingScene.date.GameManager.Player.Equipment["Main"] != 0 || FightingScene.date.GameManager.Player.Equipment["OffHand"] != 0)
+                                        if (MessageBox.Show("Atentie itemele deja echipate vor fi date jos. Doriti sa continuati", "Atention", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                                            break;
+                                        else
                                         {
-                                            curentId = FightingScene.date.GameManager.Player.Equipment["Main"];
-                                            FightingScene.date.GameManager.Player.Attack -= FightingScene.date.GameManager.Player.InventoryList[curentId].AddedATK;
-                                        }
+                                            // deletes the added stats from Main and OffHand
+                                            int curentId;
+                                            if (FightingScene.date.GameManager.Player.Equipment["OffHand"] != 0)
+                                            {
+                                                curentId = FightingScene.date.GameManager.Player.Equipment["Main"];
+                                                FightingScene.date.GameManager.Player.Attack -= FightingScene.date.GameManager.Player.InventoryList[curentId].AddedATK;
+                                            }
 
-                                        if (FightingScene.date.GameManager.Player.Equipment["OffHand"] != 0)
-                                        {
-                                            curentId = FightingScene.date.GameManager.Player.Equipment["OffHand"];
-                                            FightingScene.date.GameManager.Player.Attack -= FightingScene.date.GameManager.Player.InventoryList[curentId].AddedATK;
+                                            if (FightingScene.date.GameManager.Player.Equipment["OffHand"] != 0)
+                                            {
+                                                curentId = FightingScene.date.GameManager.Player.Equipment["OffHand"];
+                                                FightingScene.date.GameManager.Player.Attack -= FightingScene.date.GameManager.Player.InventoryList[curentId].AddedATK;
+                                            }
                                         }
-                                    }
-                                //equippes the item
-                                FightingScene.date.GameManager.Player.Equipment["Main"] = id;
-                                FightingScene.date.GameManager.Player.Equipment["OffHand"] = id;
-                                //changes stats addedMXH;addedATK;addedSTR;addedDEX;addedSPD;addedDEF;
+                                    //equippes the item
+                                    FightingScene.date.GameManager.Player.Equipment["Main"] = id;
+                                    FightingScene.date.GameManager.Player.Equipment["OffHand"] = id;
+                                    //changes stats addedMXH;addedATK;addedSTR;addedDEX;addedSPD;addedDEF;
 
-                                FightingScene.date.GameManager.Player.Attack += FightingScene.date.GameManager.Player.InventoryList[id].AddedATK;
-                                //show items in labels
-                                ShowEquippedItems();
+                                    FightingScene.date.GameManager.Player.Attack += FightingScene.date.GameManager.Player.InventoryList[id].AddedATK;
+                                    //show items in labels
+                                    ShowEquippedItems();
+                                }
+                                else MessageBox.Show("You cannot equip items from another class.");
+
                             }
                             else MessageBox.Show($"Your level is too low for this item. Your level is{FightingScene.date.GameManager.Player.Level}");
 
@@ -189,27 +200,32 @@ namespace JocRPG
                         case "Weapon(1H)": // for 1h weapons
                                            //level check
                             if (FightingScene.date.GameManager.Player.Level >= FightingScene.date.GameManager.Player.InventoryList[id].RequiredLevel)
-                            {
-                                //checks if an item is equipped in that slot
-                                if (FightingScene.date.GameManager.Player.Equipment["Main"] != 0)
-                                    if (MessageBox.Show("Atentie itemele deja echipate vor fi date jos. Doriti sa continuati", "Atention", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                                        break;
-                                    else
-                                    {
-                                        int curentId = FightingScene.date.GameManager.Player.Equipment["Main"];
-                                        FightingScene.date.GameManager.Player.Attack -= FightingScene.date.GameManager.Player.InventoryList[curentId].AddedATK;
-                                    }
+                            {//class check
+                                if (FightingScene.date.GameManager.Player.InventoryList[id].ItemClass == FightingScene.date.GameManager.Player.PlayerClass)
+                                {
+                                    //checks if an item is equipped in that slot
+                                    if (FightingScene.date.GameManager.Player.Equipment["Main"] != 0)
+                                        if (MessageBox.Show("Atentie itemele deja echipate vor fi date jos. Doriti sa continuati", "Atention", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                                            break;
+                                        else
+                                        {
+                                            int curentId = FightingScene.date.GameManager.Player.Equipment["Main"];
+                                            FightingScene.date.GameManager.Player.Attack -= FightingScene.date.GameManager.Player.InventoryList[curentId].AddedATK;
+                                        }
 
-                                //equippes the item
-                                // if ids are similar desequipes the offhand 
-                                if (FightingScene.date.GameManager.Player.Equipment["OffHand"] == FightingScene.date.GameManager.Player.Equipment["Main"])
-                                    FightingScene.date.GameManager.Player.Equipment["OffHand"] = 0;
+                                    //equippes the item
+                                    // if ids are similar desequipes the offhand 
+                                    if (FightingScene.date.GameManager.Player.Equipment["OffHand"] == FightingScene.date.GameManager.Player.Equipment["Main"])
+                                        FightingScene.date.GameManager.Player.Equipment["OffHand"] = 0;
 
-                                FightingScene.date.GameManager.Player.Equipment["Main"] = id;
-                                //changes stats addedMXH;addedATK;addedSTR;addedDEX;addedSPD;addedDEF;
-                                FightingScene.date.GameManager.Player.Attack += FightingScene.date.GameManager.Player.InventoryList[id].AddedATK;
-                                //show items in labels
-                                ShowEquippedItems();
+                                    FightingScene.date.GameManager.Player.Equipment["Main"] = id;
+                                    //changes stats addedMXH;addedATK;addedSTR;addedDEX;addedSPD;addedDEF;
+                                    FightingScene.date.GameManager.Player.Attack += FightingScene.date.GameManager.Player.InventoryList[id].AddedATK;
+                                    //show items in labels
+                                    ShowEquippedItems();
+                                }
+                                else MessageBox.Show("You cannot equip items from another class.");
+
                             }
                             else MessageBox.Show("Your level is too low for this item");
 
@@ -217,25 +233,30 @@ namespace JocRPG
                         case "OffHand": // for offhands
                                         //level check
                             if (FightingScene.date.GameManager.Player.Level >= FightingScene.date.GameManager.Player.InventoryList[id].RequiredLevel)
-                            {
-                                //checks if an item is equipped in that slot
-                                if (FightingScene.date.GameManager.Player.Equipment["OffHand"] != 0)
-                                    if (MessageBox.Show("Atentie itemele deja echipate vor fi date jos. Doriti sa continuati", "Atention", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                                        break;
-                                    else
-                                    {
-                                        int curentId = FightingScene.date.GameManager.Player.Equipment["OffHand"];
-                                        FightingScene.date.GameManager.Player.AddedDEF -= FightingScene.date.GameManager.Player.InventoryList[curentId].AddedDEF;
-                                    }
-                                //equippes the item
-                                if (FightingScene.date.GameManager.Player.Equipment["OffHand"] == FightingScene.date.GameManager.Player.Equipment["Main"])
-                                    FightingScene.date.GameManager.Player.Equipment["Main"] = 0;
+                            {//class check
+                                if (FightingScene.date.GameManager.Player.InventoryList[id].ItemClass == FightingScene.date.GameManager.Player.PlayerClass)
+                                {
+                                    //checks if an item is equipped in that slot
+                                    if (FightingScene.date.GameManager.Player.Equipment["OffHand"] != 0)
+                                        if (MessageBox.Show("Atentie itemele deja echipate vor fi date jos. Doriti sa continuati", "Atention", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                                            break;
+                                        else
+                                        {
+                                            int curentId = FightingScene.date.GameManager.Player.Equipment["OffHand"];
+                                            FightingScene.date.GameManager.Player.AddedDEF -= FightingScene.date.GameManager.Player.InventoryList[curentId].AddedDEF;
+                                        }
+                                    //equippes the item
+                                    if (FightingScene.date.GameManager.Player.Equipment["OffHand"] == FightingScene.date.GameManager.Player.Equipment["Main"])
+                                        FightingScene.date.GameManager.Player.Equipment["Main"] = 0;
 
-                                FightingScene.date.GameManager.Player.Equipment["OffHand"] = id;
-                                //changes stats addedMXH;addedATK;addedSTR;addedDEX;addedSPD;addedDEF;
-                                FightingScene.date.GameManager.Player.AddedDEF += FightingScene.date.GameManager.Player.InventoryList[id].AddedDEF;
-                                //show items in labels
-                                ShowEquippedItems();
+                                    FightingScene.date.GameManager.Player.Equipment["OffHand"] = id;
+                                    //changes stats addedMXH;addedATK;addedSTR;addedDEX;addedSPD;addedDEF;
+                                    FightingScene.date.GameManager.Player.AddedDEF += FightingScene.date.GameManager.Player.InventoryList[id].AddedDEF;
+                                    //show items in labels
+                                    ShowEquippedItems();
+                                }
+                                else MessageBox.Show("You cannot equip items from another class.");
+
                             }
                             else MessageBox.Show("Your level is too low for this item");
                             break;

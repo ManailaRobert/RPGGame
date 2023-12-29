@@ -16,7 +16,6 @@
 itemClass = Armor,Weapon(1H),Weapon(2H),OffHand
 
 type = HeadGear,ChestPiece,Leggings,Boots,Sword/GreatSword(2H)/Bow(2)/Axe(2H),Shield(OffHand)
-
 -----------------------------------------------------------------------------
 #Database:
 
@@ -27,10 +26,11 @@ type = HeadGear,ChestPiece,Leggings,Boots,Sword/GreatSword(2H)/Bow(2)/Axe(2H),Sh
 - shop list? ->items
 
 -----------------------------------------------------------------------------
-#To do list:
+#To do to present:
+-add buy potion feature
+-make the potion give a percentage of the max hp as health
 
-2.Add Class Selector, start window, save progress (maybe multiple saves; select slot -> check if empty =>yes:class selection->start;no:overwrite(yes:make inventory 0 and shop default/no:stop))
-  
+#To do list long run:
 3.add kill counter
 4.save file -> saving player data (instantiate the player entity from GameManager in createPlayer class with the details from save file)
 5.make a database
@@ -46,3 +46,36 @@ post release:
 ~Cand introduc clasele:
 - pentru jucator> formula costuri (stat - stat de clasa) / modifier +1 ;
 - in stats sa fie max stats ptr fiecare clasa
+
+
+#Dummy code 
+In btn start click event: 
+gameManager.LoadInventoryList(); (after create enemy)
+In gamemanager:
+        //Load and Save Inventory
+        public void LoadInventoryList()
+        {
+            StreamReader In = new StreamReader(@"..\..\Resources\Inventory.txt");
+            int numberItems = Convert.ToInt32(In.ReadLine());
+            if(numberItems > 0)
+            for (int i = 0; i < numberItems; i++)
+            {
+                string line = In.ReadLine();
+                string[] arr1 = line.Split(';');
+                Item item = new Item(arr1[1], arr1[2], arr1[3], Convert.ToInt32(arr1[4]), Convert.ToInt32(arr1[5]), arr1[6], Convert.ToInt32(arr1[7]), Convert.ToInt32(arr1[8]), Convert.ToInt32(arr1[9]));
+                FightingScene.date.GameManager.Player.InventoryList.Add(Convert.ToInt32(arr1[0]), item);
+            }
+            In.Close();
+        }
+        public void SaveInventoryList()
+        {
+            StreamWriter Out = new StreamWriter(@"..\..\Resources\Inventory.txt");
+            Out.WriteLine(FightingScene.date.GameManager.Player.InventoryList.Count);
+            foreach (var item in FightingScene.date.GameManager.Player.InventoryList)
+            {
+                //id,name,type,quantity,price,availableClass,requirementStat,requirement,addedMXH,addedATK,addedSTR,addedDEX,addedSPD,addedDEF
+                Out.WriteLine($"{item.Key};{item.Value.Name};{item.Value.ItemClass};{item.Value.ItemType};{item.Value.Quantity};{item.Value.Price};{item.Value.AvailableClass};{item.Value.AddedATK};{item.Value.AddedDEF}");
+            }
+
+            Out.Close();
+        }

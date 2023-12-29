@@ -22,38 +22,67 @@ namespace JocRPG
             InitializeComponent();
             date = this;
         }
-        private void BTN_Start_Click(object sender, EventArgs e)
+        private void InitializeGame()
         {
-            PB_Player.Visible= true;    
-            PB_Enemy.Visible= true;
-            BTN_Heal.Visible= true; 
-            BTN_Inventory.Visible= true;    
-            BTN_EnemyTurn.Visible= true; 
-            BTN_Stats.Visible= true;
-            BTN_Attack.Visible= true;   
-            BTN_Block.Visible= true;    
-            BTN_Counter.Visible= true;  
-            BTN_Dodge.Visible= true;  
-            BTN_Shop.Visible= true;
-            LB_Action.Visible= true;
-            LB_HPE.Visible= true;
-            LB_HPP.Visible= true;    
+            //game window
+            PB_Player.Visible = true;
+            PB_Enemy.Visible = true;
+            BTN_Heal.Visible = true;
+            BTN_Inventory.Visible = true;
+            BTN_EnemyTurn.Visible = true;
+            BTN_Stats.Visible = true;
+            BTN_Attack.Visible = true;
+            BTN_Block.Visible = true;
+            BTN_Counter.Visible = true;
+            BTN_Dodge.Visible = true;
+            BTN_Shop.Visible = true;
+            LB_Action.Visible = true;
+            LB_HPE.Visible = true;
+            LB_HPP.Visible = true;
             LB_NameP.Visible = true;
-            LB_NumeE.Visible= true;
+            LB_NumeE.Visible = true;
             BTN_StartGame.Visible = false;
 
-            Inventory inventory = new Inventory();
-            gameManager.CreatePlayer();
-            gameManager.CreateEnemy();
-            gameManager.LoadInventoryList();
-            gameManager.changeImg(this);
+            //hide classes
 
-            gameManager.UpdateHealthP(this);
-            gameManager.UpdateHealthE(this);
-            gameManager.UpdateLevelE(this);
-            gameManager.UpdateLevelP(this);
-            LB_Action.Items.Add("Turn " + gameManager.Turn);
-            LB_Action.Items.Add("Player Turn");
+            LB_Classes.Visible = false; 
+            LB_NameSelector.Visible = false;
+            TB_Name.Visible = false;    
+            RB_Archer.Visible = false;
+            RB_Barbarian.Visible = false;
+            RB_Knight.Visible = false;
+            
+        }
+        private void BTN_Start_Click(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(TB_Name.Text) != true)
+            {
+                string Name = TB_Name.Text;
+                string Class = "Knight";
+
+                if (RB_Knight.Checked == true)
+                    Class = "Knight";
+                if (RB_Barbarian.Checked == true)
+                    Class = "Barbarian";
+                if (RB_Archer.Checked == true)
+                    Class = "Archer";
+                gameManager.CreatePlayer(Name,Class);
+                InitializeGame();
+                gameManager.CreateEnemy();
+                
+                gameManager.changeImg(this);
+
+                gameManager.UpdateHealthP(this);
+                gameManager.UpdateHealthE(this);
+                gameManager.UpdateLevelE(this);
+                gameManager.UpdateLevelP(this);
+                LB_Action.Items.Add("Turn " + gameManager.Turn);
+                LB_Action.Items.Add("Player Turn");
+            }
+            else
+                MessageBox.Show("Please name your character");
+            
         }
        
         // BTN MouseHover and Leave
@@ -289,6 +318,15 @@ namespace JocRPG
             foreach (var item in gameManager.Player.InventoryList)//id,name,type,quantity,price,availableClass,requirementStat,requirement,addedMXH,addedATK,addedSTR,addedDEX,addedSPD,addedDEF
                 Out.WriteLine($"{item.Key};{item.Value.Name};{item.Value.ItemClass};{item.Value.ItemType};{item.Value.Quantity};{item.Value.Price};{item.Value.AvailableClass};{item.Value.RequiredLevel};{item.Value.AddedATK};{item.Value.AddedDEF}");
             Out.Close();
+        }
+
+        private void BTN_Saves_Click(object sender, EventArgs e)
+        {
+            //curent width = 857; height = 368;
+            if (this.Height != 500)
+                this.Height = 500;
+            else
+                this.Height = 368;
         }
     }
 }

@@ -25,6 +25,20 @@ namespace JocRPG
         private int statPoints;//just player
         private int potions;
         private int money;
+
+        //this.name = name;
+            //this.health = health;
+            //this.max_health = max_health;
+            //this.attack = attack;
+            //this.strength = strength;
+            //this.dexterity = dexterity;
+            //this.speed = speed;
+            //this.defence = defence;
+            //this.level = level;
+            //this.xp_points= xppoints;
+            //this.statPoints = statPoints;
+            //this.potions = potions;
+            //this.money= money;
        
 
         private Dictionary<int, Item> inventoryList = new Dictionary<int, Item>();
@@ -73,12 +87,12 @@ namespace JocRPG
             this.level = level;
             this.attack = attack;
             this.name = name;
-            
         }
         //Player
-        public Entity(string name, int max_health, int health,  int attack, int strength, int dexterity, int defence,int speed,  int level,int xppoints, int statPoints, int potions, int money)
+        public Entity(string name,string playerClass, int max_health, int health,  int attack, int strength, int dexterity, int defence,int speed,  int level,int xppoints, int statPoints, int potions, int money)
         {
             this.name = name;
+            this.playerClass = playerClass;
             this.health = health;
             this.max_health = max_health;
             this.attack = attack;

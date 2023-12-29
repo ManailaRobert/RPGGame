@@ -12,33 +12,69 @@ namespace JocRPG
 {
     internal class GameManager
     {
-        public Entity Player = new Entity("S", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0);//Name,Max_Hp,HP,ATK,STR,DEX,DEF,SPD,LVL,XPPoints,StatPts,Potions
+        public Entity Player = new Entity("Default","Default", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0);//Name,Max_Hp,HP,ATK,STR,DEX,DEF,SPD,LVL,XPPoints,StatPts,Potions
         public Entity Enemy = new Entity("Nume","Type", 20, 20, 1, 1); //string name, int health, int max_health, int level, int attack
 
         Dictionary<int, Item> inventoryItemList = new Dictionary<int, Item>();
-
+        public int killCounter = 0;
         public int Turn = 1;
 
         internal Dictionary<int, Item> InventoryItemList { get => inventoryItemList; set => inventoryItemList = value; }
 
         //Player creater
-        public void CreatePlayer()
+        public void CreatePlayer(string Name,string Class)
         {
-            Player.Name = "Robert";
-            Player.MaxHealth = 5000;
-            Player.Health = Player.MaxHealth;
-            Player.Attack = 3000;
-            Player.Strength = 70;
-            Player.Dexterity = 30;
-            Player.Speed = 30;
-            Player.Defence = 149;// 3 points = 1%
-            Player.Level = 90;
-            Player.StatPoints = 50000;
-            Player.Potions = 30;
-            Player.Money = 999999;
+            Player.Name = Name;
 
-            Player.AddedDEF = 0;
+            Player.PlayerClass = Class;
+            switch(Class)
+            {
+                case "Knight":
+                    Player.MaxHealth = 25;
+                    Player.Health = Player.MaxHealth;
+                    Player.Attack = 3;
+                    Player.Strength = 3; // max 70
+                    Player.Dexterity = 2;// max 50:
+                    Player.Speed = 1; // max 50:
+                    Player.Defence = 4;// max 210: 3 points = 1%
+                    Player.Level = 1; // max 90
+                    Player.StatPoints = 0;
+                    Player.Potions = 4;
+                    Player.Money = 0;
 
+                    Player.AddedDEF = 0;
+                    break;
+                case "Barbarian":
+                    Player.MaxHealth = 15;
+                    Player.Health = Player.MaxHealth;
+                    Player.Attack = 5;
+                    Player.Strength = 3; // max 70
+                    Player.Dexterity = 2;// max 50:
+                    Player.Speed = 1; // max 50:
+                    Player.Defence = 4;// max 210: 3 points = 1%
+                    Player.Level = 1; // max 90
+                    Player.StatPoints = 0;
+                    Player.Potions = 2;
+                    Player.Money = 0;
+
+                    Player.AddedDEF = 0;
+                    break;
+                case "Archer":
+                    Player.MaxHealth = 17;
+                    Player.Health = Player.MaxHealth;
+                    Player.Attack = 3;
+                    Player.Strength = 2; // max 70
+                    Player.Dexterity = 3;// max 50:
+                    Player.Speed = 1; // max 50:
+                    Player.Defence = 2;// max 210: 3 points = 1%
+                    Player.Level = 1; // max 90
+                    Player.StatPoints = 0;
+                    Player.Potions = 5;
+                    Player.Money = 0;
+
+                    Player.AddedDEF = 0;
+                    break;
+            }
         }
         // Enemy creater
         public void CreateEnemy()
@@ -76,33 +112,7 @@ namespace JocRPG
                     break;
             }
         }
-        //Load and Save Inventory
-        public void LoadInventoryList()
-        {
-            StreamReader In = new StreamReader(@"..\..\Resources\Inventory.txt");
-            int numberItems = Convert.ToInt32(In.ReadLine());
-            if(numberItems > 0)
-            for (int i = 0; i < numberItems; i++)
-            {
-                string line = In.ReadLine();
-                string[] arr1 = line.Split(';');
-                Item item = new Item(arr1[1], arr1[2], arr1[3], Convert.ToInt32(arr1[4]), Convert.ToInt32(arr1[5]), arr1[6], Convert.ToInt32(arr1[7]), Convert.ToInt32(arr1[8]), Convert.ToInt32(arr1[9]));
-                FightingScene.date.GameManager.Player.InventoryList.Add(Convert.ToInt32(arr1[0]), item);
-            }
-            In.Close();
-        }
-        public void SaveInventoryList()
-        {
-            StreamWriter Out = new StreamWriter(@"..\..\Resources\Inventory.txt");
-            Out.WriteLine(FightingScene.date.GameManager.Player.InventoryList.Count);
-            foreach (var item in FightingScene.date.GameManager.Player.InventoryList)
-            {
-                //id,name,type,quantity,price,availableClass,requirementStat,requirement,addedMXH,addedATK,addedSTR,addedDEX,addedSPD,addedDEF
-                Out.WriteLine($"{item.Key};{item.Value.Name};{item.Value.ItemClass};{item.Value.ItemType};{item.Value.Quantity};{item.Value.Price};{item.Value.AvailableClass};{item.Value.AddedATK};{item.Value.AddedDEF}");
-            }
 
-            Out.Close();
-        }
         //Health updates
         public void UpdateHealthP(FightingScene form1)
         {
@@ -120,7 +130,7 @@ namespace JocRPG
         //LVL updates
         public void UpdateLevelP(FightingScene form1)
         {
-            form1.LB_NameP.Text = "LVL " + Player.Level.ToString() + " " + Player.Name.ToString() + " ( XP: " + Player.XPPoints + "/" + Player.Level * 10 + " )";
+            form1.LB_NameP.Text = $"LVL {Player.Level.ToString()} {Player.Name.ToString()} (XP: {Player.XPPoints}/{Player.Level *10})";
         }
         public void UpdateLevelE(FightingScene form1)
         {

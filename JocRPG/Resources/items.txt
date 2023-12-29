@@ -4,7 +4,7 @@
 3;Normal Bow;Weapon(2H);Bow(2H);297;4;Archer;1;14;0
 4;Red Sword;Weapon(1H);Sword;498;5;Barbarian;3;3;0
 5;Great Axe;Weapon(2H);Axe(2H);398;10;Barbarian;10;5;0
-6;Shield;OffHand;Shield;398;10;Knight;10;0;10
+6;Shield;OffHand;Shield;396;10;Knight;10;0;10
 7;Leather ChestPlate;Armor;ChestPiece;298;6;Knight;3;0;12
 8;Coif;Armor;HeadGear;298;6;Knight;2;0;3
 9;Leather Leggings;Armor;Leggings;298;6;Knight;1;0;4

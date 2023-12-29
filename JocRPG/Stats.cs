@@ -90,7 +90,7 @@ namespace JocRPG
 
             if (Convert.ToInt32(LB_STR.Text) >= 70)
             {
-                BTN_DEF_P.Enabled = false;
+                BTN_STR_P.Enabled = false;
             }
 
         }
@@ -139,6 +139,7 @@ namespace JocRPG
             {
                 BTN_DEF_P.Enabled = false;
             }
+
         }
        //Verifing if points have been added
         private void VerifyPointsAdded()
@@ -191,7 +192,11 @@ namespace JocRPG
        
         private void SaveStats()
         {
-            FightingScene.date.GameManager.Player.Defence = Convert.ToInt32(LB_DEF.Text) - FightingScene.date.GameManager.Player.AddedDEF;
+            FightingScene.date.GameManager.Player.MaxHealth = Convert.ToInt32(LB_MaxHealth.Text);
+            FightingScene.date.GameManager.Player.Strength = Convert.ToInt32(LB_STR.Text);
+            FightingScene.date.GameManager.Player.Dexterity = Convert.ToInt32(LB_DEX.Text);
+            FightingScene.date.GameManager.Player.Speed = Convert.ToInt32(LB_SPD.Text);
+            FightingScene.date.GameManager.Player.Defence = Convert.ToInt32(LB_DEF.Text);
             FightingScene.date.GameManager.Player.StatPoints = Convert.ToInt32(LB_STP.Text);
         }
 
