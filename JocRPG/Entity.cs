@@ -26,21 +26,6 @@ namespace JocRPG
         private int potions;
         private int money;
 
-        //this.name = name;
-            //this.health = health;
-            //this.max_health = max_health;
-            //this.attack = attack;
-            //this.strength = strength;
-            //this.dexterity = dexterity;
-            //this.speed = speed;
-            //this.defence = defence;
-            //this.level = level;
-            //this.xp_points= xppoints;
-            //this.statPoints = statPoints;
-            //this.potions = potions;
-            //this.money= money;
-       
-
         private Dictionary<int, Item> inventoryList = new Dictionary<int, Item>();
         private Dictionary<string,int> equipment = new Dictionary<string,int>();
 
@@ -64,6 +49,7 @@ namespace JocRPG
         public int Money { get => money; set => money = value; }
         public string Type { get => type; set => type = value; }
         public string PlayerClass { get => playerClass; set=> playerClass=value; }
+
         public Dictionary<int, Item> InventoryList { get => inventoryList; set => inventoryList = value; }
         public Dictionary<string, int> Equipment { get => equipment; set => equipment = value; }
         //Creates equipment elements
