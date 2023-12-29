@@ -76,6 +76,7 @@
     <Compile Include="Entity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Resources\Avatar.jpeg" />
     <EmbeddedResource Include="FightingScene.resx">
       <DependentUpon>FightingScene.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,1 +1,2 @@
-0
+1
+3;Normal Bow;Weapon(2H);Bow(2H);290;4;Archer;1;14;0

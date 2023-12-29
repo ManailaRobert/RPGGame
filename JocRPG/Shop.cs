@@ -42,7 +42,7 @@ namespace JocRPG
                     TB_Detalii.Text = $"" +
                         $"\t{shopList[id].Name}" + Environment.NewLine +
                         $"Type: {shopList[id].ItemType}" + Environment.NewLine +
-                        $"Pret: {shopList[id].Price}" + Environment.NewLine +
+                        $"Price: {shopList[id].Price}" + Environment.NewLine +
                         $"Quantity: {shopList[id].Quantity}" + Environment.NewLine +
                         $"Class: {shopList[id].AvailableClass} " + Environment.NewLine +
                         $"Required Level: {shopList[id].RequiredLevel}" + Environment.NewLine;
@@ -110,7 +110,7 @@ namespace JocRPG
                         {
                             FightingScene.date.GameManager.Player.Money -= shopList[id].Price;
                             LB_Bani.Text = FightingScene.date.GameManager.Player.Money.ToString();
-                            LB_Bani.Text = "Bani: " + FightingScene.date.GameManager.Player.Money.ToString();
+                            LB_Bani.Text = "Money: " + FightingScene.date.GameManager.Player.Money.ToString();
                             shopList[id].Quantity--;
                             UpdateDetalii();
                             FightingScene.date.GameManager.Player.InventoryList.Add(id, shopList[id]);// adaugare item cumparat in inventar

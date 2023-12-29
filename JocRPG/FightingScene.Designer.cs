@@ -192,8 +192,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(93, 164);
+            this.label1.Location = new System.Drawing.Point(93, 182);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 13);
             this.label1.TabIndex = 14;
@@ -203,7 +204,7 @@
             // 
             this.LB_HPP.AutoSize = true;
             this.LB_HPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.LB_HPP.Location = new System.Drawing.Point(15, 186);
+            this.LB_HPP.Location = new System.Drawing.Point(15, 194);
             this.LB_HPP.Name = "LB_HPP";
             this.LB_HPP.Size = new System.Drawing.Size(31, 17);
             this.LB_HPP.TabIndex = 16;
@@ -334,7 +335,7 @@
             this.GB_Actions.Controls.Add(this.BTN_Shop);
             this.GB_Actions.Controls.Add(this.BTN_Heal);
             this.GB_Actions.Controls.Add(this.BTN_Counter);
-            this.GB_Actions.Location = new System.Drawing.Point(22, 209);
+            this.GB_Actions.Location = new System.Drawing.Point(22, 214);
             this.GB_Actions.Name = "GB_Actions";
             this.GB_Actions.Size = new System.Drawing.Size(821, 109);
             this.GB_Actions.TabIndex = 31;
@@ -357,7 +358,6 @@
             // GB_Game
             // 
             this.GB_Game.Controls.Add(this.LB_Action);
-            this.GB_Game.Controls.Add(this.PB_Player);
             this.GB_Game.Controls.Add(this.GB_Actions);
             this.GB_Game.Controls.Add(this.LB_HPE);
             this.GB_Game.Controls.Add(this.PB_Enemy);
@@ -365,7 +365,8 @@
             this.GB_Game.Controls.Add(this.LB_NumeE);
             this.GB_Game.Controls.Add(this.label1);
             this.GB_Game.Controls.Add(this.LB_NameP);
-            this.GB_Game.Location = new System.Drawing.Point(12, 3);
+            this.GB_Game.Controls.Add(this.PB_Player);
+            this.GB_Game.Location = new System.Drawing.Point(12, 12);
             this.GB_Game.Name = "GB_Game";
             this.GB_Game.Size = new System.Drawing.Size(859, 329);
             this.GB_Game.TabIndex = 33;
@@ -383,7 +384,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FightingScene";
             this.Text = "RPG_Game";
-            this.MaximumSizeChanged += new System.EventHandler(this.FightingScene_MaximumSizeChanged);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FightingScene_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.PB_Player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Enemy)).EndInit();

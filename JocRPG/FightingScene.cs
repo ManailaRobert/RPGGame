@@ -47,7 +47,7 @@ namespace JocRPG
                 gameManager.CreateEnemy();
                 
                 gameManager.changeImg(this);
-
+                PB_Player.ImageLocation = "..\\..\\Resources\\Avatar.jpeg";
                 gameManager.UpdateHealthP(this);
                 gameManager.UpdateHealthE(this);
                 gameManager.UpdateLevelE(this);
@@ -305,10 +305,5 @@ namespace JocRPG
                 this.Height = 368;
         }
 
-        private void FightingScene_MaximumSizeChanged(object sender, EventArgs e)
-        {
-            this.Width = 896;
-            this.Height = 379;
-        }
     }
 }

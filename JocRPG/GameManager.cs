@@ -32,7 +32,7 @@ namespace JocRPG
                 case "Knight":
                     Player.MaxHealth = 25;
                     Player.Health = Player.MaxHealth;
-                    Player.Attack = 3;
+                    Player.Attack = 5;
                     Player.Strength = 3; // max 70
                     Player.Dexterity = 2;// max 50:
                     Player.Speed = 1; // max 50:
@@ -48,7 +48,7 @@ namespace JocRPG
                 case "Barbarian":
                     Player.MaxHealth = 15;
                     Player.Health = Player.MaxHealth;
-                    Player.Attack = 5;
+                    Player.Attack = 7;
                     Player.Strength = 3; // max 70
                     Player.Dexterity = 2;// max 50:
                     Player.Speed = 1; // max 50:
@@ -64,7 +64,7 @@ namespace JocRPG
                 case "Archer":
                     Player.MaxHealth = 17;
                     Player.Health = Player.MaxHealth;
-                    Player.Attack = 3;
+                    Player.Attack = 5;
                     Player.Strength = 2; // max 70
                     Player.Dexterity = 3;// max 50:
                     Player.Speed = 1; // max 50:
@@ -92,7 +92,7 @@ namespace JocRPG
                     Enemy.MaxHealth = 14 + (Player.Level * 2);
                     Enemy.Health = Enemy.MaxHealth;
                     Enemy.Level = Player.Level;
-                    Enemy.Attack = 4 + (Player.Level * 2);
+                    Enemy.Attack = 2 + (Player.Level * 2);
                     break;
 
                 case 2: //assets not made
@@ -142,12 +142,14 @@ namespace JocRPG
         //Enemy Turn
         public void EnemyTurn(FightingScene form1, string move)
         {
-            int attack1 = Convert.ToInt32(Enemy.Attack * (Convert.ToDouble((Player.Defence+Player.AddedDEF) / 3) / 100));//dmg taken formula: Enemy Attack * ( (PlayerDef/3)/100 ) -> percentage
-            int attack2 = Convert.ToInt32(Enemy.Attack*2 * (Convert.ToDouble((Player.Defence + Player.AddedDEF) / 3) / 100)); //amplified dmg 2X
-            int attack3 = Convert.ToInt32(Enemy.Attack/2 * (Convert.ToDouble((Player.Defence + Player.AddedDEF) / 3) / 100)); //half dmg given 
-           if(attack1 <1) attack1 = 1;
-           if(attack2 <1) attack2 = 1;
-           if(attack3 <1) attack3 = 1;
+            int playerDefence = Player.Defence + Player.AddedDEF;
+            //for exceding max stat
+            if (playerDefence > 210)
+                playerDefence = 210;
+            double defenceFormula = (Convert.ToDouble(playerDefence) / 300);// 3 points = 1% of 100%
+            int attack1 = Convert.ToInt32(Enemy.Attack - (Enemy.Attack * defenceFormula));//dmg taken formula: Enemy Attack * ( (PlayerDef/3)/100 ) -> percentage
+            int attack2 = Convert.ToInt32(Enemy.Attack*2 - (Enemy.Attack * defenceFormula)); //amplified dmg 2X
+            int attack3 = Convert.ToInt32(Enemy.Attack/2 - (Enemy.Attack * defenceFormula)); //half dmg given 
             
             switch (move)
             {

@@ -75,22 +75,22 @@ namespace JocRPG
         {
             if(Convert.ToInt32(LB_DEX.Text)>=50)
             {
-                BTN_DEX_P.Enabled= false;
+                BTN_DEX_P.Visible= false;
             }
 
             if (Convert.ToInt32(LB_SPD.Text) >= 50)
             {
-                BTN_SPD_P.Enabled = false;
+                BTN_SPD_P.Visible = false;
             }
 
-            if(Convert.ToInt32(LB_DEF.Text)>=210) 
+            if(Convert.ToInt32(LB_DEF.Text)+Convert.ToInt32(FightingScene.date.GameManager.Player.AddedDEF) >=210) 
             {
-                BTN_DEF_P.Enabled = false;
+                BTN_DEF_P.Visible = false;
             }
 
             if (Convert.ToInt32(LB_STR.Text) >= 70)
             {
-                BTN_STR_P.Enabled = false;
+                BTN_STR_P.Visible = false;
             }
 
         }
@@ -146,47 +146,47 @@ namespace JocRPG
         {
             if (MXH_p != 0)
             {
-                BTN_MXH_M.Enabled = true;
+                BTN_MXH_M.Visible = true;
             }
             else
             {
-                BTN_MXH_M.Enabled = false;
+                BTN_MXH_M.Visible = false;
             }
 
             if (STR_p != 0)
             {
-                BTN_STR_M.Enabled = true;
+                BTN_STR_M.Visible = true;
             }
             else
             {
-                BTN_STR_M.Enabled = false;
+                BTN_STR_M.Visible = false;
             }
 
 
             if (DEX_p != 0)
             {
-                BTN_DEX_M.Enabled = true;
+                BTN_DEX_M.Visible = true;
             }
             else
             {
-                BTN_DEX_M.Enabled = false;
+                BTN_DEX_M.Visible = false;
             }
 
             if (SPD_p != 0)
             {
-                BTN_SPD_M.Enabled = true;
+                BTN_SPD_M.Visible = true;
             }
             else
             {
-                BTN_SPD_M.Enabled = false;
+                BTN_SPD_M.Visible = false;
             }
             if (DEF_p != 0)
             {
-                BTN_DEF_M.Enabled = true;
+                BTN_DEF_M.Visible = true;
             }
             else
             {
-                BTN_DEF_M.Enabled = false;
+                BTN_DEF_M.Visible = false;
             }
         }
        
@@ -218,7 +218,7 @@ namespace JocRPG
             //every 3 points cost +1
             if (Convert.ToInt32(LB_DEF.Text) / 3 == 0)
                 LB_Cost_DEF.Text = Convert.ToString(1);
-            else LB_Cost_DEF.Text = Convert.ToString(Convert.ToInt32(LB_DEF.Text) - FightingScene.date.GameManager.Player.AddedDEF / 3);
+            else LB_Cost_DEF.Text = Convert.ToString((Convert.ToInt32(LB_DEF.Text) - FightingScene.date.GameManager.Player.AddedDEF) / 3+1);
 
             // DEX,SPD fix; after 25 points the dex maxes out
      
@@ -247,7 +247,7 @@ namespace JocRPG
 
         private void Stats_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (BTN_MXH_M.Enabled == true || BTN_STR_M.Enabled == true || BTN_DEX_M.Enabled == true || BTN_SPD_M.Enabled == true || BTN_DEF_M.Enabled==true)
+            if (BTN_MXH_M.Visible == true || BTN_STR_M.Visible == true || BTN_DEX_M.Visible == true || BTN_SPD_M.Visible == true || BTN_DEF_M.Visible == true)
             {
                 DialogResult result;
                 result = MessageBox.Show("You have not saved the stats. Do you want to save?", "Save", MessageBoxButtons.YesNo);

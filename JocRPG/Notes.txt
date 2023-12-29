@@ -27,9 +27,7 @@ type = HeadGear,ChestPiece,Leggings,Boots,Sword/GreatSword(2H)/Bow(2)/Axe(2H),Sh
 
 -----------------------------------------------------------------------------
 #To do to present:
--add buy potion feature
--make the potion give a percentage of the max hp as health
--fix dmg taken by player in gamemanager.EnemyTurn
+
 
 #To do list long run:
 3.add kill counter
