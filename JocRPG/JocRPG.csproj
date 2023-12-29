@@ -59,7 +59,6 @@
       <DependentUpon>Inventory.cs</DependentUpon>
     </Compile>
     <Compile Include="Item.cs" />
-    <Content Include="Resources\Inventory.txt" />
     <Content Include="Resources\items.txt" />
     <Compile Include="Shop.cs">
       <SubType>Form</SubType>
