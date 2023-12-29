@@ -78,7 +78,7 @@ namespace JocRPG
                 gameManager.UpdateLevelE(this);
                 gameManager.UpdateLevelP(this);
                 LB_Action.Items.Add("Turn " + gameManager.Turn);
-                LB_Action.Items.Add("Player Turn");
+                LB_Action.Items.Add($"{gameManager.Player.Name} Turn");
             }
             else
                 MessageBox.Show("Please name your character");

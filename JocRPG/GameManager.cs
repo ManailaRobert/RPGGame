@@ -81,7 +81,6 @@ namespace JocRPG
         {
             var random = new Random();
             int Enemy_Number = random.Next(1, 1);
-            //EnemyLevel = Convert.ToInt32(kills / 2);
             switch (Enemy_Number)
             {
                 case 1:
@@ -90,10 +89,10 @@ namespace JocRPG
                     Enemy.MaxHealth = 14 + (Player.Level * 2);
                     Enemy.Health = Enemy.MaxHealth;
                     Enemy.Level = Player.Level;
-                    Enemy.Attack = 2 + (Player.Level * 2);
+                    Enemy.Attack = 4 + (Player.Level * 2);
                     break;
 
-                case 2:
+                case 2: //assets not made
                     Enemy.Name = "Orc";
                     Enemy.Type = "Orc";
                     Enemy.MaxHealth = 16 + (Player.Level * 2);
@@ -102,7 +101,7 @@ namespace JocRPG
                     Enemy.Attack = 2 + (Player.Level * 2);
                     break;
 
-                case 3:
+                case 3: // assets not made
                     Enemy.Name = "Orc King";
                     Enemy.Type = "Boss";
                     Enemy.MaxHealth = 20;
@@ -143,6 +142,10 @@ namespace JocRPG
             int attack1 = Convert.ToInt32(Enemy.Attack * (Convert.ToDouble((Player.Defence+Player.AddedDEF) / 3) / 100));//dmg taken formula: Enemy Attack * ( (PlayerDef/3)/100 ) -> percentage
             int attack2 = Convert.ToInt32(Enemy.Attack*2 * (Convert.ToDouble((Player.Defence + Player.AddedDEF) / 3) / 100)); //amplified dmg 2X
             int attack3 = Convert.ToInt32(Enemy.Attack/2 * (Convert.ToDouble((Player.Defence + Player.AddedDEF) / 3) / 100)); //half dmg given 
+           if(attack1 <1) attack1 = 1;
+           if(attack2 <1) attack2 = 1;
+           if(attack3 <1) attack3 = 1;
+            
             switch (move)
             {
                 case "Attack":
