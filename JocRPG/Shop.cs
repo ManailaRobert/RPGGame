@@ -87,10 +87,13 @@ namespace JocRPG
         //events
         private void Shop_Load(object sender, EventArgs e)
         {
-            LB_Bani.Text = "Bani: " + FightingScene.date.GameManager.Player.Money.ToString();
+            LB_Bani.Text = $"Money: {FightingScene.date.GameManager.Player.Money}";
             LoadShopListFromFile();
             UpdateList();
 
+            LB_HpPerPotion.Text = $"{FightingScene.date.GameManager.Player.HpPotion}";
+            LB_PotionUpgradeCost.Text = $"{FightingScene.date.GameManager.Player.HpPotion * 10}";
+            LB_PotionsCost.Text = $"5";
         }
         private void BTN_Cumparare_Click(object sender, EventArgs e)
         {
@@ -126,6 +129,55 @@ namespace JocRPG
         private void Shop_FormClosed(object sender, FormClosedEventArgs e)
         {
             SaveListOfItems();
+        }
+
+        private void TB_PotionNumber_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(TB_PotionNumber.Text) == false)
+                if (int.TryParse(TB_PotionNumber.Text, out int result) == true)
+                {
+                    int cost = Convert.ToInt32(TB_PotionNumber.Text) * Convert.ToInt32(LB_HpPerPotion.Text);
+                    LB_PotionsCost.Text = $"{cost}";
+                }
+                else MessageBox.Show("Please type a number.");
+            else TB_PotionNumber.Text = "1";
+        }
+
+        private void BTN_BuyPotions_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(TB_PotionNumber.Text, out int result) == true)
+            {
+                int cost = Convert.ToInt32(LB_PotionsCost.Text);
+                int potionNumber = Convert.ToInt32(TB_PotionNumber.Text);
+                if (potionNumber > 0)
+                    if (FightingScene.date.GameManager.Player.Money >= cost)
+                    {
+                        FightingScene.date.GameManager.Player.Potions += potionNumber;
+                        FightingScene.date.GameManager.Player.Money -= cost;
+                        LB_Bani.Text = $"Money: {FightingScene.date.GameManager.Player.Money}";
+                        if (potionNumber == 1) MessageBox.Show($"You bought {TB_PotionNumber.Text} potion.");
+                        else MessageBox.Show($"You bought {TB_PotionNumber.Text} potions.");
+                        TB_PotionNumber.Text = "1";
+                    }
+                    else MessageBox.Show($"You dont have enough money to but that many potions. You need {cost} and you have {FightingScene.date.GameManager.Player.Money}.");
+                else MessageBox.Show("You cannot but that many potions.");            
+            }
+        }
+
+        private void BTN_UpgradePotion_Click(object sender, EventArgs e)
+        {
+            int cost = Convert.ToInt32(LB_PotionUpgradeCost.Text);
+            if (FightingScene.date.GameManager.Player.Money >= cost)
+            {
+                //deduct money
+                FightingScene.date.GameManager.Player.Money -= cost;
+                LB_Bani.Text = $"Money: {FightingScene.date.GameManager.Player.Money}";
+                //change HP Gained
+                FightingScene.date.GameManager.Player.HpPotion += 5;
+                LB_PotionUpgradeCost.Text = $"{FightingScene.date.GameManager.Player.HpPotion * 10}";
+                LB_HpPerPotion.Text = $"{FightingScene.date.GameManager.Player.HpPotion}" ;
+            }
+            else MessageBox.Show("You dont have enough money to buy the upgrade to potions.");
         }
     }
 }

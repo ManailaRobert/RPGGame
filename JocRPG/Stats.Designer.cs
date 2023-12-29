@@ -65,7 +65,9 @@
             this.LB_Cost_DEF = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.LB_ATK = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // LB_Name
@@ -92,7 +94,7 @@
             // 
             this.LB_MaxHealth.AutoSize = true;
             this.LB_MaxHealth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_MaxHealth.Location = new System.Drawing.Point(62, 128);
+            this.LB_MaxHealth.Location = new System.Drawing.Point(54, 31);
             this.LB_MaxHealth.Name = "LB_MaxHealth";
             this.LB_MaxHealth.Size = new System.Drawing.Size(45, 20);
             this.LB_MaxHealth.TabIndex = 2;
@@ -102,7 +104,7 @@
             // 
             this.LB_STR.AutoSize = true;
             this.LB_STR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_STR.Location = new System.Drawing.Point(62, 159);
+            this.LB_STR.Location = new System.Drawing.Point(54, 62);
             this.LB_STR.Name = "LB_STR";
             this.LB_STR.Size = new System.Drawing.Size(41, 20);
             this.LB_STR.TabIndex = 3;
@@ -112,7 +114,7 @@
             // 
             this.LB_DEX.AutoSize = true;
             this.LB_DEX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_DEX.Location = new System.Drawing.Point(62, 190);
+            this.LB_DEX.Location = new System.Drawing.Point(54, 93);
             this.LB_DEX.Name = "LB_DEX";
             this.LB_DEX.Size = new System.Drawing.Size(43, 20);
             this.LB_DEX.TabIndex = 4;
@@ -122,7 +124,7 @@
             // 
             this.LB_SPD.AutoSize = true;
             this.LB_SPD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_SPD.Location = new System.Drawing.Point(62, 221);
+            this.LB_SPD.Location = new System.Drawing.Point(54, 124);
             this.LB_SPD.Name = "LB_SPD";
             this.LB_SPD.Size = new System.Drawing.Size(42, 20);
             this.LB_SPD.TabIndex = 5;
@@ -132,7 +134,7 @@
             // 
             this.LB_StatPoints.AutoSize = true;
             this.LB_StatPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_StatPoints.Location = new System.Drawing.Point(12, 314);
+            this.LB_StatPoints.Location = new System.Drawing.Point(4, 217);
             this.LB_StatPoints.Name = "LB_StatPoints";
             this.LB_StatPoints.Size = new System.Drawing.Size(154, 20);
             this.LB_StatPoints.TabIndex = 6;
@@ -142,7 +144,7 @@
             // 
             this.LB_STP.AutoSize = true;
             this.LB_STP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_STP.Location = new System.Drawing.Point(162, 314);
+            this.LB_STP.Location = new System.Drawing.Point(154, 217);
             this.LB_STP.Name = "LB_STP";
             this.LB_STP.Size = new System.Drawing.Size(99, 20);
             this.LB_STP.TabIndex = 13;
@@ -152,7 +154,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 221);
+            this.label2.Location = new System.Drawing.Point(3, 124);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 20);
             this.label2.TabIndex = 12;
@@ -162,7 +164,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 190);
+            this.label3.Location = new System.Drawing.Point(3, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 20);
             this.label3.TabIndex = 11;
@@ -172,7 +174,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(11, 159);
+            this.label4.Location = new System.Drawing.Point(3, 62);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 20);
             this.label4.TabIndex = 10;
@@ -182,7 +184,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 128);
+            this.label5.Location = new System.Drawing.Point(3, 31);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 20);
             this.label5.TabIndex = 9;
@@ -190,100 +192,109 @@
             // 
             // BTN_Save
             // 
+            this.BTN_Save.BackColor = System.Drawing.Color.White;
             this.BTN_Save.Enabled = false;
-            this.BTN_Save.Location = new System.Drawing.Point(91, 351);
+            this.BTN_Save.Location = new System.Drawing.Point(110, 252);
             this.BTN_Save.Name = "BTN_Save";
             this.BTN_Save.Size = new System.Drawing.Size(75, 23);
             this.BTN_Save.TabIndex = 14;
             this.BTN_Save.Text = "Save";
-            this.BTN_Save.UseVisualStyleBackColor = true;
+            this.BTN_Save.UseVisualStyleBackColor = false;
             this.BTN_Save.Click += new System.EventHandler(this.BTN_Save_Click);
             // 
             // BTN_MXH_M
             // 
-            this.BTN_MXH_M.Location = new System.Drawing.Point(205, 125);
+            this.BTN_MXH_M.BackColor = System.Drawing.Color.White;
+            this.BTN_MXH_M.Location = new System.Drawing.Point(197, 28);
             this.BTN_MXH_M.Name = "BTN_MXH_M";
             this.BTN_MXH_M.Size = new System.Drawing.Size(27, 23);
             this.BTN_MXH_M.TabIndex = 15;
             this.BTN_MXH_M.Text = "-";
-            this.BTN_MXH_M.UseVisualStyleBackColor = true;
+            this.BTN_MXH_M.UseVisualStyleBackColor = false;
             this.BTN_MXH_M.Visible = false;
             this.BTN_MXH_M.Click += new System.EventHandler(this.BTN_MXH_M_Click);
             // 
             // BTN_MXH_P
             // 
-            this.BTN_MXH_P.Location = new System.Drawing.Point(238, 125);
+            this.BTN_MXH_P.BackColor = System.Drawing.Color.White;
+            this.BTN_MXH_P.Location = new System.Drawing.Point(230, 28);
             this.BTN_MXH_P.Name = "BTN_MXH_P";
             this.BTN_MXH_P.Size = new System.Drawing.Size(27, 23);
             this.BTN_MXH_P.TabIndex = 16;
             this.BTN_MXH_P.Text = "+";
-            this.BTN_MXH_P.UseVisualStyleBackColor = true;
+            this.BTN_MXH_P.UseVisualStyleBackColor = false;
             this.BTN_MXH_P.Visible = false;
             this.BTN_MXH_P.Click += new System.EventHandler(this.BTN_MXH_P_Click);
             // 
             // BTN_STR_P
             // 
-            this.BTN_STR_P.Location = new System.Drawing.Point(238, 156);
+            this.BTN_STR_P.BackColor = System.Drawing.Color.White;
+            this.BTN_STR_P.Location = new System.Drawing.Point(230, 59);
             this.BTN_STR_P.Name = "BTN_STR_P";
             this.BTN_STR_P.Size = new System.Drawing.Size(27, 23);
             this.BTN_STR_P.TabIndex = 18;
             this.BTN_STR_P.Text = "+";
-            this.BTN_STR_P.UseVisualStyleBackColor = true;
+            this.BTN_STR_P.UseVisualStyleBackColor = false;
             this.BTN_STR_P.Visible = false;
             this.BTN_STR_P.Click += new System.EventHandler(this.BTN_STR_P_Click);
             // 
             // BTN_STR_M
             // 
-            this.BTN_STR_M.Location = new System.Drawing.Point(205, 156);
+            this.BTN_STR_M.BackColor = System.Drawing.Color.White;
+            this.BTN_STR_M.Location = new System.Drawing.Point(197, 59);
             this.BTN_STR_M.Name = "BTN_STR_M";
             this.BTN_STR_M.Size = new System.Drawing.Size(27, 23);
             this.BTN_STR_M.TabIndex = 17;
             this.BTN_STR_M.Text = "-";
-            this.BTN_STR_M.UseVisualStyleBackColor = true;
+            this.BTN_STR_M.UseVisualStyleBackColor = false;
             this.BTN_STR_M.Visible = false;
             this.BTN_STR_M.Click += new System.EventHandler(this.BTN_STR_M_Click);
             // 
             // BTN_DEX_P
             // 
-            this.BTN_DEX_P.Location = new System.Drawing.Point(238, 187);
+            this.BTN_DEX_P.BackColor = System.Drawing.Color.White;
+            this.BTN_DEX_P.Location = new System.Drawing.Point(230, 90);
             this.BTN_DEX_P.Name = "BTN_DEX_P";
             this.BTN_DEX_P.Size = new System.Drawing.Size(27, 23);
             this.BTN_DEX_P.TabIndex = 20;
             this.BTN_DEX_P.Text = "+";
-            this.BTN_DEX_P.UseVisualStyleBackColor = true;
+            this.BTN_DEX_P.UseVisualStyleBackColor = false;
             this.BTN_DEX_P.Visible = false;
             this.BTN_DEX_P.Click += new System.EventHandler(this.BTN_DEX_P_Click);
             // 
             // BTN_DEX_M
             // 
-            this.BTN_DEX_M.Location = new System.Drawing.Point(205, 187);
+            this.BTN_DEX_M.BackColor = System.Drawing.Color.White;
+            this.BTN_DEX_M.Location = new System.Drawing.Point(197, 90);
             this.BTN_DEX_M.Name = "BTN_DEX_M";
             this.BTN_DEX_M.Size = new System.Drawing.Size(27, 23);
             this.BTN_DEX_M.TabIndex = 19;
             this.BTN_DEX_M.Text = "-";
-            this.BTN_DEX_M.UseVisualStyleBackColor = true;
+            this.BTN_DEX_M.UseVisualStyleBackColor = false;
             this.BTN_DEX_M.Visible = false;
             this.BTN_DEX_M.Click += new System.EventHandler(this.BTN_DEX_M_Click);
             // 
             // BTN_SPD_P
             // 
-            this.BTN_SPD_P.Location = new System.Drawing.Point(238, 218);
+            this.BTN_SPD_P.BackColor = System.Drawing.Color.White;
+            this.BTN_SPD_P.Location = new System.Drawing.Point(230, 121);
             this.BTN_SPD_P.Name = "BTN_SPD_P";
             this.BTN_SPD_P.Size = new System.Drawing.Size(27, 23);
             this.BTN_SPD_P.TabIndex = 22;
             this.BTN_SPD_P.Text = "+";
-            this.BTN_SPD_P.UseVisualStyleBackColor = true;
+            this.BTN_SPD_P.UseVisualStyleBackColor = false;
             this.BTN_SPD_P.Visible = false;
             this.BTN_SPD_P.Click += new System.EventHandler(this.BTN_SPD_P_Click);
             // 
             // BTN_SPD_M
             // 
-            this.BTN_SPD_M.Location = new System.Drawing.Point(205, 218);
+            this.BTN_SPD_M.BackColor = System.Drawing.Color.White;
+            this.BTN_SPD_M.Location = new System.Drawing.Point(197, 121);
             this.BTN_SPD_M.Name = "BTN_SPD_M";
             this.BTN_SPD_M.Size = new System.Drawing.Size(27, 23);
             this.BTN_SPD_M.TabIndex = 21;
             this.BTN_SPD_M.Text = "-";
-            this.BTN_SPD_M.UseVisualStyleBackColor = true;
+            this.BTN_SPD_M.UseVisualStyleBackColor = false;
             this.BTN_SPD_M.Visible = false;
             this.BTN_SPD_M.Click += new System.EventHandler(this.BTN_SPD_M_Click);
             // 
@@ -298,7 +309,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(270, 92);
+            this.label1.Location = new System.Drawing.Point(257, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 13);
             this.label1.TabIndex = 24;
@@ -307,7 +318,7 @@
             // LB_Cost_MXH
             // 
             this.LB_Cost_MXH.AutoSize = true;
-            this.LB_Cost_MXH.Location = new System.Drawing.Point(280, 130);
+            this.LB_Cost_MXH.Location = new System.Drawing.Point(272, 33);
             this.LB_Cost_MXH.Name = "LB_Cost_MXH";
             this.LB_Cost_MXH.Size = new System.Drawing.Size(13, 13);
             this.LB_Cost_MXH.TabIndex = 25;
@@ -316,7 +327,7 @@
             // LB_Cost_STR
             // 
             this.LB_Cost_STR.AutoSize = true;
-            this.LB_Cost_STR.Location = new System.Drawing.Point(280, 161);
+            this.LB_Cost_STR.Location = new System.Drawing.Point(272, 64);
             this.LB_Cost_STR.Name = "LB_Cost_STR";
             this.LB_Cost_STR.Size = new System.Drawing.Size(13, 13);
             this.LB_Cost_STR.TabIndex = 26;
@@ -325,7 +336,7 @@
             // LB_Cost_DEX
             // 
             this.LB_Cost_DEX.AutoSize = true;
-            this.LB_Cost_DEX.Location = new System.Drawing.Point(280, 192);
+            this.LB_Cost_DEX.Location = new System.Drawing.Point(272, 95);
             this.LB_Cost_DEX.Name = "LB_Cost_DEX";
             this.LB_Cost_DEX.Size = new System.Drawing.Size(13, 13);
             this.LB_Cost_DEX.TabIndex = 27;
@@ -334,7 +345,7 @@
             // LB_Cost_SPD
             // 
             this.LB_Cost_SPD.AutoSize = true;
-            this.LB_Cost_SPD.Location = new System.Drawing.Point(280, 225);
+            this.LB_Cost_SPD.Location = new System.Drawing.Point(272, 128);
             this.LB_Cost_SPD.Name = "LB_Cost_SPD";
             this.LB_Cost_SPD.Size = new System.Drawing.Size(13, 13);
             this.LB_Cost_SPD.TabIndex = 28;
@@ -343,7 +354,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(115, 108);
+            this.label6.Location = new System.Drawing.Point(107, 11);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 13);
             this.label6.TabIndex = 29;
@@ -352,7 +363,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(46, 108);
+            this.label7.Location = new System.Drawing.Point(38, 11);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 13);
             this.label7.TabIndex = 34;
@@ -362,7 +373,7 @@
             // 
             this.LB_DEF.AutoSize = true;
             this.LB_DEF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_DEF.Location = new System.Drawing.Point(65, 254);
+            this.LB_DEF.Location = new System.Drawing.Point(57, 157);
             this.LB_DEF.Name = "LB_DEF";
             this.LB_DEF.Size = new System.Drawing.Size(42, 20);
             this.LB_DEF.TabIndex = 35;
@@ -372,7 +383,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(12, 254);
+            this.label9.Location = new System.Drawing.Point(4, 157);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 20);
             this.label9.TabIndex = 36;
@@ -381,7 +392,7 @@
             // LB_AddedDEF
             // 
             this.LB_AddedDEF.AutoSize = true;
-            this.LB_AddedDEF.Location = new System.Drawing.Point(150, 259);
+            this.LB_AddedDEF.Location = new System.Drawing.Point(142, 162);
             this.LB_AddedDEF.Name = "LB_AddedDEF";
             this.LB_AddedDEF.Size = new System.Drawing.Size(13, 13);
             this.LB_AddedDEF.TabIndex = 37;
@@ -389,30 +400,32 @@
             // 
             // BTN_DEF_M
             // 
-            this.BTN_DEF_M.Location = new System.Drawing.Point(205, 254);
+            this.BTN_DEF_M.BackColor = System.Drawing.Color.White;
+            this.BTN_DEF_M.Location = new System.Drawing.Point(197, 157);
             this.BTN_DEF_M.Name = "BTN_DEF_M";
             this.BTN_DEF_M.Size = new System.Drawing.Size(27, 23);
             this.BTN_DEF_M.TabIndex = 38;
             this.BTN_DEF_M.Text = "-";
-            this.BTN_DEF_M.UseVisualStyleBackColor = true;
+            this.BTN_DEF_M.UseVisualStyleBackColor = false;
             this.BTN_DEF_M.Visible = false;
             this.BTN_DEF_M.Click += new System.EventHandler(this.BTN_DEF_M_Click);
             // 
             // BTN_DEF_P
             // 
-            this.BTN_DEF_P.Location = new System.Drawing.Point(238, 254);
+            this.BTN_DEF_P.BackColor = System.Drawing.Color.White;
+            this.BTN_DEF_P.Location = new System.Drawing.Point(230, 157);
             this.BTN_DEF_P.Name = "BTN_DEF_P";
             this.BTN_DEF_P.Size = new System.Drawing.Size(27, 23);
             this.BTN_DEF_P.TabIndex = 39;
             this.BTN_DEF_P.Text = "+";
-            this.BTN_DEF_P.UseVisualStyleBackColor = true;
+            this.BTN_DEF_P.UseVisualStyleBackColor = false;
             this.BTN_DEF_P.Visible = false;
             this.BTN_DEF_P.Click += new System.EventHandler(this.BTN_DEF_P_Click);
             // 
             // LB_Cost_DEF
             // 
             this.LB_Cost_DEF.AutoSize = true;
-            this.LB_Cost_DEF.Location = new System.Drawing.Point(280, 259);
+            this.LB_Cost_DEF.Location = new System.Drawing.Point(272, 162);
             this.LB_Cost_DEF.Name = "LB_Cost_DEF";
             this.LB_Cost_DEF.Size = new System.Drawing.Size(13, 13);
             this.LB_Cost_DEF.TabIndex = 40;
@@ -422,7 +435,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(13, 285);
+            this.label8.Location = new System.Drawing.Point(5, 188);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(39, 20);
             this.label8.TabIndex = 41;
@@ -432,59 +445,73 @@
             // 
             this.LB_ATK.AutoSize = true;
             this.LB_ATK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_ATK.Location = new System.Drawing.Point(65, 285);
+            this.LB_ATK.Location = new System.Drawing.Point(57, 188);
             this.LB_ATK.Name = "LB_ATK";
             this.LB_ATK.Size = new System.Drawing.Size(39, 20);
             this.LB_ATK.TabIndex = 42;
             this.LB_ATK.Text = "ATK";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Silver;
+            this.groupBox1.Controls.Add(this.LB_ATK);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.LB_Cost_DEF);
+            this.groupBox1.Controls.Add(this.BTN_DEF_P);
+            this.groupBox1.Controls.Add(this.BTN_DEF_M);
+            this.groupBox1.Controls.Add(this.LB_AddedDEF);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.LB_DEF);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.LB_Cost_SPD);
+            this.groupBox1.Controls.Add(this.LB_Cost_DEX);
+            this.groupBox1.Controls.Add(this.LB_Cost_STR);
+            this.groupBox1.Controls.Add(this.LB_Cost_MXH);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.BTN_SPD_P);
+            this.groupBox1.Controls.Add(this.BTN_SPD_M);
+            this.groupBox1.Controls.Add(this.BTN_DEX_P);
+            this.groupBox1.Controls.Add(this.BTN_DEX_M);
+            this.groupBox1.Controls.Add(this.BTN_STR_P);
+            this.groupBox1.Controls.Add(this.BTN_STR_M);
+            this.groupBox1.Controls.Add(this.BTN_MXH_P);
+            this.groupBox1.Controls.Add(this.BTN_MXH_M);
+            this.groupBox1.Controls.Add(this.BTN_Save);
+            this.groupBox1.Controls.Add(this.LB_STP);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.LB_StatPoints);
+            this.groupBox1.Controls.Add(this.LB_SPD);
+            this.groupBox1.Controls.Add(this.LB_DEX);
+            this.groupBox1.Controls.Add(this.LB_STR);
+            this.groupBox1.Controls.Add(this.LB_MaxHealth);
+            this.groupBox1.Location = new System.Drawing.Point(8, 97);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(306, 292);
+            this.groupBox1.TabIndex = 43;
+            this.groupBox1.TabStop = false;
+            // 
             // Stats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 378);
-            this.Controls.Add(this.LB_ATK);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.LB_Cost_DEF);
-            this.Controls.Add(this.BTN_DEF_P);
-            this.Controls.Add(this.BTN_DEF_M);
-            this.Controls.Add(this.LB_AddedDEF);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.LB_DEF);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.LB_Cost_SPD);
-            this.Controls.Add(this.LB_Cost_DEX);
-            this.Controls.Add(this.LB_Cost_STR);
-            this.Controls.Add(this.LB_Cost_MXH);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(321, 399);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.BTN_SPD_P);
-            this.Controls.Add(this.BTN_SPD_M);
-            this.Controls.Add(this.BTN_DEX_P);
-            this.Controls.Add(this.BTN_DEX_M);
-            this.Controls.Add(this.BTN_STR_P);
-            this.Controls.Add(this.BTN_STR_M);
-            this.Controls.Add(this.BTN_MXH_P);
-            this.Controls.Add(this.BTN_MXH_M);
-            this.Controls.Add(this.BTN_Save);
-            this.Controls.Add(this.LB_STP);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.LB_StatPoints);
-            this.Controls.Add(this.LB_SPD);
-            this.Controls.Add(this.LB_DEX);
-            this.Controls.Add(this.LB_STR);
-            this.Controls.Add(this.LB_MaxHealth);
             this.Controls.Add(this.LB_Level);
             this.Controls.Add(this.LB_Name);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Stats";
             this.Text = "Stats";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Stats_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -529,5 +556,6 @@
         private System.Windows.Forms.Label LB_Cost_DEF;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label LB_ATK;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

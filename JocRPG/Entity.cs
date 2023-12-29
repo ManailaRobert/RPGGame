@@ -24,6 +24,7 @@ namespace JocRPG
         private int xp_points;
         private int statPoints;//just player
         private int potions;
+        private int hpPotion;
         private int money;
 
         private Dictionary<int, Item> inventoryList = new Dictionary<int, Item>();
@@ -52,6 +53,8 @@ namespace JocRPG
 
         public Dictionary<int, Item> InventoryList { get => inventoryList; set => inventoryList = value; }
         public Dictionary<string, int> Equipment { get => equipment; set => equipment = value; }
+        public int HpPotion { get => hpPotion; set => hpPotion = value; }
+
         //Creates equipment elements
         private void initializeEquipment()
         {
@@ -75,7 +78,7 @@ namespace JocRPG
             this.name = name;
         }
         //Player
-        public Entity(string name,string playerClass, int max_health, int health,  int attack, int strength, int dexterity, int defence,int speed,  int level,int xppoints, int statPoints, int potions, int money)
+        public Entity(string name,string playerClass, int max_health, int health,  int attack, int strength, int dexterity, int defence,int speed,  int level,int xppoints, int statPoints, int potions,int hpPotion, int money)
         {
             this.name = name;
             this.playerClass = playerClass;
@@ -90,6 +93,7 @@ namespace JocRPG
             this.xp_points= xppoints;
             this.statPoints = statPoints;
             this.potions = potions;
+            this.hpPotion = hpPotion;
             this.money= money;
             initializeEquipment();
         }

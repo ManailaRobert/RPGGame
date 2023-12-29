@@ -12,7 +12,7 @@ namespace JocRPG
 {
     internal class GameManager
     {
-        public Entity Player = new Entity("Default","Default", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0);//Name,Max_Hp,HP,ATK,STR,DEX,DEF,SPD,LVL,XPPoints,StatPts,Potions
+        public Entity Player = new Entity("Default","Default", 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0,0);//Name,Max_Hp,HP,ATK,STR,DEX,DEF,SPD,LVL,XPPoints,StatPts,Potions
         public Entity Enemy = new Entity("Nume","Type", 20, 20, 1, 1); //string name, int health, int max_health, int level, int attack
 
         Dictionary<int, Item> inventoryItemList = new Dictionary<int, Item>();
@@ -40,7 +40,8 @@ namespace JocRPG
                     Player.Level = 1; // max 90
                     Player.StatPoints = 0;
                     Player.Potions = 4;
-                    Player.Money = 0;
+                    Player.HpPotion = 5;
+                    Player.Money = 500;
 
                     Player.AddedDEF = 0;
                     break;
@@ -55,6 +56,7 @@ namespace JocRPG
                     Player.Level = 1; // max 90
                     Player.StatPoints = 0;
                     Player.Potions = 2;
+                    Player.HpPotion = 5;
                     Player.Money = 0;
 
                     Player.AddedDEF = 0;
@@ -70,6 +72,7 @@ namespace JocRPG
                     Player.Level = 1; // max 90
                     Player.StatPoints = 0;
                     Player.Potions = 5;
+                    Player.HpPotion = 6;
                     Player.Money = 0;
 
                     Player.AddedDEF = 0;

@@ -22,7 +22,7 @@ namespace JocRPG
                     string selectedElement = LB_Inventory.Items[i].ToString();
                     string[] details = selectedElement.Split(' ');
                     int id = Convert.ToInt32(details[0]);
-
+                   // MessageBox.Show($"{id}");
                     TB_Detalii.Text = $"" +
                         $"\t{FightingScene.date.GameManager.InventoryItemList[id].Name}" + Environment.NewLine +
                         $"Type: {FightingScene.date.GameManager.InventoryItemList[id].ItemType}" + Environment.NewLine +
@@ -134,7 +134,7 @@ namespace JocRPG
                             //level check
                             if (FightingScene.date.GameManager.Player.Level >= FightingScene.date.GameManager.Player.InventoryList[id].RequiredLevel)
                             {//class check
-                                if (FightingScene.date.GameManager.Player.InventoryList[id].ItemClass == FightingScene.date.GameManager.Player.PlayerClass)
+                                if (FightingScene.date.GameManager.Player.InventoryList[id].AvailableClass == FightingScene.date.GameManager.Player.PlayerClass)
                                 {
                                     if (FightingScene.date.GameManager.Player.Equipment[FightingScene.date.GameManager.Player.InventoryList[id].ItemType] != 0)
                                         if (MessageBox.Show("Atentie itemele deja echipate vor fi date jos. Doriti sa continuati", "Atention", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
@@ -160,7 +160,7 @@ namespace JocRPG
                                            //level check
                             if (FightingScene.date.GameManager.Player.Level >= FightingScene.date.GameManager.Player.InventoryList[id].RequiredLevel)
                             {//class check
-                                if (FightingScene.date.GameManager.Player.InventoryList[id].ItemClass == FightingScene.date.GameManager.Player.PlayerClass)
+                                if (FightingScene.date.GameManager.Player.InventoryList[id].AvailableClass == FightingScene.date.GameManager.Player.PlayerClass)
                                 {
                                     //checks if an item is equipped in that slot
                                     if (FightingScene.date.GameManager.Player.Equipment["Main"] != 0 || FightingScene.date.GameManager.Player.Equipment["OffHand"] != 0)
@@ -201,7 +201,7 @@ namespace JocRPG
                                            //level check
                             if (FightingScene.date.GameManager.Player.Level >= FightingScene.date.GameManager.Player.InventoryList[id].RequiredLevel)
                             {//class check
-                                if (FightingScene.date.GameManager.Player.InventoryList[id].ItemClass == FightingScene.date.GameManager.Player.PlayerClass)
+                                if (FightingScene.date.GameManager.Player.InventoryList[id].AvailableClass == FightingScene.date.GameManager.Player.PlayerClass)
                                 {
                                     //checks if an item is equipped in that slot
                                     if (FightingScene.date.GameManager.Player.Equipment["Main"] != 0)

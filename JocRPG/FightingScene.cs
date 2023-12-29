@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,34 +25,8 @@ namespace JocRPG
         }
         private void InitializeGame()
         {
-            //game window
-            PB_Player.Visible = true;
-            PB_Enemy.Visible = true;
-            BTN_Heal.Visible = true;
-            BTN_Inventory.Visible = true;
-            BTN_EnemyTurn.Visible = true;
-            BTN_Stats.Visible = true;
-            BTN_Attack.Visible = true;
-            BTN_Block.Visible = true;
-            BTN_Counter.Visible = true;
-            BTN_Dodge.Visible = true;
-            BTN_Shop.Visible = true;
-            LB_Action.Visible = true;
-            LB_HPE.Visible = true;
-            LB_HPP.Visible = true;
-            LB_NameP.Visible = true;
-            LB_NumeE.Visible = true;
-            BTN_StartGame.Visible = false;
-
-            //hide classes
-
-            LB_Classes.Visible = false; 
-            LB_NameSelector.Visible = false;
-            TB_Name.Visible = false;    
-            RB_Archer.Visible = false;
-            RB_Barbarian.Visible = false;
-            RB_Knight.Visible = false;
-            
+            GB_Game.Visible = true;
+            GB_StartGame.Visible = false;
         }
         private void BTN_Start_Click(object sender, EventArgs e)
         {
@@ -79,6 +54,7 @@ namespace JocRPG
                 gameManager.UpdateLevelP(this);
                 LB_Action.Items.Add("Turn " + gameManager.Turn);
                 LB_Action.Items.Add($"{gameManager.Player.Name} Turn");
+                this.Height = 379;
             }
             else
                 MessageBox.Show("Please name your character");
@@ -107,7 +83,7 @@ namespace JocRPG
         private void BTN_Heal_MouseHover(object sender, EventArgs e)
         {
             TB_Detalii.Visible = true;
-            TB_Detalii.Text = "Number of potions:  " + Convert.ToString (gameManager.Player.Potions) +" (+5 HP)";
+            TB_Detalii.Text = $"Number of potions:{GameManager.Player.Potions} (+{GameManager.Player.HpPotion} HP)";
         }
         private void BTN_Counter_MouseMove(object sender, EventArgs e)
         {
@@ -221,7 +197,7 @@ namespace JocRPG
         }
         private void BTN_Heal_Click(object sender, EventArgs e)
         {
-            int healAmmount = 20;
+            int healAmmount = GameManager.Player.HpPotion;
             if (gameManager.Player.Health != gameManager.Player.MaxHealth)
             {
                 gameManager.Player.Health += healAmmount;
@@ -229,11 +205,11 @@ namespace JocRPG
 
                 if (gameManager.Player.Health > gameManager.Player.MaxHealth)
                 {
-                    LB_Action.Items.Add($"You healed for   + {Convert.ToString(healAmmount+ (gameManager.Player.MaxHealth-gameManager.Player.Health) )}");
+                    LB_Action.Items.Add($"You healed {Convert.ToString(healAmmount+ (gameManager.Player.MaxHealth-gameManager.Player.Health) )} HP");
                     gameManager.Player.Health = gameManager.Player.MaxHealth;
                 }
                 else
-                    LB_Action.Items.Add($"You healed for {healAmmount}");
+                    LB_Action.Items.Add($"You healed {healAmmount} HP");
                 gameManager.UpdateHealthP(this);
                 BTN_Heal.Enabled = false;
             }
@@ -327,6 +303,12 @@ namespace JocRPG
                 this.Height = 500;
             else
                 this.Height = 368;
+        }
+
+        private void FightingScene_MaximumSizeChanged(object sender, EventArgs e)
+        {
+            this.Width = 896;
+            this.Height = 379;
         }
     }
 }
