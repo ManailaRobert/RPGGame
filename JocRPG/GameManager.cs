@@ -41,7 +41,7 @@ namespace JocRPG
                     Player.StatPoints = 0;
                     Player.Potions = 4;
                     Player.HpPotion = 5;
-                    Player.Money = 500;
+                    Player.Money = 0;
 
                     Player.AddedDEF = 0;
                     break;

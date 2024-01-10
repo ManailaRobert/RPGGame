@@ -1,4 +1,4 @@
-10
+40
 1;Excalibur;Weapon(1H);Sword;297;3;Knight;2;15;0
 2;GreatSword;Weapon(2H);Sword(2H);298;3;Knight;2;12;0
 3;Normal Bow;Weapon(2H);Bow(2H);290;4;Archer;1;14;0
@@ -9,3 +9,33 @@
 8;Coif;Armor;HeadGear;298;6;Knight;2;0;3
 9;Leather Leggings;Armor;Leggings;290;6;Knight;1;0;210
 10;Leather Boots;Armor;Boots;298;6;Knight;6;0;5
+11;Leather Chestplate;Armor;ChestPiece;500;30;Barbarian;1;0;5
+12;Iron Leggings;Armor;Leggings;500;40;Archer;1;0;8
+13;Bronze Boots;Armor;Boots;500;20;Knight;1;0;3
+14;Silver Sword;Weapon(1H);Sword;500;60;Barbarian;1;6;0
+15;Great Axe;Weapon(2H);Axe;500;80;Knight;1;8;0
+16;Elven Bow;Weapon(2);Bow;500;70;Archer;1;7;0
+17;Magical Shield;OffHand;Shield;500;45;Knight;1;0;15
+18;Chainmail Helmet;Armor;HeadGear;500;35;Barbarian;1;0;7
+19;Plate Chestplate;Armor;ChestPiece;500;55;Archer;1;0;12
+20;Dragon Scale Leggings;Armor;Leggings;500;75;Knight;1;0;15
+21;Swift Boots;Armor;Boots;500;25;Barbarian;1;0;4
+22;Flaming Sword;Weapon(1H);Sword;500;65;Archer;1;6;0
+23;Thunderous Hammer;Weapon(2H);Axe;500;90;Knight;1;8;0
+24;Ice Bow;Weapon(2);Bow;500;80;Archer;1;7;0
+25;Holy Shield;OffHand;Shield;500;50;Knight;1;0;20
+26;Shadow Hood;Armor;HeadGear;500;40;Barbarian;1;0;8
+27;Mystic Robe;Armor;ChestPiece;500;60;Archer;1;0;14
+28;Stealthy Leggings;Armor;Leggings;500;30;Knight;1;0;6
+29;Silver Saber;Weapon(1H);Sword;500;70;Barbarian;1;6;0
+30;Ancient Greataxe;Weapon(2H);Axe;500;100;Archer;1;10;0
+31;Silk Hood;Armor;HeadGear;500;45;Knight;2;0;5
+32;Cotton Robe;Armor;ChestPiece;500;25;Barbarian;2;0;3
+33;Leather Pants;Armor;Leggings;500;35;Archer;2;0;7
+34;Bronze Shoes;Armor;Boots;500;15;Knight;2;0;2
+35;Wooden Staff;Weapon(2H);Staff;500;40;Barbarian;2;4;0
+36;Short Sword;Weapon(1H);Sword;500;30;Archer;2;3;0
+37;Oak Bow;Weapon(2);Bow;500;25;Knight;2;2;0
+38;Wooden Shield;OffHand;Shield;500;20;Barbarian;2;0;6
+39;Cloth Cap;Armor;HeadGear;500;20;Archer;2;0;3
+40;Linen Tunic;Armor;ChestPiece;500;30;Knight;2;0;5

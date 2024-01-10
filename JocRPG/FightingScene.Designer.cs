@@ -199,6 +199,7 @@
             this.label1.Size = new System.Drawing.Size(106, 13);
             this.label1.TabIndex = 14;
             this.label1.Text = "Stat points Available!";
+            this.label1.Visible = false;
             // 
             // LB_HPP
             // 
