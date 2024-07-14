@@ -1,11 +1,10 @@
-# RPGGame  
-# !!! First project  
+# RPGGame    
 This is a C# game made in vs studio.  
-As interface it has forms.  
+The interface was made with windows forms.
 
 ~What you can do in the game  
--Beat 2 types of mobs: Goblins and Orcs  
--Beat 1 boss: Orc King  
+-Beat 2 types of mobs: Goblins and Orcs (Not Implemented)  
+-Beat 1 boss: Orc King (Not implemented)  
 -Buy items  
 -Grow your caracter  
 
