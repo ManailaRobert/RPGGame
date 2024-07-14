@@ -17,4 +17,4 @@ The interface was made with windows forms.
 -Its my first game and my first big project so take it with a grain of salt  
 -I am not good at design :)  
 
-(#1 Big Project)
+(#1 Big Project made)
